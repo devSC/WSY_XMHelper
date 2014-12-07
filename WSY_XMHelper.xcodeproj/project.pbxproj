@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00FB1D6963BC8A36172D2A32 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F53ADBFF45B9FC73C9CDC3 /* libPods.a */; };
+		FEAAF03E1A33646B00731999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF03D1A33646B00731999 /* main.m */; };
+		FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0401A33646B00731999 /* AppDelegate.m */; };
+		FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0481A33646B00731999 /* Main.storyboard */; };
+		FEAAF04C1A33646B00731999 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF04B1A33646B00731999 /* Images.xcassets */; };
+		FEAAF04F1A33646B00731999 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF04D1A33646B00731999 /* LaunchScreen.xib */; };
+		FEAAF05B1A33646B00731999 /* WSY_XMHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF05A1A33646B00731999 /* WSY_XMHelperTests.m */; };
+		FEAAF0701A33F60E00731999 /* XMVideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF06D1A33F60E00731999 /* XMVideoListCell.m */; };
+		FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF06F1A33F60E00731999 /* XMVideoListController.m */; };
+		FEAAF07E1A33F6E800731999 /* XMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0741A33F6E800731999 /* XMDataManager.m */; };
+		FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0771A33F6E800731999 /* XMAPI.m */; };
+		FEAAF0801A33F6E800731999 /* XMListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF07A1A33F6E800731999 /* XMListModel.m */; };
+		FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF07D1A33F6E800731999 /* XMRequest.m */; };
+		FEAAF0841A340A7500731999 /* XMDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0831A340A7500731999 /* XMDetailListController.m */; };
+		FEAAF0871A34130A00731999 /* XMDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0861A34130A00731999 /* XMDetailCell.m */; };
+		FEAAF08A1A34148400731999 /* XMYouKuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0891A34148400731999 /* XMYouKuModel.m */; };
+		FEAAF08C1A343E4D00731999 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF08B1A343E4D00731999 /* InfoPlist.strings */; };
+		FEAAF0901A34860100731999 /* background_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF08F1A34860100731999 /* background_logo@2x.png */; };
+		FEAAF0921A348F9700731999 /* icon_video_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0911A348F9700731999 /* icon_video_play@2x.png */; };
+		FEAAF0941A348F9F00731999 /* icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0931A348F9F00731999 /* icon_settings@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FEAAF0551A33646B00731999 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEAAF0301A33646B00731999 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEAAF0371A33646B00731999;
+			remoteInfo = WSY_XMHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2BB703B7929271AB1D8AAB97 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A8F53ADBFF45B9FC73C9CDC3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC243F116D49492F26CD3152 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FEAAF0381A33646B00731999 /* WSY_XMHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSY_XMHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEAAF03C1A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEAAF03D1A33646B00731999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FEAAF03F1A33646B00731999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FEAAF0401A33646B00731999 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FEAAF0491A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEAAF04B1A33646B00731999 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FEAAF04E1A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FEAAF0541A33646B00731999 /* WSY_XMHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WSY_XMHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEAAF0591A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEAAF05A1A33646B00731999 /* WSY_XMHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSY_XMHelperTests.m; sourceTree = "<group>"; };
+		FEAAF06C1A33F60E00731999 /* XMVideoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMVideoListCell.h; sourceTree = "<group>"; };
+		FEAAF06D1A33F60E00731999 /* XMVideoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMVideoListCell.m; sourceTree = "<group>"; };
+		FEAAF06E1A33F60E00731999 /* XMVideoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMVideoListController.h; sourceTree = "<group>"; };
+		FEAAF06F1A33F60E00731999 /* XMVideoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMVideoListController.m; sourceTree = "<group>"; };
+		FEAAF0731A33F6E800731999 /* XMDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDataManager.h; sourceTree = "<group>"; };
+		FEAAF0741A33F6E800731999 /* XMDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDataManager.m; sourceTree = "<group>"; };
+		FEAAF0761A33F6E800731999 /* XMAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMAPI.h; sourceTree = "<group>"; };
+		FEAAF0771A33F6E800731999 /* XMAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMAPI.m; sourceTree = "<group>"; };
+		FEAAF0781A33F6E800731999 /* XMHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMHelper.h; sourceTree = "<group>"; };
+		FEAAF0791A33F6E800731999 /* XMListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMListModel.h; sourceTree = "<group>"; };
+		FEAAF07A1A33F6E800731999 /* XMListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMListModel.m; sourceTree = "<group>"; };
+		FEAAF07C1A33F6E800731999 /* XMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMRequest.h; sourceTree = "<group>"; };
+		FEAAF07D1A33F6E800731999 /* XMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMRequest.m; sourceTree = "<group>"; };
+		FEAAF0821A340A7500731999 /* XMDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDetailListController.h; sourceTree = "<group>"; };
+		FEAAF0831A340A7500731999 /* XMDetailListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailListController.m; sourceTree = "<group>"; };
+		FEAAF0851A34130A00731999 /* XMDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDetailCell.h; sourceTree = "<group>"; };
+		FEAAF0861A34130A00731999 /* XMDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailCell.m; sourceTree = "<group>"; };
+		FEAAF0881A34148400731999 /* XMYouKuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMYouKuModel.h; sourceTree = "<group>"; };
+		FEAAF0891A34148400731999 /* XMYouKuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMYouKuModel.m; sourceTree = "<group>"; };
+		FEAAF08B1A343E4D00731999 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = WSY_XMHelperTests/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		FEAAF08F1A34860100731999 /* background_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_logo@2x.png"; sourceTree = "<group>"; };
+		FEAAF0911A348F9700731999 /* icon_video_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video_play@2x.png"; sourceTree = "<group>"; };
+		FEAAF0931A348F9F00731999 /* icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_settings@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEAAF0351A33646B00731999 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FB1D6963BC8A36172D2A32 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEAAF0511A33646B00731999 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B00F50BC1E2A332073A100D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8F53ADBFF45B9FC73C9CDC3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE227E181856BAD5B591DEA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC243F116D49492F26CD3152 /* Pods.debug.xcconfig */,
+				2BB703B7929271AB1D8AAB97 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FEAAF02F1A33646B00731999 = {
+			isa = PBXGroup;
+			children = (
+				FEAAF03A1A33646B00731999 /* WSY_XMHelper */,
+				FEAAF0571A33646B00731999 /* WSY_XMHelperTests */,
+				FEAAF0391A33646B00731999 /* Products */,
+				CE227E181856BAD5B591DEA6 /* Pods */,
+				B00F50BC1E2A332073A100D3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FEAAF0391A33646B00731999 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF0381A33646B00731999 /* WSY_XMHelper.app */,
+				FEAAF0541A33646B00731999 /* WSY_XMHelperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEAAF03A1A33646B00731999 /* WSY_XMHelper */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF0721A33F6E800731999 /* XMManager */,
+				FEAAF0751A33F6E800731999 /* XMModel */,
+				FEAAF07B1A33F6E800731999 /* XMRequest */,
+				FEAAF06A1A33F60E00731999 /* Section */,
+				FEAAF03F1A33646B00731999 /* AppDelegate.h */,
+				FEAAF0401A33646B00731999 /* AppDelegate.m */,
+				FEAAF0481A33646B00731999 /* Main.storyboard */,
+				FEAAF04B1A33646B00731999 /* Images.xcassets */,
+				FEAAF04D1A33646B00731999 /* LaunchScreen.xib */,
+				FEAAF03B1A33646B00731999 /* Supporting Files */,
+			);
+			path = WSY_XMHelper;
+			sourceTree = "<group>";
+		};
+		FEAAF03B1A33646B00731999 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF08E1A34860100731999 /* Resource */,
+				FEAAF03C1A33646B00731999 /* Info.plist */,
+				FEAAF03D1A33646B00731999 /* main.m */,
+				FEAAF08B1A343E4D00731999 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEAAF0571A33646B00731999 /* WSY_XMHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF05A1A33646B00731999 /* WSY_XMHelperTests.m */,
+				FEAAF0581A33646B00731999 /* Supporting Files */,
+			);
+			path = WSY_XMHelperTests;
+			sourceTree = "<group>";
+		};
+		FEAAF0581A33646B00731999 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF0591A33646B00731999 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEAAF06A1A33F60E00731999 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF06B1A33F60E00731999 /* VideoList */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		FEAAF06B1A33F60E00731999 /* VideoList */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF06C1A33F60E00731999 /* XMVideoListCell.h */,
+				FEAAF06D1A33F60E00731999 /* XMVideoListCell.m */,
+				FEAAF06E1A33F60E00731999 /* XMVideoListController.h */,
+				FEAAF06F1A33F60E00731999 /* XMVideoListController.m */,
+				FEAAF0821A340A7500731999 /* XMDetailListController.h */,
+				FEAAF0831A340A7500731999 /* XMDetailListController.m */,
+				FEAAF0851A34130A00731999 /* XMDetailCell.h */,
+				FEAAF0861A34130A00731999 /* XMDetailCell.m */,
+			);
+			path = VideoList;
+			sourceTree = "<group>";
+		};
+		FEAAF0721A33F6E800731999 /* XMManager */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF0731A33F6E800731999 /* XMDataManager.h */,
+				FEAAF0741A33F6E800731999 /* XMDataManager.m */,
+			);
+			path = XMManager;
+			sourceTree = "<group>";
+		};
+		FEAAF0751A33F6E800731999 /* XMModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF0761A33F6E800731999 /* XMAPI.h */,
+				FEAAF0771A33F6E800731999 /* XMAPI.m */,
+				FEAAF0781A33F6E800731999 /* XMHelper.h */,
+				FEAAF0791A33F6E800731999 /* XMListModel.h */,
+				FEAAF07A1A33F6E800731999 /* XMListModel.m */,
+				FEAAF0881A34148400731999 /* XMYouKuModel.h */,
+				FEAAF0891A34148400731999 /* XMYouKuModel.m */,
+			);
+			path = XMModel;
+			sourceTree = "<group>";
+		};
+		FEAAF07B1A33F6E800731999 /* XMRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF07C1A33F6E800731999 /* XMRequest.h */,
+				FEAAF07D1A33F6E800731999 /* XMRequest.m */,
+			);
+			path = XMRequest;
+			sourceTree = "<group>";
+		};
+		FEAAF08E1A34860100731999 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF0931A348F9F00731999 /* icon_settings@2x.png */,
+				FEAAF0911A348F9700731999 /* icon_video_play@2x.png */,
+				FEAAF08F1A34860100731999 /* background_logo@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEAAF0371A33646B00731999 /* WSY_XMHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEAAF05E1A33646B00731999 /* Build configuration list for PBXNativeTarget "WSY_XMHelper" */;
+			buildPhases = (
+				26FDDBA2DB914E4FB95F5FE2 /* Check Pods Manifest.lock */,
+				FEAAF0341A33646B00731999 /* Sources */,
+				FEAAF0351A33646B00731999 /* Frameworks */,
+				FEAAF0361A33646B00731999 /* Resources */,
+				D1346C9BB58B915211B6512D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WSY_XMHelper;
+			productName = WSY_XMHelper;
+			productReference = FEAAF0381A33646B00731999 /* WSY_XMHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FEAAF0531A33646B00731999 /* WSY_XMHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEAAF0611A33646B00731999 /* Build configuration list for PBXNativeTarget "WSY_XMHelperTests" */;
+			buildPhases = (
+				FEAAF0501A33646B00731999 /* Sources */,
+				FEAAF0511A33646B00731999 /* Frameworks */,
+				FEAAF0521A33646B00731999 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEAAF0561A33646B00731999 /* PBXTargetDependency */,
+			);
+			name = WSY_XMHelperTests;
+			productName = WSY_XMHelperTests;
+			productReference = FEAAF0541A33646B00731999 /* WSY_XMHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEAAF0301A33646B00731999 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "wilson-yuan";
+				TargetAttributes = {
+					FEAAF0371A33646B00731999 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					FEAAF0531A33646B00731999 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = FEAAF0371A33646B00731999;
+					};
+				};
+			};
+			buildConfigurationList = FEAAF0331A33646B00731999 /* Build configuration list for PBXProject "WSY_XMHelper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEAAF02F1A33646B00731999;
+			productRefGroup = FEAAF0391A33646B00731999 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEAAF0371A33646B00731999 /* WSY_XMHelper */,
+				FEAAF0531A33646B00731999 /* WSY_XMHelperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEAAF0361A33646B00731999 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */,
+				FEAAF0901A34860100731999 /* background_logo@2x.png in Resources */,
+				FEAAF08C1A343E4D00731999 /* InfoPlist.strings in Resources */,
+				FEAAF0941A348F9F00731999 /* icon_settings@2x.png in Resources */,
+				FEAAF04F1A33646B00731999 /* LaunchScreen.xib in Resources */,
+				FEAAF04C1A33646B00731999 /* Images.xcassets in Resources */,
+				FEAAF0921A348F9700731999 /* icon_video_play@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEAAF0521A33646B00731999 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26FDDBA2DB914E4FB95F5FE2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D1346C9BB58B915211B6512D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEAAF0341A33646B00731999 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEAAF07E1A33F6E800731999 /* XMDataManager.m in Sources */,
+				FEAAF0701A33F60E00731999 /* XMVideoListCell.m in Sources */,
+				FEAAF0801A33F6E800731999 /* XMListModel.m in Sources */,
+				FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */,
+				FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */,
+				FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */,
+				FEAAF0841A340A7500731999 /* XMDetailListController.m in Sources */,
+				FEAAF08A1A34148400731999 /* XMYouKuModel.m in Sources */,
+				FEAAF03E1A33646B00731999 /* main.m in Sources */,
+				FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */,
+				FEAAF0871A34130A00731999 /* XMDetailCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEAAF0501A33646B00731999 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEAAF05B1A33646B00731999 /* WSY_XMHelperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FEAAF0561A33646B00731999 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEAAF0371A33646B00731999 /* WSY_XMHelper */;
+			targetProxy = FEAAF0551A33646B00731999 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FEAAF0481A33646B00731999 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEAAF0491A33646B00731999 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FEAAF04D1A33646B00731999 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEAAF04E1A33646B00731999 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEAAF05C1A33646B00731999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FEAAF05D1A33646B00731999 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEAAF05F1A33646B00731999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC243F116D49492F26CD3152 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WSY_XMHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEAAF0601A33646B00731999 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BB703B7929271AB1D8AAB97 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WSY_XMHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FEAAF0621A33646B00731999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WSY_XMHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WSY_XMHelper.app/WSY_XMHelper";
+			};
+			name = Debug;
+		};
+		FEAAF0631A33646B00731999 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WSY_XMHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WSY_XMHelper.app/WSY_XMHelper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEAAF0331A33646B00731999 /* Build configuration list for PBXProject "WSY_XMHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEAAF05C1A33646B00731999 /* Debug */,
+				FEAAF05D1A33646B00731999 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEAAF05E1A33646B00731999 /* Build configuration list for PBXNativeTarget "WSY_XMHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEAAF05F1A33646B00731999 /* Debug */,
+				FEAAF0601A33646B00731999 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEAAF0611A33646B00731999 /* Build configuration list for PBXNativeTarget "WSY_XMHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEAAF0621A33646B00731999 /* Debug */,
+				FEAAF0631A33646B00731999 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEAAF0301A33646B00731999 /* Project object */;
+}
