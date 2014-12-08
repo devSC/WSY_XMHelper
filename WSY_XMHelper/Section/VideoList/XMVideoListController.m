@@ -84,7 +84,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     XMVideoListCell *cell = (XMVideoListCell *)sender;
     if ([segue.identifier isEqualToString:@"XMDetail"]) {
         XMDetailListController *detailsViewController =  segue.destinationViewController;
-        [detailsViewController setVideoListType:_type name:cell.videoId];
+        [detailsViewController setVideoListType:_type name:cell.name.text videoId:cell.videoId ];
     }
 }
 #pragma mark <UICollectionViewDelegate>

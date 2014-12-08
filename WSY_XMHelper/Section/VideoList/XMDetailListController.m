@@ -14,9 +14,9 @@
 @interface XMDetailListController ()
 
 @property (nonatomic, assign) VIDEO_TYPE type;
-@property (nonatomic, assign) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger page;
-
+@property (nonatomic, copy) NSString *ID;
 @property (nonatomic, assign) NSArray *detailList;
 
 @end
@@ -27,26 +27,31 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.estimatedRowHeight = 110.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [[XMDataManager defaultDataManager] xm_detailListWithType:_type name:_name page:_page];
+    
+    self.title = _name;
+    
+    [[XMDataManager defaultDataManager] xm_detailListWithType:_type name:_ID page:_page];
     
     @weakify(self);
     [[RACObserve([XMDataManager defaultDataManager], detailList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *list) {
         @strongify(self);
         self.detailList = list;
-        NSLog(@"%@", list);
+//        NSLog(@"%@", list);
         [self.tableView reloadData];
     }];
-    
 }
-- (void)setVideoListType:(VIDEO_TYPE)type name:(NSString *)name
+- (void)setVideoListType:(VIDEO_TYPE)type name:(NSString *)name videoId:(NSString *)ID
 {
     self.type = type;
     self.name = name;
+    self.ID = ID;
     self.page = 1;
 }
 
@@ -84,6 +89,8 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:urlString]];
     [self.navigationController presentMoviePlayerViewControllerAnimated:player];
 }
+
+//urlString	NSString *	@"http://pl.youku.com/playlist/m3u8?ep=eiaVHUmPUM0H5ybZiz8bbnnrciJeXJZ0vEiG%2FKYXSsVAMezQkT%2FRww%3D%3D&sid=8417026372563129e96ea&token=8104&ctype=12&ev=1&type=hd2&keyframe=0&oip=1931225911&ts=hXGJ9zRFKHwyRBt2AcC-SLQ&vid=XNzg3MDEzNTI4"	0x00007fb84bc9f910
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

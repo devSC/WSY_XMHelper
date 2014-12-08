@@ -10,5 +10,5 @@
 #import "XMHelper.h"
 @interface XMDetailListController : UITableViewController
 
-- (void)setVideoListType: (VIDEO_TYPE)type name: (NSString *)name;
+- (void)setVideoListType: (VIDEO_TYPE)type name: (NSString *)name videoId: (NSString *)ID;
 @end
