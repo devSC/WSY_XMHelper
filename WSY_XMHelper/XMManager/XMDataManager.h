@@ -11,6 +11,7 @@
 @interface XMDataManager : NSObject
 @property (nonatomic, strong) NSArray *videoList;
 @property (nonatomic, strong) NSArray *detailList;
+@property (nonatomic, strong) NSMutableArray *downloadList;
 
 + (instancetype)defaultDataManager;
 /**

@@ -43,10 +43,10 @@
     })
 }
 
-- (void)downloader_StartDownLoadWithUrlString:(NSString *)urlString  failedHandler:(void (^)())failedHandler
+- (void)downloader_StartDownLoadWithName:(NSString *)name urlString:(NSString *)urlString downloadProgress:(void (^)(float))progress failedHandler:(void (^)())failedHandler
 {
     
-    NSString *uuid = @"movie";
+    NSString *uuid = name;
     [[XMM3U8Handler defaultHandler] handler_parseUrlString:urlString uuid:uuid completionHandler:^(XMM3U8PlayList *playList) {
         self.downloadArray = [NSMutableArray array];
         for (int i = 0; i < playList.length; i++) {
@@ -59,11 +59,10 @@
         _totleNumber = self.downloadArray.count;
         for (XMM3U8SegmentDownloader *downloader in self.downloadArray) {
             [downloader startWitProgress:^(CGFloat progress) {
-                NSLog(@"sg progress: %.2f", progress);
             } completion:^(XMM3U8SegmentDownloader *downloader) {
                 [self.downloadArray removeObject:downloader];
                 CGFloat totleProgress= (_totleNumber - self.downloadArray.count)/_totleNumber;
-                NSLog(@"======totle Progress: %.2f", totleProgress);
+                progress(totleProgress);
             }];
         }
     } failedHandler:^{

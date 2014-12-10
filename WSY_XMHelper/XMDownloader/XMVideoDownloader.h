@@ -11,7 +11,7 @@
 @interface XMVideoDownloader : NSObject
 
 + (XMVideoDownloader *)defaultDownloader;
-- (void)downloader_StartDownLoadWithUrlString: (NSString*)urlString failedHandler: (void(^)())failedHandler;
+- (void)downloader_StartDownLoadWithName: (NSString *)name urlString: (NSString*)urlString downloadProgress: (void(^)(float progress))progress failedHandler: (void(^)())failedHandler;
 
 
 @end

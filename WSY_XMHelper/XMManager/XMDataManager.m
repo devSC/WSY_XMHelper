@@ -16,6 +16,15 @@
         return [[self alloc] init];
     });
 }
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.downloadList = [NSMutableArray new];
+    }
+    return self;
+}
+
 
 - (void)xm_videoListWithVideoType: (VIDEO_TYPE)type
 {

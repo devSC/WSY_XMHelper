@@ -45,14 +45,18 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     
     NSString *urlString = @"http://pl.youku.com/playlist/m3u8?ep=eiaVGEyLX8gF4iPXiz8bYSXidSNbXJZ0rHrP%2F4gXAcRAH%2BjQnD%2FYxw%3D%3D&sid=8412569657083126901dd&token=5190&ctype=12&ev=1&type=hd2&keyframe=0&oip=1931225911&ts=kqe00jEBIwA2ORoyAeaHkaM&vid=XNjUzNjE1OTg0";
     
-    [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithUrlString:urlString failedHandler:^{
-        NSLog(@"Download Failed");
-    }];
+//    [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithName:@"哈哈" urlString:urlString downloadProgress:^(float progress) {
+//        NSLog(@"progress: %.4f", progress);
+//    } failedHandler:^{
+//        NSLog(@"Download failed");
+//    }];
     
 }
 - (IBAction)segmentDidPressed:(UISegmentedControl *)sender {
     self.type = (sender.selectedSegmentIndex +2);
     [[XMDataManager defaultDataManager] xm_videoListWithVideoType:_type];
+    NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
+    [self.collectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,61 +1,64 @@
 //
-//  XMDetailListController.m
+//  XMDownloadListController.m
 //  WSY_XMHelper
 //
-//  Created by 袁仕崇 on 14/12/7.
+//  Created by 袁仕崇 on 14/12/10.
 //  Copyright (c) 2014年 wilson-yuan. All rights reserved.
 //
 
-#import "XMDetailListController.h"
+#import "XMDownloadListController.h"
+#import "XMDownloadCell.h"
+#import "XMHelper.h"
 #import "XMDataManager.h"
-#import "XMDetailCell.h"
-#import <MediaPlayer/MediaPlayer.h>
-#import <UIAlertView+BlocksKit.h>
+#import "XMVideoDownloader.h"
 
-@interface XMDetailListController ()
+@interface XMDownloadListController ()
+{
+    NSMutableArray *_listArray;
+}
+@property (nonatomic, strong) NSMutableArray *listArray;
 
-@property (nonatomic, assign) VIDEO_TYPE type;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, assign) NSInteger page;
-@property (nonatomic, copy) NSString *ID;
-@property (nonatomic, assign) NSArray *detailList;
+
 
 @end
 
-static NSString *const cellIdentifier = @"XMDetailCell";
-@implementation XMDetailListController
+@implementation XMDownloadListController
+@synthesize listArray = _listArray;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.estimatedRowHeight = 110.0;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.title = _name;
-    
-    [[XMDataManager defaultDataManager] xm_detailListWithType:_type name:_ID page:_page];
+    self.tableView.estimatedRowHeight = 129.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     @weakify(self);
-    [[RACObserve([XMDataManager defaultDataManager], detailList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *list) {
+    [[RACObserve([XMDataManager defaultDataManager], downloadList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSMutableArray *list){
         @strongify(self);
-        self.detailList = list;
-//        NSLog(@"%@", list);
+        self.listArray = list;
         [self.tableView reloadData];
+        [self startDownload];
     }];
+    
 }
-- (void)setVideoListType:(VIDEO_TYPE)type name:(NSString *)name videoId:(NSString *)ID
+- (void)startDownload
 {
-    self.type = type;
-    self.name = name;
-    self.ID = ID;
-    self.page = 1;
+    for (int i = 0; i < self.listArray.count; i++) {
+        NSIndexPath *index = [NSIndexPath indexPathForRow:i inSection:0];
+        XMDownloadCell *cell = (XMDownloadCell *)[self.tableView cellForRowAtIndexPath:index];
+        
+        [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithName:cell.name.text urlString:cell.youku.video_addr downloadProgress:^(float progress) {
+            [cell.progressView setProgress:progress];
+        } failedHandler:^{
+            NSLog(@"downloadFailed");
+        }];
+    }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -65,53 +68,29 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
+
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return self.detailList.count;
+    
+    return self.listArray.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    XMDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    XMDownloadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XMDownloadCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    [cell setCellData:[_detailList objectAtIndex:indexPath.row]];
-    
+    [cell setCellData:[self.listArray objectAtIndex:indexPath.row]];
+
     return cell;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    XMDetailCell *cell = (XMDetailCell *)[tableView cellForRowAtIndexPath:indexPath];
-
-    UIAlertView *alertView = [UIAlertView bk_alertViewWithTitle:@"选择操作"];
-    [alertView bk_addButtonWithTitle:NSLocalizedString(@"下载", @"下载") handler:^{
-//        NSString *urlString = cell.youku.video_addr_super;
-//        NSString *name = cell.name.text;
-//        NSString *length = cell.length.text;
-//        NSString *time = cell.time.text;
-//        NSDictionary *dic = @{@"name": name, @"urlString": urlString, @"length":length, @"time": time};
-        
-        [[[XMDataManager defaultDataManager] downloadList] addObject:[_detailList objectAtIndex:indexPath.row]];
-    }];
-    [alertView bk_addButtonWithTitle:NSLocalizedString(@"播放", nil) handler:^{
-        NSString *urlString = cell.youku.video_addr_super;
-        MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:urlString]];
-        [self.navigationController presentMoviePlayerViewControllerAnimated:player];
-    }];
-    [alertView bk_addButtonWithTitle:@"取消" handler:^{
-        
-    }];
-    [alertView show];
-   
 }
 
-
-//urlString	NSString *	@"http://pl.youku.com/playlist/m3u8?ep=eiaVHUmPUM0H5ybZiz8bbnnrciJeXJZ0vEiG%2FKYXSsVAMezQkT%2FRww%3D%3D&sid=8417026372563129e96ea&token=8104&ctype=12&ev=1&type=hd2&keyframe=0&oip=1931225911&ts=hXGJ9zRFKHwyRBt2AcC-SLQ&vid=XNzg3MDEzNTI4"	0x00007fb84bc9f910
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

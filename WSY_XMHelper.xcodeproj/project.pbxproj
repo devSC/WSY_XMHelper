@@ -45,6 +45,12 @@
 		FED0B2BE1A3752DF0059E826 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0B2BD1A3752DF0059E826 /* libxml2.dylib */; };
 		FED0B2C01A3752E60059E826 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0B2BF1A3752E60059E826 /* libz.dylib */; };
 		FED0B2C21A3752F00059E826 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0B2C11A3752F00059E826 /* SystemConfiguration.framework */; };
+		FED0B2C41A388C1B0059E826 /* ic_video_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED0B2C31A388C1B0059E826 /* ic_video_normal@3x.png */; };
+		FED0B2C61A388C350059E826 /* ic_novideo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED0B2C51A388C350059E826 /* ic_novideo@3x.png */; };
+		FED0B2CA1A388CE30059E826 /* ic_left_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED0B2C91A388CE30059E826 /* ic_left_3@2x.png */; };
+		FED0B2CC1A388DDE0059E826 /* ic_record_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FED0B2CB1A388DDE0059E826 /* ic_record_normal@2x.png */; };
+		FED0B2D41A388F430059E826 /* XMDownloadListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2D31A388F430059E826 /* XMDownloadListController.m */; };
+		FED0B2D71A3891220059E826 /* XMDownloadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2D61A3891220059E826 /* XMDownloadCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +73,7 @@
 		FEAAF03F1A33646B00731999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FEAAF0401A33646B00731999 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FEAAF0491A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FEAAF04B1A33646B00731999 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FEAAF04B1A33646B00731999 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WSY_XMHelper/Images.xcassets; sourceTree = "<group>"; };
 		FEAAF04E1A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FEAAF0541A33646B00731999 /* WSY_XMHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WSY_XMHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAAF0591A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +137,14 @@
 		FED0B2BD1A3752DF0059E826 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		FED0B2BF1A3752E60059E826 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FED0B2C11A3752F00059E826 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FED0B2C31A388C1B0059E826 /* ic_video_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_video_normal@3x.png"; sourceTree = "<group>"; };
+		FED0B2C51A388C350059E826 /* ic_novideo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_novideo@3x.png"; sourceTree = "<group>"; };
+		FED0B2C91A388CE30059E826 /* ic_left_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_left_3@2x.png"; sourceTree = "<group>"; };
+		FED0B2CB1A388DDE0059E826 /* ic_record_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_record_normal@2x.png"; sourceTree = "<group>"; };
+		FED0B2D21A388F430059E826 /* XMDownloadListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDownloadListController.h; sourceTree = "<group>"; };
+		FED0B2D31A388F430059E826 /* XMDownloadListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadListController.m; sourceTree = "<group>"; };
+		FED0B2D51A3891220059E826 /* XMDownloadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDownloadCell.h; sourceTree = "<group>"; };
+		FED0B2D61A3891220059E826 /* XMDownloadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				FEAAF03A1A33646B00731999 /* WSY_XMHelper */,
+				FEAAF04B1A33646B00731999 /* Images.xcassets */,
+				FEAAF04D1A33646B00731999 /* LaunchScreen.xib */,
 				FEAAF0571A33646B00731999 /* WSY_XMHelperTests */,
 				FEAAF0391A33646B00731999 /* Products */,
 				CE227E181856BAD5B591DEA6 /* Pods */,
@@ -200,17 +216,15 @@
 		FEAAF03A1A33646B00731999 /* WSY_XMHelper */ = {
 			isa = PBXGroup;
 			children = (
+				FEAAF03F1A33646B00731999 /* AppDelegate.h */,
+				FEAAF0401A33646B00731999 /* AppDelegate.m */,
+				FEAAF0481A33646B00731999 /* Main.storyboard */,
+				FEAAF06A1A33F60E00731999 /* Section */,
 				FED0B2971A3751A60059E826 /* Vendor */,
 				FED0B2841A372E3E0059E826 /* XMDownloader */,
 				FEAAF0721A33F6E800731999 /* XMManager */,
 				FEAAF0751A33F6E800731999 /* XMModel */,
 				FEAAF07B1A33F6E800731999 /* XMRequest */,
-				FEAAF06A1A33F60E00731999 /* Section */,
-				FEAAF03F1A33646B00731999 /* AppDelegate.h */,
-				FEAAF0401A33646B00731999 /* AppDelegate.m */,
-				FEAAF0481A33646B00731999 /* Main.storyboard */,
-				FEAAF04B1A33646B00731999 /* Images.xcassets */,
-				FEAAF04D1A33646B00731999 /* LaunchScreen.xib */,
 				FEAAF03B1A33646B00731999 /* Supporting Files */,
 			);
 			path = WSY_XMHelper;
@@ -247,6 +261,7 @@
 		FEAAF06A1A33F60E00731999 /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				FED0B2CE1A388EB90059E826 /* DownloadList */,
 				FEAAF06B1A33F60E00731999 /* VideoList */,
 			);
 			path = Section;
@@ -302,6 +317,10 @@
 		FEAAF08E1A34860100731999 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FED0B2CB1A388DDE0059E826 /* ic_record_normal@2x.png */,
+				FED0B2C91A388CE30059E826 /* ic_left_3@2x.png */,
+				FED0B2C51A388C350059E826 /* ic_novideo@3x.png */,
+				FED0B2C31A388C1B0059E826 /* ic_video_normal@3x.png */,
 				FEAAF0931A348F9F00731999 /* icon_settings@2x.png */,
 				FEAAF0911A348F9700731999 /* icon_video_play@2x.png */,
 				FEAAF08F1A34860100731999 /* background_logo@2x.png */,
@@ -387,6 +406,17 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		FED0B2CE1A388EB90059E826 /* DownloadList */ = {
+			isa = PBXGroup;
+			children = (
+				FED0B2D21A388F430059E826 /* XMDownloadListController.h */,
+				FED0B2D31A388F430059E826 /* XMDownloadListController.m */,
+				FED0B2D51A3891220059E826 /* XMDownloadCell.h */,
+				FED0B2D61A3891220059E826 /* XMDownloadCell.m */,
+			);
+			path = DownloadList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,12 +500,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */,
+				FED0B2C61A388C350059E826 /* ic_novideo@3x.png in Resources */,
+				FED0B2CC1A388DDE0059E826 /* ic_record_normal@2x.png in Resources */,
 				FEAAF0901A34860100731999 /* background_logo@2x.png in Resources */,
 				FEAAF08C1A343E4D00731999 /* InfoPlist.strings in Resources */,
 				FEAAF0941A348F9F00731999 /* icon_settings@2x.png in Resources */,
 				FEAAF04F1A33646B00731999 /* LaunchScreen.xib in Resources */,
 				FEAAF04C1A33646B00731999 /* Images.xcassets in Resources */,
+				FED0B2C41A388C1B0059E826 /* ic_video_normal@3x.png in Resources */,
 				FEAAF0921A348F9700731999 /* icon_video_play@2x.png in Resources */,
+				FED0B2CA1A388CE30059E826 /* ic_left_3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +576,9 @@
 				FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */,
 				FED0B2961A3742110059E826 /* XMM3U8SegmentDownloader.m in Sources */,
 				FED0B2B81A3751A60059E826 /* ASIInputStream.m in Sources */,
+				FED0B2D41A388F430059E826 /* XMDownloadListController.m in Sources */,
 				FED0B2901A3734C80059E826 /* XMVideoDownloader.m in Sources */,
+				FED0B2D71A3891220059E826 /* XMDownloadCell.m in Sources */,
 				FEAAF0841A340A7500731999 /* XMDetailListController.m in Sources */,
 				FEAAF08A1A34148400731999 /* XMYouKuModel.m in Sources */,
 				FED0B2B31A3751A60059E826 /* ASIDataCompressor.m in Sources */,
@@ -587,6 +623,7 @@
 				FEAAF04E1A33646B00731999 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = WSY_XMHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,23 +1,15 @@
 //
-//  XMDetailCell.m
+//  XMDownloadCell.m
 //  WSY_XMHelper
 //
-//  Created by 袁仕崇 on 14/12/7.
+//  Created by 袁仕崇 on 14/12/10.
 //  Copyright (c) 2014年 wilson-yuan. All rights reserved.
 //
 
-#import "XMDetailCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
-
-@interface XMDetailCell ()
-@property (weak, nonatomic) IBOutlet UIView *backGroundView;
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
-
-
-
-@end
-@implementation XMDetailCell
-
+#import "XMDownloadCell.h"
+#import <UIImageView+WebCache.h>
+#import "XMVideoDownloader.h"
+@implementation XMDownloadCell
 - (void)awakeFromNib {
     // Initialization code
     
@@ -33,8 +25,6 @@
     _youku = [[XMYouKuModel alloc] init];
     [_youku setModelData:data];
 }
-
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
