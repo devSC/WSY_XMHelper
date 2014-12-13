@@ -81,7 +81,7 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     NSDictionary *videoDic = [self.downloadSqueue firstObject];
     NSString *videoName = videoDic[@"name"];
     NSMutableDictionary *videoInfo = [NSMutableDictionary new];
-#if 0
+#if 1
     
     //开始下载
     if (self.downloadStatus == XMDownloadStateDownloadNow) {

@@ -91,13 +91,13 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     XMDownloadCell *cell =(XMDownloadCell *)[tableView cellForRowAtIndexPath:indexPath];
-//    if (cell.progressView.progress == 1) {
+    if (cell.progressView.progress == 1) {
         NSString *urlString = [NSString stringWithFormat:@"http://127.0.0.1:12345/%@/movie.m3u8", cell.youku.youku_id];
-        urlString = @"http://127.0.0.1:12345/movie1/movie.m3u8";
+//        urlString = @"http://127.0.0.1:12345/movie1/movie.m3u8";
         NSURL *url = [NSURL URLWithString:urlString];
         MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
         [self presentMoviePlayerViewControllerAnimated:player];
-//    }
+    }
 }
 
 /*

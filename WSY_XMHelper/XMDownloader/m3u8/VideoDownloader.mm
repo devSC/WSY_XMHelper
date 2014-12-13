@@ -174,7 +174,7 @@
         //创建文件头部
         NSString* head = @"#EXTM3U\n#EXT-X-TARGETDURATION:30\n#EXT-X-VERSION:2\n#EXT-X-DISCONTINUITY\n";
      
-        NSString* segmentPrefix = [NSString stringWithFormat:@"http://127.0.0.1:54321/%@/",playlist.uuid];
+        NSString* segmentPrefix = [NSString stringWithFormat:@"http://127.0.0.1:12345/%@/",playlist.uuid];
         //填充片段数据
         for(int i = 0;i< self.playlist.length;i++)
         {

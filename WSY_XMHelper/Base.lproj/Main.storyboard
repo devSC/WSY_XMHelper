@@ -311,7 +311,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="DYM-VD-6vf" secondAttribute="bottom" constant="5" id="ooV-Ra-DwP"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.18431372549019609" green="0.2627450980392157" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.29411764709999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="backGroundView" destination="DYM-VD-6vf" id="enX-w0-N2u"/>
                                     <outlet property="icon" destination="nH6-MX-d33" id="Kpq-Hc-MDG"/>

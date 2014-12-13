@@ -20,7 +20,7 @@ static NSString *const path = @"Downloads";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // Create server using our custom MyHTTPServer class
-    HTTPServer *httpServer = [[HTTPServer alloc] init];
+    httpServer = [[HTTPServer alloc] init];
     
     // Tell the server to broadcast its presence via Bonjour.
     // This allows browsers such as Safari to automatically discover our service.
@@ -34,6 +34,7 @@ static NSString *const path = @"Downloads";
     // Serve files from our embedded Web folder
     NSString *pathPrefix = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *webPath = [pathPrefix stringByAppendingPathComponent:path];
+    NSLog(@"Setting document root: %@", webPath);
     [httpServer setDocumentRoot:webPath];
     //start the httpServer
     

@@ -13,7 +13,6 @@
 		FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0481A33646B00731999 /* Main.storyboard */; };
 		FEAAF04C1A33646B00731999 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF04B1A33646B00731999 /* Images.xcassets */; };
 		FEAAF04F1A33646B00731999 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF04D1A33646B00731999 /* LaunchScreen.xib */; };
-		FEAAF05B1A33646B00731999 /* WSY_XMHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF05A1A33646B00731999 /* WSY_XMHelperTests.m */; };
 		FEAAF0701A33F60E00731999 /* XMVideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF06D1A33F60E00731999 /* XMVideoListCell.m */; };
 		FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF06F1A33F60E00731999 /* XMVideoListController.m */; };
 		FEAAF07E1A33F6E800731999 /* XMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0741A33F6E800731999 /* XMDataManager.m */; };
@@ -88,16 +87,6 @@
 		FED0B3531A3C39790059E826 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B3381A3C39790059E826 /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FEAAF0551A33646B00731999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FEAAF0301A33646B00731999 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEAAF0371A33646B00731999;
-			remoteInfo = WSY_XMHelper;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		9C9C825FDC2DAAE1F793CBAA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFFFFE3382C4B1491CBE72F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,7 +99,6 @@
 		FEAAF0491A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEAAF04B1A33646B00731999 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WSY_XMHelper/Images.xcassets; sourceTree = "<group>"; };
 		FEAAF04E1A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FEAAF0541A33646B00731999 /* WSY_XMHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WSY_XMHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAAF0591A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEAAF05A1A33646B00731999 /* WSY_XMHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSY_XMHelperTests.m; sourceTree = "<group>"; };
 		FEAAF06C1A33F60E00731999 /* XMVideoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMVideoListCell.h; sourceTree = "<group>"; };
@@ -264,13 +252,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEAAF0511A33646B00731999 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -315,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				FEAAF0381A33646B00731999 /* WSY_XMHelper.app */,
-				FEAAF0541A33646B00731999 /* WSY_XMHelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -689,24 +669,6 @@
 			productReference = FEAAF0381A33646B00731999 /* WSY_XMHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FEAAF0531A33646B00731999 /* WSY_XMHelperTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEAAF0611A33646B00731999 /* Build configuration list for PBXNativeTarget "WSY_XMHelperTests" */;
-			buildPhases = (
-				FEAAF0501A33646B00731999 /* Sources */,
-				FEAAF0511A33646B00731999 /* Frameworks */,
-				FEAAF0521A33646B00731999 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FEAAF0561A33646B00731999 /* PBXTargetDependency */,
-			);
-			name = WSY_XMHelperTests;
-			productName = WSY_XMHelperTests;
-			productReference = FEAAF0541A33646B00731999 /* WSY_XMHelperTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -718,10 +680,6 @@
 				TargetAttributes = {
 					FEAAF0371A33646B00731999 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					FEAAF0531A33646B00731999 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = FEAAF0371A33646B00731999;
 					};
 				};
 			};
@@ -739,7 +697,6 @@
 			projectRoot = "";
 			targets = (
 				FEAAF0371A33646B00731999 /* WSY_XMHelper */,
-				FEAAF0531A33646B00731999 /* WSY_XMHelperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -763,13 +720,6 @@
 				FEAAF0921A348F9700731999 /* icon_video_play@2x.png in Resources */,
 				FED0B34C1A3C39790059E826 /* About.txt in Resources */,
 				FED0B2CA1A388CE30059E826 /* ic_left_3@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEAAF0521A33646B00731999 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,23 +822,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEAAF0501A33646B00731999 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FEAAF05B1A33646B00731999 /* WSY_XMHelperTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FEAAF0561A33646B00731999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FEAAF0371A33646B00731999 /* WSY_XMHelper */;
-			targetProxy = FEAAF0551A33646B00731999 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FEAAF0481A33646B00731999 /* Main.storyboard */ = {
@@ -1035,40 +969,6 @@
 			};
 			name = Release;
 		};
-		FEAAF0621A33646B00731999 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WSY_XMHelperTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WSY_XMHelper.app/WSY_XMHelper";
-			};
-			name = Debug;
-		};
-		FEAAF0631A33646B00731999 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WSY_XMHelperTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WSY_XMHelper.app/WSY_XMHelper";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1086,15 +986,6 @@
 			buildConfigurations = (
 				FEAAF05F1A33646B00731999 /* Debug */,
 				FEAAF0601A33646B00731999 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FEAAF0611A33646B00731999 /* Build configuration list for PBXNativeTarget "WSY_XMHelperTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEAAF0621A33646B00731999 /* Debug */,
-				FEAAF0631A33646B00731999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
