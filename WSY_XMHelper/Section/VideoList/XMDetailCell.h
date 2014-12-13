@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *length;
 @property (nonatomic, strong) XMYouKuModel *youku;
-
+@property (nonatomic, strong) NSString *imgString;
 - (void)setCellData: (NSDictionary *)data;
 
 @end

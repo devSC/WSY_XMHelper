@@ -11,6 +11,8 @@
 #import "XMHelper.h"
 #import "XMDataManager.h"
 #import "XMVideoDownloader.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <UIColor+Expanded.h>
 
 @interface XMDownloadListController ()
 {
@@ -29,35 +31,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.estimatedRowHeight = 129.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+//    [[XMDataManager defaultDataManager] setDelegate:self];
     
     @weakify(self);
     [[RACObserve([XMDataManager defaultDataManager], downloadList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSMutableArray *list){
         @strongify(self);
         self.listArray = list;
         [self.tableView reloadData];
-        [self startDownload];
+//        [self startDownload];
     }];
-    
-}
-- (void)startDownload
-{
-    for (int i = 0; i < self.listArray.count; i++) {
-        NSIndexPath *index = [NSIndexPath indexPathForRow:i inSection:0];
-        XMDownloadCell *cell = (XMDownloadCell *)[self.tableView cellForRowAtIndexPath:index];
-        
-        [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithName:cell.name.text urlString:cell.youku.video_addr downloadProgress:^(float progress) {
-            [cell.progressView setProgress:progress];
-        } failedHandler:^{
-            NSLog(@"downloadFailed");
-        }];
-    }
+    [[RACObserve([XMDataManager defaultDataManager], downloadNow) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSMutableDictionary *downloadNow) {
+        @strongify(self);
+        NSDictionary *downloadInfo = downloadNow[@"download"];
+        NSString *videoName = downloadInfo[@"name"];
+        NSArray *visiableCell = self.tableView.visibleCells;
+        for (XMDownloadCell *cell in visiableCell) {
+            if ([cell.name.text isEqualToString:videoName]) {
+                CGFloat progress = [downloadInfo[@"progress"] floatValue];
+                [cell.progressLabel setText:[NSString stringWithFormat:@"%%%.0f", progress*100]];
+                cell.progressView.progress = progress;
+                break;
+            }
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +90,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    XMDownloadCell *cell =(XMDownloadCell *)[tableView cellForRowAtIndexPath:indexPath];
+//    if (cell.progressView.progress == 1) {
+        NSString *urlString = [NSString stringWithFormat:@"http://127.0.0.1:12345/%@/movie.m3u8", cell.youku.youku_id];
+        urlString = @"http://127.0.0.1:12345/movie1/movie.m3u8";
+        NSURL *url = [NSURL URLWithString:urlString];
+        MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+        [self presentMoviePlayerViewControllerAnimated:player];
+//    }
 }
 
 /*

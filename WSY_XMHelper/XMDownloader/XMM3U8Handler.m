@@ -23,6 +23,7 @@ static NSString *const formant = @"#EXTINF:";
 
 -(void)handler_parseUrlString:(NSString *)urlString uuid:(NSString *)uuid completionHandler:(void (^)(XMM3U8PlayList *))successHandler failedHandler:(void (^)())failedHandler
 {
+    NSLog(@"download name: %@  urlString: %@", uuid, urlString);
     NSStringEncoding encoding;
     NSError *error = nil;
     NSString *dataString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] usedEncoding:&encoding error:&error];
@@ -32,14 +33,14 @@ static NSString *const formant = @"#EXTINF:";
     }
     NSMutableArray *m3u8Segments = [NSMutableArray array];
     NSString *remainData = dataString;
-    NSRange m3u8SegmentRange = [remainData rangeOfString:formant];
-    while (m3u8SegmentRange.location != NSNotFound) {
-        
+    NSRange m3u8SegmentRange = [remainData rangeOfString:@"#EXTINF:"];
+    while (m3u8SegmentRange.location != NSNotFound)
+    {
         XMM3U8SegmentInfo *segmentInfo = [[XMM3U8SegmentInfo alloc] init];
         //读取片段时长
         NSRange commentRange = [remainData rangeOfString:@","];
-        NSString *value = [remainData substringWithRange:NSMakeRange(m3u8SegmentRange.location + [formant length], commentRange.location - (m3u8SegmentRange.location + [formant length]))];
-        segmentInfo.duration = [value integerValue];
+        NSString *value = [remainData substringWithRange:NSMakeRange(m3u8SegmentRange.location + [@"#EXTINF:" length], commentRange.location - (m3u8SegmentRange.location + [@"#EXTINF:" length]))];
+        segmentInfo.duration = [value intValue];
         
         remainData = [remainData substringFromIndex:commentRange.location];
         //读取片段url
@@ -49,15 +50,14 @@ static NSString *const formant = @"#EXTINF:";
         segmentInfo.locationUrl = linkUrl;
         
         [m3u8Segments addObject:segmentInfo];
-        
         remainData = [remainData substringFromIndex:linkRangeEnd.location];
-        m3u8SegmentRange = [remainData rangeOfString:formant];
+        m3u8SegmentRange = [remainData rangeOfString:@"#EXTINF:"];
         }
     
     XMM3U8PlayList *playList = [[XMM3U8PlayList alloc] initWithM3U8Segments:m3u8Segments];
     playList.uuid = uuid;
-    m3u8Segments = nil;
     successHandler(playList);
+    m3u8Segments = nil;
 }
 
 

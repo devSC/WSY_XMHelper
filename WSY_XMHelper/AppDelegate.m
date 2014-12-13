@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import <HTTPServer.h>
-
+//#import <HTTPServer.h>
+#import "HTTPServer.h"
+#import <UIColor+Expanded.h>
 @interface AppDelegate ()
 
 @end
@@ -41,6 +42,20 @@ static NSString *const path = @"Downloads";
     if (error) {
         NSLog(@"HttpServerStartError: %@", [error description]);
     }
+    
+    
+//    [[UINavigationBar appearance] setTitleTextAttributes:
+//     [NSDictionary dictionaryWithObjectsAndKeys:
+//      [UIColor colorWithHexString:@"004B8B"],
+//      NSForegroundColorAttributeName,
+//      shadow, NSShadowAttributeName,
+//      [UIFont fontWithName:@"Avenir Light" size:17.0], NSFontAttributeName,
+//      nil]];
+//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary
+//                                                       dictionaryWithObjectsAndKeys: [UIColor colorWithHexString:@"004B8B"],
+//                                                       NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+//
+    
     
     return YES;
 }

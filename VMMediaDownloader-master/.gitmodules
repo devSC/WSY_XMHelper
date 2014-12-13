@@ -1,3 +1,0 @@
-[submodule "Vendor/asi-http-request"]
-	path = Vendor/asi-http-request
-	url = git@github.com:pokeb/asi-http-request.git

@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface XMVideoDownloader : NSObject
 
+
+
 + (XMVideoDownloader *)defaultDownloader;
-- (void)downloader_StartDownLoadWithName: (NSString *)name urlString: (NSString*)urlString downloadProgress: (void(^)(float progress))progress failedHandler: (void(^)())failedHandler;
+- (void)downloader_StartDownLoadWithName: (NSString *)name urlString: (NSString*)urlString downloadProgress: (void(^)(float progress))progress completionHandler: (void(^)())completionHandler failedHandler: (void(^)())failedHandler;
 
 
 @end
+

@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8B425EB2-A24E-4EF6-A88B-812D9D95A6D4</string>
+	<string>886E0549-5E51-41F8-9307-709A948C990E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>WSY_XMHelper</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/devSC/WSY_XMHelper.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WSY_XMHelper.xcworkspace</string>
+	<string>WSY_XMHelper.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4C3DDB302D5B24874DD0516FEAAEF88B784FBCBE</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/devSC/WSY_XMHelper.git</string>

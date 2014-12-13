@@ -26,7 +26,8 @@
 }
 - (void)setCellData:(NSDictionary *)data
 {
-    [_icon sd_setImageWithURL:[NSURL URLWithString:[data objectForKey:@"img"]]];
+    _imgString = [data objectForKey:@"img"];
+    [_icon sd_setImageWithURL:[NSURL URLWithString:_imgString]];
     _name.text = [data objectForKey:@"name"];
     _time.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"time"]];
     _length.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"length"]];

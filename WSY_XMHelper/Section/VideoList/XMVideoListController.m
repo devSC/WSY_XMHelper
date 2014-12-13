@@ -12,6 +12,7 @@
 #import "XMDataManager.h"
 #import "XMDetailListController.h"
 #import "XMVideoDownloader.h"
+#import <UIColor+Expanded.h>
 
 @interface XMVideoListController ()
 {
@@ -33,6 +34,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
 
     self.type = VIDEO_TYPE_PLAYER;
     [[XMDataManager defaultDataManager] xm_videoListWithVideoType:_type];
@@ -42,15 +44,6 @@ static NSString * const reuseIdentifier = @"VideoListCell";
         self.videoList = listArray;
         [self.collectionView reloadData];
     }];
-    
-    NSString *urlString = @"http://pl.youku.com/playlist/m3u8?ep=eiaVGEyLX8gF4iPXiz8bYSXidSNbXJZ0rHrP%2F4gXAcRAH%2BjQnD%2FYxw%3D%3D&sid=8412569657083126901dd&token=5190&ctype=12&ev=1&type=hd2&keyframe=0&oip=1931225911&ts=kqe00jEBIwA2ORoyAeaHkaM&vid=XNjUzNjE1OTg0";
-    
-//    [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithName:@"哈哈" urlString:urlString downloadProgress:^(float progress) {
-//        NSLog(@"progress: %.4f", progress);
-//    } failedHandler:^{
-//        NSLog(@"Download failed");
-//    }];
-    
 }
 - (IBAction)segmentDidPressed:(UISegmentedControl *)sender {
     self.type = (sender.selectedSegmentIndex +2);

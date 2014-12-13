@@ -8,16 +8,34 @@
 
 #import <Foundation/Foundation.h>
 #import "XMAPI.h"
+typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
+    XMVideoDownloadQualityNormal,
+    XMVideoDownloadQualityHigher,
+    XMVideoDownloadQualitySuper,
+};
+//@protocol XMVideoDownloadDelegate;
+
 @interface XMDataManager : NSObject
+
 @property (nonatomic, strong) NSArray *videoList;
 @property (nonatomic, strong) NSArray *detailList;
 @property (nonatomic, strong) NSMutableArray *downloadList;
+@property (nonatomic, strong) NSMutableDictionary *downloadNow;
+
+@property (nonatomic, assign) XMVideoDownloadQuality quality;
+//@property (nonatomic, assign) id<XMVideoDownloadDelegate>delegate;
+
 
 + (instancetype)defaultDataManager;
-/**
- *  赛事
- */
 - (void)xm_videoListWithVideoType: (VIDEO_TYPE)type;
 - (void)xm_detailListWithType: (VIDEO_TYPE)type name: (NSString *)name page: (NSInteger)page;
+//download
+- (void)xm_addVideoDownloadwithVideoDic: (NSDictionary *)videoDic;
 
 @end
+
+//@protocol XMVideoDownloadDelegate <NSObject>
+//
+//- (void)xmVideoDownloadSetProgress: (float)progress withInfo: (NSDictionary *)info;
+//
+//@end

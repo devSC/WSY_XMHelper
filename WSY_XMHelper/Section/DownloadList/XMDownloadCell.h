@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *length;
 @property (strong, nonatomic) XMYouKuModel *youku;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 
 @property (strong, nonatomic) NSString *videoId;
 - (void)setCellData: (NSDictionary *)data;

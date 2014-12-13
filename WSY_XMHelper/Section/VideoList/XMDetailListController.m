@@ -90,13 +90,16 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 
     UIAlertView *alertView = [UIAlertView bk_alertViewWithTitle:@"选择操作"];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"下载", @"下载") handler:^{
-//        NSString *urlString = cell.youku.video_addr_super;
+        NSString *urlString = cell.youku.video_addr;
 //        NSString *name = cell.name.text;
-//        NSString *length = cell.length.text;
-//        NSString *time = cell.time.text;
-//        NSDictionary *dic = @{@"name": name, @"urlString": urlString, @"length":length, @"time": time};
+        NSString *length = cell.length.text;
+        NSString *time = cell.time.text;
         
-        [[[XMDataManager defaultDataManager] downloadList] addObject:[_detailList objectAtIndex:indexPath.row]];
+urlString =@"http://pl.youku.com/playlist/m3u8?vid=118402875&type=mp4&ts=1415233731&keyframe=0&ep=diaVH0uOVckD5SPeiT8bMX3jdSUIXP8L%2FhuFg9plBdQmSuG9&sid=441523373001112fa11b7&token=2292&ctype=12&ev=1&oip=2081459012";
+        
+        NSDictionary *dic = @{@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"img": cell.imgString, @"youku_id": cell.youku.youku_id};
+        
+        [[XMDataManager defaultDataManager] xm_addVideoDownloadwithVideoDic:dic];
     }];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"播放", nil) handler:^{
         NSString *urlString = cell.youku.video_addr_super;

@@ -30,7 +30,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mJD-AQ-yOi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.93665193260000001" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1843137255" green="0.26274509800000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7E9-iq-Wa1">
                             <size key="itemSize" width="110" height="130"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -110,6 +110,7 @@
                                 <segment title="赛事"/>
                                 <segment title="最新"/>
                             </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="segmentDidPressed:" destination="DTx-ZR-izr" eventType="valueChanged" id="ofk-dm-JYe"/>
                             </connections>
@@ -127,7 +128,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="zfh-oa-836">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1843137255" green="0.26274509800000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XMDetailCell" rowHeight="100" id="ggg-u0-KRE" customClass="XMDetailCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -185,7 +186,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.93665193260000001" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.1843137255" green="0.26274509800000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="xEq-mq-Juf" firstAttribute="leading" secondItem="9mr-26-FBS" secondAttribute="leadingMargin" constant="-5" id="Bmh-YD-ixo"/>
                                         <constraint firstItem="xEq-mq-Juf" firstAttribute="trailing" secondItem="9mr-26-FBS" secondAttribute="trailingMargin" constant="5" id="CBH-p9-GmF"/>
@@ -220,7 +221,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="129" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wlx-ug-tlX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1843137255" green="0.26274509800000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XMDownloadCell" rowHeight="129" id="Byp-Le-9uY" customClass="XMDownloadCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -248,11 +249,11 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BS-5T-UQc">
                                                     <rect key="frame" x="96" y="8" width="482" height="42"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.18431372549019609" green="0.2627450980392157" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1R-xr-f4S">
-                                                    <rect key="frame" x="106" y="79" width="472" height="2"/>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d1R-xr-f4S">
+                                                    <rect key="frame" x="96" y="79" width="433" height="2"/>
                                                 </progressView>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrV-EC-5dz">
                                                     <rect key="frame" x="106" y="76" width="252" height="21.5"/>
@@ -272,10 +273,18 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="%0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shv-Vm-lSg">
+                                                    <rect key="frame" x="536" y="69" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="9BS-5T-UQc" firstAttribute="top" secondItem="DYM-VD-6vf" secondAttribute="top" constant="8" id="6ts-oE-FMO"/>
+                                                <constraint firstItem="shv-Vm-lSg" firstAttribute="leading" secondItem="d1R-xr-f4S" secondAttribute="trailing" constant="7" id="9ev-pk-lQ6"/>
+                                                <constraint firstAttribute="trailing" secondItem="shv-Vm-lSg" secondAttribute="trailing" constant="8" id="B8a-oG-zOQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="fWz-sP-9XP" secondAttribute="trailing" constant="8" id="OE7-Hi-2Vp"/>
                                                 <constraint firstItem="9BS-5T-UQc" firstAttribute="leading" secondItem="nH6-MX-d33" secondAttribute="trailing" constant="8" id="Tm5-Zx-H6G"/>
                                                 <constraint firstItem="nH6-MX-d33" firstAttribute="leading" secondItem="DYM-VD-6vf" secondAttribute="leading" constant="8" id="Ujz-2i-eES"/>
@@ -285,15 +294,16 @@
                                                 <constraint firstItem="nH6-MX-d33" firstAttribute="top" secondItem="DYM-VD-6vf" secondAttribute="top" constant="13" id="cbL-gg-Na9"/>
                                                 <constraint firstItem="wrV-EC-5dz" firstAttribute="leading" secondItem="9BS-5T-UQc" secondAttribute="leading" id="dYF-jG-XpY"/>
                                                 <constraint firstItem="d1R-xr-f4S" firstAttribute="top" secondItem="9BS-5T-UQc" secondAttribute="bottom" constant="29" id="dqb-Jw-w91"/>
+                                                <constraint firstItem="shv-Vm-lSg" firstAttribute="centerY" secondItem="fWz-sP-9XP" secondAttribute="centerY" constant="-7" id="ga6-lc-0PZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="wrV-EC-5dz" secondAttribute="bottom" constant="8" id="k4D-uV-d1S"/>
                                                 <constraint firstItem="d1R-xr-f4S" firstAttribute="leading" secondItem="9BS-5T-UQc" secondAttribute="leading" id="kCP-Zp-rwF"/>
                                                 <constraint firstItem="wrV-EC-5dz" firstAttribute="centerY" secondItem="fWz-sP-9XP" secondAttribute="centerY" constant="1" id="m0P-LI-xiM"/>
                                                 <constraint firstAttribute="centerY" secondItem="nH6-MX-d33" secondAttribute="centerY" id="o0h-wM-DEB"/>
-                                                <constraint firstItem="d1R-xr-f4S" firstAttribute="trailing" secondItem="9BS-5T-UQc" secondAttribute="trailing" constant="-21" id="opX-v3-f29"/>
+                                                <constraint firstItem="d1R-xr-f4S" firstAttribute="trailing" secondItem="9BS-5T-UQc" secondAttribute="trailing" constant="-49" id="opX-v3-f29"/>
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.93665193260000001" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.29411764709999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="DYM-VD-6vf" secondAttribute="trailing" constant="-1" id="8CI-J6-76j"/>
                                         <constraint firstItem="DYM-VD-6vf" firstAttribute="leading" secondItem="wcY-Vh-uFu" secondAttribute="leadingMargin" constant="-1" id="Wjl-LP-GhH"/>
@@ -301,11 +311,13 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="DYM-VD-6vf" secondAttribute="bottom" constant="5" id="ooV-Ra-DwP"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.18431372549019609" green="0.2627450980392157" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="backGroundView" destination="DYM-VD-6vf" id="enX-w0-N2u"/>
                                     <outlet property="icon" destination="nH6-MX-d33" id="Kpq-Hc-MDG"/>
                                     <outlet property="length" destination="fWz-sP-9XP" id="vZ7-Am-KQa"/>
                                     <outlet property="name" destination="9BS-5T-UQc" id="Nym-Ov-i0S"/>
+                                    <outlet property="progressLabel" destination="shv-Vm-lSg" id="CvV-20-Go4"/>
                                     <outlet property="progressView" destination="d1R-xr-f4S" id="PAS-DD-veX"/>
                                     <outlet property="time" destination="wrV-EC-5dz" id="umw-hY-f3S"/>
                                 </connections>
@@ -320,7 +332,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkR-4F-gvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381" y="358.5"/>
+            <point key="canvasLocation" x="1381" y="358"/>
         </scene>
         <!--Item-->
         <scene sceneID="3vt-BI-bBe">

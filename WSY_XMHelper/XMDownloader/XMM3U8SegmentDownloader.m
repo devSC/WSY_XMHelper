@@ -25,9 +25,8 @@ static NSString *const path = @"Downloads";
         self.filePath = filePath;
         
         NSString *pathPrefix = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-//        NSString *saveTo = [pathPrefix stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@/%@", path,];
         NSString *saveTo = [[pathPrefix stringByAppendingPathComponent:path] stringByAppendingPathComponent:self.filePath];
-        NSString *downloadingFileName = [saveTo stringByAppendingPathComponent:[fileName stringByAppendingString:kTextDownloadingFileSuffix]];
+        NSString *downloadingFileName = [[NSString alloc] initWithString:[saveTo stringByAppendingPathComponent:[fileName stringByAppendingString:kTextDownloadingFileSuffix]]];
         self.tmpFileName = downloadingFileName;
         
         BOOL isDir = NO;
