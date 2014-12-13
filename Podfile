@@ -6,3 +6,5 @@ pod 'SDWebImage'
 pod 'UIColor-Utilities', '~> 1.0.1'
 pod 'MBProgressHUD'
 pod 'Mantle'
+pod 'CocoaHTTPServer', '~> 2.3'
+

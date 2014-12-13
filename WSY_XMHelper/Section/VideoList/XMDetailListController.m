@@ -95,8 +95,6 @@ static NSString *const cellIdentifier = @"XMDetailCell";
         NSString *length = cell.length.text;
         NSString *time = cell.time.text;
         
-//urlString =@"http://pl.youku.com/playlist/m3u8?vid=118402875&type=mp4&ts=1415233731&keyframe=0&ep=diaVH0uOVckD5SPeiT8bMX3jdSUIXP8L%2FhuFg9plBdQmSuG9&sid=441523373001112fa11b7&token=2292&ctype=12&ev=1&oip=2081459012";
-        
         NSDictionary *dic = @{@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"img": cell.imgString, @"youku_id": cell.youku.youku_id};
         
         [[XMDataManager defaultDataManager] xm_addVideoDownloadwithVideoDic:dic];

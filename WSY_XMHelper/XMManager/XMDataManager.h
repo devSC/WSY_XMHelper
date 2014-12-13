@@ -13,7 +13,6 @@ typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
     XMVideoDownloadQualityHigher,
     XMVideoDownloadQualitySuper,
 };
-//@protocol XMVideoDownloadDelegate;
 
 @interface XMDataManager : NSObject
 
@@ -23,7 +22,6 @@ typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
 @property (nonatomic, strong) NSMutableDictionary *downloadNow;
 
 @property (nonatomic, assign) XMVideoDownloadQuality quality;
-//@property (nonatomic, assign) id<XMVideoDownloadDelegate>delegate;
 
 
 + (instancetype)defaultDataManager;

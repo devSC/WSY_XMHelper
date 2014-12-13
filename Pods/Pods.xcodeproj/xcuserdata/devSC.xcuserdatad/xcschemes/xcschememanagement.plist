@@ -14,6 +14,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CocoaAsyncSocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CocoaHTTPServer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-GCDObjC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2BA6ED40EF1612F7F9D20762</key>
+		<key>0478CC9CD0764C4682A8E347</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3625595D473D58274F36EFE2</key>
+		<key>2E34B8B3DDDF2E55D0541EE1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37938BACF70DA3099ECDC732</key>
+		<key>3A55D2B425DF073AF5EC460B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E4E4E44B11CF19AF591D692</key>
+		<key>4E41DE6364998DC95FCBEEDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A0293E3BC883E3419177AFA</key>
+		<key>55899CFCB891808864519500</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5849B3766DC3135FAB854FB0</key>
+		<key>6075A791065A57374B02734C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB8A47445291F0BA35E82EC5</key>
+		<key>8509731A2D542ADB824F5A2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF2E0691D7448DBC1186A425</key>
+		<key>8A7E6E35848DCD082F5E1392</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D926C9A52E2EEE2D93BAAD65</key>
+		<key>9297B0C709D1FE9B7C4ECA01</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD4E5B21844C53E3EE998345</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC6E3D29CF890085D4693EB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5F3D7C97EBC0D50BC948BC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

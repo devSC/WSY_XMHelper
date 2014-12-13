@@ -35,6 +35,15 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CocoaAsyncSocket (7.3.5)
+  - CocoaHTTPServer (2.3):
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions (= 1.9.2)
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
   - GCDObjC (0.2.0)
   - Mantle (1.5.1):
     - Mantle/extobjc (= 1.5.1)
@@ -55,6 +64,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
+  - CocoaHTTPServer (~> 2.3)
   - GCDObjC
   - Mantle
   - MBProgressHUD
@@ -65,6 +75,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
+  CocoaHTTPServer: 217df4cba4e48803db2480f97b805aaad2230dd1
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   GCDObjC: 4221bab8503688aaee67e5930b58fe8c0ed1f9a9
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8

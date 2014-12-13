@@ -9,19 +9,16 @@
 #import "XMDataManager.h"
 #import "XMHelper.h"
 #import "XMVideoDownloader.h"
-#import "M3U8Handler.h"
-#import "VideoDownloader.h"
 
 typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     XMDownloadStateDownloadNow,
     XMDownloadStateDownloadStop,
 };
 
-@interface XMDataManager()<VideoDownloadDelegate>
+@interface XMDataManager()
 @property (nonatomic, strong) NSDictionary *qualityDic;
 @property (nonatomic, strong) NSMutableArray *downloadSqueue;
 @property (nonatomic, assign) XMDownloadStatus downloadStatus;
-@property (nonatomic, strong) VideoDownloader *downloader;
 
 @end
 
@@ -81,7 +78,6 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     NSDictionary *videoDic = [self.downloadSqueue firstObject];
     NSString *videoName = videoDic[@"name"];
     NSMutableDictionary *videoInfo = [NSMutableDictionary new];
-#if 1
     
     //开始下载
     if (self.downloadStatus == XMDownloadStateDownloadNow) {
@@ -109,29 +105,7 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     } failedHandler:^{
         NSLog(@"DownLoadError");
     }];
-#else
-    M3U8Handler *handler = [[M3U8Handler alloc] init];
-    [handler praseUrl:videoDic[@"urlString"]];
-    handler.playlist.uuid = @"movie1";
-    _downloader = [[VideoDownloader alloc] initWithM3U8List:handler.playlist];
-    _downloader.delegate = self;
-    [_downloader startDownloadVideo];
-#endif
     
-}
--(void)videoDownloaderFinished:(VideoDownloader*)request
-{
-    [request createLocalM3U8file];
-}
-
-- (void)videoDownloaderFailed:(VideoDownloader *)request {
-    NSLog(@"Video Download Failed..");
-}
-- (void)videoDownloaderProgress:(CGFloat)progress
-{
-    NSLog(@"%.2f", progress);
-//    [self.progressView setProgress:progress];
-//    [self.progressLabel setText:[NSString stringWithFormat:@"%%%.0f", progress*100]];
 }
 
 
