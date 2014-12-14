@@ -45,6 +45,9 @@ PODS:
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
   - GCDObjC (0.2.0)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core (= 2.2)
+  - MagicalRecord/Core (2.2)
   - Mantle (1.5.1):
     - Mantle/extobjc (= 1.5.1)
   - Mantle/extobjc (1.5.1)
@@ -66,6 +69,7 @@ DEPENDENCIES:
   - BlocksKit
   - CocoaHTTPServer (~> 2.3)
   - GCDObjC
+  - MagicalRecord (~> 2.2)
   - Mantle
   - MBProgressHUD
   - ReactiveCocoa
@@ -79,6 +83,7 @@ SPEC CHECKSUMS:
   CocoaHTTPServer: 217df4cba4e48803db2480f97b805aaad2230dd1
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   GCDObjC: 4221bab8503688aaee67e5930b58fe8c0ed1f9a9
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
