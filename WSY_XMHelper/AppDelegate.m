@@ -10,6 +10,9 @@
 #import <HTTPServer.h>
 //#import "HTTPServer.h"
 #import <UIColor+Expanded.h>
+#import <MagicalRecord/CoreData+MagicalRecord.h>
+#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+
 @interface AppDelegate ()
 
 @end
@@ -44,6 +47,8 @@ static NSString *const path = @"Downloads";
         NSLog(@"HttpServerStartError: %@", [error description]);
     }
     
+    
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"XMHelper.sqlite"];
     
 //    [[UINavigationBar appearance] setTitleTextAttributes:
 //     [NSDictionary dictionaryWithObjectsAndKeys:
@@ -81,6 +86,7 @@ static NSString *const path = @"Downloads";
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [MagicalRecord cleanUp];
 }
 
 @end

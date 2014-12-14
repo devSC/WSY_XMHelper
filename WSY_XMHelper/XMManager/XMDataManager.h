@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "XMAPI.h"
+
+
 typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
     XMVideoDownloadQualityNormal,
     XMVideoDownloadQualityHigher,

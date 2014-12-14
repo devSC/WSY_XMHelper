@@ -9,6 +9,8 @@
 #import "XMDataManager.h"
 #import "XMHelper.h"
 #import "XMVideoDownloader.h"
+#import "XMDownloadInfo.h"
+#import <CoreData+MagicalRecord.h>
 
 typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     XMDownloadStateDownloadNow,
@@ -65,10 +67,23 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
 }
 - (void)downloader_addDownloadToSqeue: (NSDictionary *)videoDic
 {
+    [self xm_addVideoDownloadDicToEntity:videoDic];
     
     [self.downloadSqueue addObject:videoDic];
     [self downloader_startDownload];
     
+}
+- (void)xm_addVideoDownloadDicToEntity: (NSDictionary *)videoDic
+{
+    //@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"img": cell.imgString, @"youku_id": cell.youku.youku_id
+    
+    XMDownloadInfo *info = [XMDownloadInfo MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+    info.name = videoDic[@"name"];
+    info.time = videoDic[@"time"];
+    info.imgString = videoDic[@"imgString"];
+    info.youku_id = videoDic[@"youku_id"];
+    info.done = [NSNumber numberWithBool:NO];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 

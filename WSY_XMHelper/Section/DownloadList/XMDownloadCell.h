@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XMYouKuModel.h"
+@class XMDownloadInfo;
 @interface XMDownloadCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *backGroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
@@ -17,8 +18,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *length;
 @property (strong, nonatomic) XMYouKuModel *youku;
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
+@property (nonatomic, strong) XMDownloadInfo *info;
 
 @property (strong, nonatomic) NSString *videoId;
 - (void)setCellData: (NSDictionary *)data;
-
+- (void)setCellInfo: (XMDownloadInfo *)info;
+- (void)setDownloadProgress: (float)progress;
 @end

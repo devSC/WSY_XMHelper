@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3BC7630C85DE40AEC1AA6088 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BB451226F2529C07C06470 /* libPods.a */; };
+		FE056C751A3DD204003FE277 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE056C731A3DD204003FE277 /* Model.xcdatamodeld */; };
+		FE056C841A3DD568003FE277 /* XMDownloadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FE056C831A3DD568003FE277 /* XMDownloadInfo.m */; };
 		FEAAF03E1A33646B00731999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF03D1A33646B00731999 /* main.m */; };
 		FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0401A33646B00731999 /* AppDelegate.m */; };
 		FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0481A33646B00731999 /* Main.storyboard */; };
@@ -59,6 +61,9 @@
 		9C9C825FDC2DAAE1F793CBAA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AFFFFFE3382C4B1491CBE72F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F8BB451226F2529C07C06470 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE056C741A3DD204003FE277 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FE056C821A3DD568003FE277 /* XMDownloadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDownloadInfo.h; sourceTree = "<group>"; };
+		FE056C831A3DD568003FE277 /* XMDownloadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadInfo.m; sourceTree = "<group>"; };
 		FEAAF0381A33646B00731999 /* WSY_XMHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSY_XMHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAAF03C1A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEAAF03D1A33646B00731999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -229,6 +234,7 @@
 				FEAAF03C1A33646B00731999 /* Info.plist */,
 				FEAAF03D1A33646B00731999 /* main.m */,
 				FEAAF08B1A343E4D00731999 /* InfoPlist.strings */,
+				FE056C731A3DD204003FE277 /* Model.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 				FEAAF07A1A33F6E800731999 /* XMListModel.m */,
 				FEAAF0881A34148400731999 /* XMYouKuModel.h */,
 				FEAAF0891A34148400731999 /* XMYouKuModel.m */,
+				FE056C821A3DD568003FE277 /* XMDownloadInfo.h */,
+				FE056C831A3DD568003FE277 /* XMDownloadInfo.m */,
 			);
 			path = XMModel;
 			sourceTree = "<group>";
@@ -533,6 +541,7 @@
 				FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */,
 				FED0B2B91A3751A60059E826 /* ASINetworkQueue.m in Sources */,
 				FED0B2B61A3751A60059E826 /* ASIFormDataRequest.m in Sources */,
+				FE056C841A3DD568003FE277 /* XMDownloadInfo.m in Sources */,
 				FED0B2B41A3751A60059E826 /* ASIDataDecompressor.m in Sources */,
 				FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */,
 				FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */,
@@ -549,6 +558,7 @@
 				FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */,
 				FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */,
 				FEAAF0871A34130A00731999 /* XMDetailCell.m in Sources */,
+				FE056C751A3DD204003FE277 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +717,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE056C731A3DD204003FE277 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE056C741A3DD204003FE277 /* Model.xcdatamodel */,
+			);
+			currentVersion = FE056C741A3DD204003FE277 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FEAAF0301A33646B00731999 /* Project object */;
 }

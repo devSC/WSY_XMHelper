@@ -94,9 +94,7 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 //        NSString *name = cell.name.text;
         NSString *length = cell.length.text;
         NSString *time = cell.time.text;
-        
-        NSDictionary *dic = @{@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"img": cell.imgString, @"youku_id": cell.youku.youku_id};
-        
+        NSDictionary *dic = @{@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"imgString": cell.imgString, @"youku_id": cell.youku.youku_id};
         [[XMDataManager defaultDataManager] xm_addVideoDownloadwithVideoDic:dic];
     }];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"播放", nil) handler:^{
