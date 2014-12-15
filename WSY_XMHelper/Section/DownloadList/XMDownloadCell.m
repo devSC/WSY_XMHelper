@@ -11,6 +11,8 @@
 #import "XMVideoDownloader.h"
 #import "XMDownloadInfo.h"
 #import <CoreData+MagicalRecord.h>
+#import <Foundation/Foundation.h>
+
 @implementation XMDownloadCell
 - (void)awakeFromNib {
     // Initialization code
@@ -33,13 +35,27 @@
     [_icon sd_setImageWithURL:[NSURL URLWithString:info.imgString]];
     _name.text = info.name;
     _time.text = info.time;
-    if (info.done.boolValue) {
+    if (self.info.start == NO) {
+        self.progressLabel.text = @"%0";
+        self.progressView.progress = 0;
+    }
+    [self setHidenState];
+}
+- (void)setHidenState
+{
+    if (self.info.done.boolValue) {
         [self.progressView setHidden:YES];
         [self.progressLabel setHidden:YES];
         self.time.hidden = NO;
         self.length.hidden = NO;
-        [self.length setText:info.length];
+        [self.length setText:self.info.length];
         self.time.text = @"下载完成";
+        self.time.text = [self localDate:self.info.addTime];
+    }else{
+        [self.progressView setHidden:NO];
+        [self.progressLabel setHidden:NO];
+        self.time.hidden = YES;
+        self.length.hidden = YES;
     }
 }
 - (void)setDownloadProgress:(float)progress
@@ -48,13 +64,34 @@
     self.progressView.progress = progress;
     if (progress == 1) {
         self.info.done = [NSNumber numberWithBool:YES];
+        [self setHidenState];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    }
+    if (self.info.start == NO) {
+        self.info.start = [NSNumber numberWithBool:YES];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
 }
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
+- (NSString *)localDate:(NSDate*)date
+{
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit |
+                                    NSMonthCalendarUnit | NSYearCalendarUnit fromDate:date];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *dates = [gregorian dateFromComponents:components];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMTForDate: dates];
+    NSArray *array = [[date  dateByAddingTimeInterval: interval].description componentsSeparatedByString:@" "];
+    NSString *timeString = [NSString stringWithFormat:@"%@ %@", array[0], array[1]];
+    return timeString ;
+}
+
+
+
 
 @end

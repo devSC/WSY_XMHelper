@@ -61,19 +61,23 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
 
 - (void)xm_addVideoDownloadwithVideoDic:(NSDictionary *)videoDic
 {
-    [self.downloadList addObject:videoDic];
-//    [self downloader_startDownloadWithVideoDic:videoDic];
-    [self downloader_addDownloadToSqeue:videoDic];
+        [self downloader_addDownloadToSqeue:videoDic];
 }
 - (void)downloader_addDownloadToSqeue: (NSDictionary *)videoDic
 {
-    [self xm_addVideoDownloadDicToEntity:videoDic];
+//    [self xm_addVideoDownloadDicToEntity:videoDic];
+    [self xm_addVideoDownloadDicToEntity:videoDic completion:^(XMDownloadInfo *info) {
+        [self willChangeValueForKey:@"downloadList"];
+        [self.downloadList addObject:videoDic];
+        [self didChangeValueForKey:@"downloadList"];
+        [self.downloadSqueue addObject:info];
+        [self downloader_startDownload];
+    }];
     
-    [self.downloadSqueue addObject:videoDic];
-    [self downloader_startDownload];
     
 }
-- (void)xm_addVideoDownloadDicToEntity: (NSDictionary *)videoDic
+
+- (void)xm_addVideoDownloadDicToEntity: (NSDictionary *)videoDic completion: (void(^)(XMDownloadInfo *info))completion
 {
     //@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"img": cell.imgString, @"youku_id": cell.youku.youku_id
     
@@ -82,16 +86,25 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     info.time = videoDic[@"time"];
     info.imgString = videoDic[@"imgString"];
     info.youku_id = videoDic[@"youku_id"];
+    info.urlString = videoDic[@"urlString"];
+    info.length = videoDic[@"length"];
     info.done = [NSNumber numberWithBool:NO];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    info.addTime = [NSDate date];
+    info.filePath = [self xm_getDocumentPathWithUUID:info.youku_id];
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        if (success) {
+            completion(info);
+        }
+    }];
 }
 
 
 - (void)downloader_startDownload
 {
     
-    NSDictionary *videoDic = [self.downloadSqueue firstObject];
-    NSString *videoName = videoDic[@"name"];
+    XMDownloadInfo *downloadInfo = [self.downloadSqueue firstObject];
+    NSString *videoName = downloadInfo.name;
     NSMutableDictionary *videoInfo = [NSMutableDictionary new];
     
     //开始下载
@@ -100,7 +113,7 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     }
     self.downloadStatus = XMDownloadStateDownloadNow;
     @weakify(self);
-    [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithName:videoDic[@"youku_id"] urlString:videoDic[@"urlString"]  downloadProgress:^(float progress) {
+    [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithName:downloadInfo.youku_id urlString:downloadInfo.urlString  downloadProgress:^(float progress) {
         @strongify(self);
         NSString *progressString = [NSString stringWithFormat:@"%.2f", progress];
         [videoInfo removeAllObjects];
@@ -112,16 +125,35 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
         [self didChangeValueForKey:@"downloadNow"];
     } completionHandler:^{
         @strongify(self);
-        [self.downloadSqueue removeObject:videoDic];
-        self.downloadStatus = XMDownloadStateDownloadStop;
-        if (self.downloadSqueue.count != 0) {
-            [self downloader_startDownload];
-        }
+        downloadInfo.done = [NSNumber numberWithBool:YES];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            [self.downloadSqueue removeObject:downloadInfo];
+            self.downloadStatus = XMDownloadStateDownloadStop;
+            if (self.downloadSqueue.count != 0) {
+                [self downloader_startDownload];
+            }
+            
+        }];
     } failedHandler:^{
         NSLog(@"DownLoadError");
     }];
     
 }
 
+- (NSString *)xm_getDocumentPathWithUUID: (NSString *)uuid
+{
+    NSString *pathPrefix = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *saveTo = [[pathPrefix stringByAppendingPathComponent:@"Downloads"] stringByAppendingPathComponent:uuid];
+    return saveTo;
+}
+
+- (void)xm_deleteLocalDownloadFileWithPath: (NSString *)path
+{
+    NSError *error = nil;
+    [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+    if (error) {
+        NSLog(@"error: %@", [error description]);
+    }
+}
 
 @end

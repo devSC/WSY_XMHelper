@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
 - (void)xm_detailListWithType: (VIDEO_TYPE)type name: (NSString *)name page: (NSInteger)page;
 //download
 - (void)xm_addVideoDownloadwithVideoDic: (NSDictionary *)videoDic;
-
+- (void)xm_deleteLocalDownloadFileWithPath: (NSString *)path;
 @end
 
 //@protocol XMVideoDownloadDelegate <NSObject>

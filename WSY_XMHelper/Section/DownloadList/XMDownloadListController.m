@@ -17,7 +17,7 @@
 #import <CoreData+MagicalRecord.h>
 #import "XMDownloadInfo.h"
 
-@interface XMDownloadListController ()
+@interface XMDownloadListController ()<NSFetchedResultsControllerDelegate>
 {
     NSMutableArray *_listArray;
 }
@@ -34,8 +34,10 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
+    _fetchedResultsController = nil;
     if (!_fetchedResultsController) {
-        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllGroupedBy:@"name" withPredicate:nil sortedBy:nil ascending:NO];
+        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllGroupedBy:@"addTime" withPredicate:nil sortedBy:nil ascending:YES];
+//        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllSortedBy:nil ascending:YES withPredicate:nil groupBy:@"addTime" delegate:self];
     }
     return _fetchedResultsController;
 }
@@ -80,7 +82,7 @@
 //                cell.progressView.progress = progress;
                 [cell setDownloadProgress:progress];
                 if (progress == 1) {
-                    [self reloadFetchedResultsController];
+//                    [self reloadFetchedResultsController];
                 }
                 break;
             }
@@ -131,6 +133,9 @@
     }
 }
 
+- (IBAction)editButtonPressed:(id)sender {
+    
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,14 +149,80 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         XMDownloadInfo *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [[XMDataManager defaultDataManager] xm_deleteLocalDownloadFileWithPath:info.filePath];
         [info MR_deleteEntity];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+- (void)configureCell:(XMDownloadCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    // Configure the cell
+    XMDownloadInfo *info = (XMDownloadInfo *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.info = info;
+}
+
+/**
+ Delegate methods of NSFetchedResultsController to respond to additions, removals and so on.
+ */
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
+    [self.tableView beginUpdates];
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:(XMDownloadCell *)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
+    [self.tableView endUpdates];
+}
+
 
 
 /*

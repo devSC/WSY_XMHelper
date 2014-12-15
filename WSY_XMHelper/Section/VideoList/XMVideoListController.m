@@ -49,7 +49,9 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     self.type = (sender.selectedSegmentIndex +2);
     [[XMDataManager defaultDataManager] xm_videoListWithVideoType:_type];
     NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
-    [self.collectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    if(self.videoList.count > 0) {
+        [self.collectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

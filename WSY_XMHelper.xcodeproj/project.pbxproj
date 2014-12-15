@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		3BC7630C85DE40AEC1AA6088 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BB451226F2529C07C06470 /* libPods.a */; };
 		FE056C751A3DD204003FE277 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE056C731A3DD204003FE277 /* Model.xcdatamodeld */; };
-		FE056C841A3DD568003FE277 /* XMDownloadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FE056C831A3DD568003FE277 /* XMDownloadInfo.m */; };
+		FE62A4C91A3F1A6E00BF98BC /* XMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62A4C81A3F1A6E00BF98BC /* XMDataManager.m */; };
+		FE62A4CF1A3F335200BF98BC /* XMDownloadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62A4CE1A3F335200BF98BC /* XMDownloadInfo.m */; };
 		FEAAF03E1A33646B00731999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF03D1A33646B00731999 /* main.m */; };
 		FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0401A33646B00731999 /* AppDelegate.m */; };
 		FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0481A33646B00731999 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		FEAAF04F1A33646B00731999 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF04D1A33646B00731999 /* LaunchScreen.xib */; };
 		FEAAF0701A33F60E00731999 /* XMVideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF06D1A33F60E00731999 /* XMVideoListCell.m */; };
 		FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF06F1A33F60E00731999 /* XMVideoListController.m */; };
-		FEAAF07E1A33F6E800731999 /* XMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0741A33F6E800731999 /* XMDataManager.m */; };
 		FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0771A33F6E800731999 /* XMAPI.m */; };
 		FEAAF0801A33F6E800731999 /* XMListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF07A1A33F6E800731999 /* XMListModel.m */; };
 		FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF07D1A33F6E800731999 /* XMRequest.m */; };
@@ -62,8 +62,10 @@
 		AFFFFFE3382C4B1491CBE72F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F8BB451226F2529C07C06470 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE056C741A3DD204003FE277 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		FE056C821A3DD568003FE277 /* XMDownloadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDownloadInfo.h; sourceTree = "<group>"; };
-		FE056C831A3DD568003FE277 /* XMDownloadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadInfo.m; sourceTree = "<group>"; };
+		FE62A4C71A3F1A6E00BF98BC /* XMDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDataManager.h; sourceTree = "<group>"; };
+		FE62A4C81A3F1A6E00BF98BC /* XMDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDataManager.m; sourceTree = "<group>"; };
+		FE62A4CD1A3F335200BF98BC /* XMDownloadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDownloadInfo.h; sourceTree = "<group>"; };
+		FE62A4CE1A3F335200BF98BC /* XMDownloadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadInfo.m; sourceTree = "<group>"; };
 		FEAAF0381A33646B00731999 /* WSY_XMHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSY_XMHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAAF03C1A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEAAF03D1A33646B00731999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,8 +80,6 @@
 		FEAAF06D1A33F60E00731999 /* XMVideoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMVideoListCell.m; sourceTree = "<group>"; };
 		FEAAF06E1A33F60E00731999 /* XMVideoListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMVideoListController.h; sourceTree = "<group>"; };
 		FEAAF06F1A33F60E00731999 /* XMVideoListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMVideoListController.m; sourceTree = "<group>"; };
-		FEAAF0731A33F6E800731999 /* XMDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDataManager.h; sourceTree = "<group>"; };
-		FEAAF0741A33F6E800731999 /* XMDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDataManager.m; sourceTree = "<group>"; };
 		FEAAF0761A33F6E800731999 /* XMAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMAPI.h; sourceTree = "<group>"; };
 		FEAAF0771A33F6E800731999 /* XMAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMAPI.m; sourceTree = "<group>"; };
 		FEAAF0781A33F6E800731999 /* XMHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMHelper.h; sourceTree = "<group>"; };
@@ -189,6 +189,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE62A4C61A3F1A6E00BF98BC /* XMDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				FE62A4C71A3F1A6E00BF98BC /* XMDataManager.h */,
+				FE62A4C81A3F1A6E00BF98BC /* XMDataManager.m */,
+			);
+			path = XMDataManager;
+			sourceTree = "<group>";
+		};
 		FEAAF02F1A33646B00731999 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +227,7 @@
 				FEAAF0481A33646B00731999 /* Main.storyboard */,
 				FEAAF06A1A33F60E00731999 /* Section */,
 				FED0B2971A3751A60059E826 /* Vendor */,
+				FE62A4C61A3F1A6E00BF98BC /* XMDataManager */,
 				FEAAF0721A33F6E800731999 /* XMManager */,
 				FED0B2841A372E3E0059E826 /* XMDownloader */,
 				FEAAF0751A33F6E800731999 /* XMModel */,
@@ -283,8 +293,6 @@
 		FEAAF0721A33F6E800731999 /* XMManager */ = {
 			isa = PBXGroup;
 			children = (
-				FEAAF0731A33F6E800731999 /* XMDataManager.h */,
-				FEAAF0741A33F6E800731999 /* XMDataManager.m */,
 			);
 			path = XMManager;
 			sourceTree = "<group>";
@@ -299,8 +307,8 @@
 				FEAAF07A1A33F6E800731999 /* XMListModel.m */,
 				FEAAF0881A34148400731999 /* XMYouKuModel.h */,
 				FEAAF0891A34148400731999 /* XMYouKuModel.m */,
-				FE056C821A3DD568003FE277 /* XMDownloadInfo.h */,
-				FE056C831A3DD568003FE277 /* XMDownloadInfo.m */,
+				FE62A4CD1A3F335200BF98BC /* XMDownloadInfo.h */,
+				FE62A4CE1A3F335200BF98BC /* XMDownloadInfo.m */,
 			);
 			path = XMModel;
 			sourceTree = "<group>";
@@ -531,7 +539,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FED0B28A1A3734940059E826 /* XMM3U8PlayList.m in Sources */,
-				FEAAF07E1A33F6E800731999 /* XMDataManager.m in Sources */,
 				FED0B2B51A3751A60059E826 /* ASIDownloadCache.m in Sources */,
 				FEAAF0701A33F60E00731999 /* XMVideoListCell.m in Sources */,
 				FED0B2BA1A3751A60059E826 /* Reachability.m in Sources */,
@@ -541,9 +548,10 @@
 				FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */,
 				FED0B2B91A3751A60059E826 /* ASINetworkQueue.m in Sources */,
 				FED0B2B61A3751A60059E826 /* ASIFormDataRequest.m in Sources */,
-				FE056C841A3DD568003FE277 /* XMDownloadInfo.m in Sources */,
 				FED0B2B41A3751A60059E826 /* ASIDataDecompressor.m in Sources */,
+				FE62A4CF1A3F335200BF98BC /* XMDownloadInfo.m in Sources */,
 				FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */,
+				FE62A4C91A3F1A6E00BF98BC /* XMDataManager.m in Sources */,
 				FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */,
 				FED0B2961A3742110059E826 /* XMM3U8SegmentDownloader.m in Sources */,
 				FED0B2B81A3751A60059E826 /* ASIInputStream.m in Sources */,
