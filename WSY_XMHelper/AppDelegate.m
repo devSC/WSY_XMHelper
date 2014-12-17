@@ -10,8 +10,10 @@
 #import <HTTPServer.h>
 //#import "HTTPServer.h"
 #import <UIColor+Expanded.h>
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+
 #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+#import <CoreData+MagicalRecord.h>
+#import <MagicalRecord.h>
 
 @interface AppDelegate ()
 
@@ -46,7 +48,7 @@ static NSString *const path = @"Downloads";
     if (error) {
         NSLog(@"HttpServerStartError: %@", [error description]);
     }
-    
+//    [MagicalRecord setLogLevel:MagicalRecordLogLevelOff]
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"XMHelper.sqlite"];
     

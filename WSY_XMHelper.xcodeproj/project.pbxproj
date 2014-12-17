@@ -11,6 +11,7 @@
 		FE056C751A3DD204003FE277 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE056C731A3DD204003FE277 /* Model.xcdatamodeld */; };
 		FE62A4C91A3F1A6E00BF98BC /* XMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62A4C81A3F1A6E00BF98BC /* XMDataManager.m */; };
 		FE62A4CF1A3F335200BF98BC /* XMDownloadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62A4CE1A3F335200BF98BC /* XMDownloadInfo.m */; };
+		FE62A4D31A40746200BF98BC /* WSYDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62A4D21A40746200BF98BC /* WSYDeviceInfo.m */; };
 		FEAAF03E1A33646B00731999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF03D1A33646B00731999 /* main.m */; };
 		FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0401A33646B00731999 /* AppDelegate.m */; };
 		FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0481A33646B00731999 /* Main.storyboard */; };
@@ -66,6 +67,8 @@
 		FE62A4C81A3F1A6E00BF98BC /* XMDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDataManager.m; sourceTree = "<group>"; };
 		FE62A4CD1A3F335200BF98BC /* XMDownloadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDownloadInfo.h; sourceTree = "<group>"; };
 		FE62A4CE1A3F335200BF98BC /* XMDownloadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadInfo.m; sourceTree = "<group>"; };
+		FE62A4D11A40746200BF98BC /* WSYDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSYDeviceInfo.h; sourceTree = "<group>"; };
+		FE62A4D21A40746200BF98BC /* WSYDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSYDeviceInfo.m; sourceTree = "<group>"; };
 		FEAAF0381A33646B00731999 /* WSY_XMHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSY_XMHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEAAF03C1A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEAAF03D1A33646B00731999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -196,6 +199,15 @@
 				FE62A4C81A3F1A6E00BF98BC /* XMDataManager.m */,
 			);
 			path = XMDataManager;
+			sourceTree = "<group>";
+		};
+		FE62A4D01A40746200BF98BC /* WSYDeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FE62A4D11A40746200BF98BC /* WSYDeviceInfo.h */,
+				FE62A4D21A40746200BF98BC /* WSYDeviceInfo.m */,
+			);
+			path = WSYDeviceInfo;
 			sourceTree = "<group>";
 		};
 		FEAAF02F1A33646B00731999 = {
@@ -356,6 +368,7 @@
 		FED0B2971A3751A60059E826 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				FE62A4D01A40746200BF98BC /* WSYDeviceInfo */,
 				FED0B2981A3751A60059E826 /* asi-http-request */,
 			);
 			path = Vendor;
@@ -545,6 +558,7 @@
 				FED0B2931A373A250059E826 /* XMM3U8SegmentInfo.m in Sources */,
 				FED0B2B71A3751A60059E826 /* ASIHTTPRequest.m in Sources */,
 				FEAAF0801A33F6E800731999 /* XMListModel.m in Sources */,
+				FE62A4D31A40746200BF98BC /* WSYDeviceInfo.m in Sources */,
 				FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */,
 				FED0B2B91A3751A60059E826 /* ASINetworkQueue.m in Sources */,
 				FED0B2B61A3751A60059E826 /* ASIFormDataRequest.m in Sources */,

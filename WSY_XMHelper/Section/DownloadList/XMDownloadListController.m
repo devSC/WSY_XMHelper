@@ -32,16 +32,6 @@
 @implementation XMDownloadListController
 @synthesize listArray = _listArray;
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    _fetchedResultsController = nil;
-    if (!_fetchedResultsController) {
-        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllGroupedBy:@"addTime" withPredicate:nil sortedBy:nil ascending:YES];
-//        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllSortedBy:nil ascending:YES withPredicate:nil groupBy:@"addTime" delegate:self];
-    }
-    return _fetchedResultsController;
-}
-
 - (void)reloadFetchedResultsController
 {
     NSError *error = nil;
@@ -68,7 +58,7 @@
         @strongify(self);
         self.listArray = list;
 //        [self startDownload];
-        [self reloadFetchedResultsController];
+//        [self reloadFetchedResultsController];
     }];
     
     [[RACObserve([XMDataManager defaultDataManager], downloadNow) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSMutableDictionary *downloadNow) {
@@ -140,7 +130,7 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return NO;
+    return YES;
 }
 
 
@@ -149,7 +139,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         XMDownloadInfo *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [[XMDataManager defaultDataManager] xm_deleteLocalDownloadFileWithPath:info.filePath];
+        [[XMDataManager defaultDataManager] xm_deleteLocalDownloadFileWithFileUUID:info.youku_id];
         [info MR_deleteEntity];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -165,7 +155,18 @@
 - (void)configureCell:(XMDownloadCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell
     XMDownloadInfo *info = (XMDownloadInfo *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.info = info;
+    [cell setCellInfo:info];
+    NSLog(@"addInfo: %@ %@", info.name, info.addTime);
+}
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+//    _fetchedResultsController = nil;
+    if (!_fetchedResultsController) {
+        //        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllGroupedBy:@"addTime" withPredicate:nil sortedBy:nil ascending:YES];
+        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllSortedBy:nil ascending:YES withPredicate:nil groupBy:@"addTime" delegate:self];
+    }
+    return _fetchedResultsController;
 }
 
 /**

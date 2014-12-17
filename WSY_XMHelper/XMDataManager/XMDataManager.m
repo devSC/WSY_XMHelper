@@ -90,8 +90,6 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     info.length = videoDic[@"length"];
     info.done = [NSNumber numberWithBool:NO];
     info.addTime = [NSDate date];
-    info.filePath = [self xm_getDocumentPathWithUUID:info.youku_id];
-    
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         if (success) {
             completion(info);
@@ -132,7 +130,6 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
             if (self.downloadSqueue.count != 0) {
                 [self downloader_startDownload];
             }
-            
         }];
     } failedHandler:^{
         NSLog(@"DownLoadError");
@@ -140,19 +137,18 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     
 }
 
-- (NSString *)xm_getDocumentPathWithUUID: (NSString *)uuid
+- (void)xm_deleteLocalDownloadFileWithFileUUID:(NSString *)uuid
 {
-    NSString *pathPrefix = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    NSString *saveTo = [[pathPrefix stringByAppendingPathComponent:@"Downloads"] stringByAppendingPathComponent:uuid];
-    return saveTo;
-}
-
-- (void)xm_deleteLocalDownloadFileWithPath: (NSString *)path
-{
-    NSError *error = nil;
-    [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
-    if (error) {
-        NSLog(@"error: %@", [error description]);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [NSString stringWithFormat:@"%@/Downloads/%@", documentsDirectory, uuid];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+        if (error) {
+            NSLog(@"error: %@", [error description]);
+        }
+        
     }
 }
 

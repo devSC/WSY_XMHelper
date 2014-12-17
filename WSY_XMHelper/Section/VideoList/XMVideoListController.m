@@ -13,8 +13,9 @@
 #import "XMDetailListController.h"
 #import "XMVideoDownloader.h"
 #import <UIColor+Expanded.h>
+#import "WSYDeviceInfo.h"
 
-@interface XMVideoListController ()
+@interface XMVideoListController ()<UICollectionViewDelegateFlowLayout>
 {
     NSArray *_videoList;
 }
@@ -34,6 +35,9 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    
+
+    
     [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
 
     self.type = VIDEO_TYPE_PLAYER;
@@ -95,7 +99,13 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     }
 }
 #pragma mark <UICollectionViewDelegate>
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if ([WSYDeviceInfo deviceSize] == iPhone4inch || [WSYDeviceInfo deviceSize] == iPhone35inch) {
+        return CGSizeMake(80, 90);
+    }
+    return CGSizeMake(110, 130);
 
+}
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -124,5 +134,6 @@ static NSString * const reuseIdentifier = @"VideoListCell";
 	
 }
 */
+
 
 @end
