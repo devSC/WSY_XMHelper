@@ -89,7 +89,7 @@ static NSString *const path = @"Downloads";
     NSString *saveTo = [[pathPrefix stringByAppendingPathComponent:path] stringByAppendingPathComponent:playList.uuid];
     NSString *fullPath = [saveTo stringByAppendingPathComponent:@"movie.m3u8"];
     
-    NSLog(@"creat Local M3U8 file path: %@", fullPath);
+//    NSLog(@"creat Local M3U8 file path: %@", fullPath);
     
     //创建文件头部
     NSString *head = @"#EXTM3U\n#EXT-X-TARGETDURATION:30\n#EXT-X-VERSION:2\n#EXT-X-DISCONTINUITY\n";
@@ -112,7 +112,7 @@ static NSString *const path = @"Downloads";
     
     BOOL bSuccess = [writer writeToFile:fullPath atomically:YES];
     if (bSuccess) {
-        NSLog(@"create m3u8 file success; \n fullpath: %@ \n head: %@", fullPath, head);
+//        NSLog(@"create m3u8 file success; \n fullpath: %@ \n head: %@", fullPath, head);
         completionHelper();
     }else{
         NSLog(@"create m3u8 file failed");
@@ -121,7 +121,7 @@ static NSString *const path = @"Downloads";
     NSString *pathPrefix = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
     NSString *saveTo = [[pathPrefix stringByAppendingPathComponent:path] stringByAppendingPathComponent:playList.uuid];
     NSString *fullpath = [saveTo stringByAppendingPathComponent:@"movie.m3u8"];
-    NSLog(@"createLocalM3U8file:%@",fullpath);
+//    NSLog(@"createLocalM3U8file:%@",fullpath);
     
     //创建文件头部
     NSString* head = @"#EXTM3U\n#EXT-X-TARGETDURATION:30\n#EXT-X-VERSION:2\n#EXT-X-DISCONTINUITY\n";
@@ -145,7 +145,7 @@ static NSString *const path = @"Downloads";
     BOOL bSucc =[writer writeToFile:fullpath atomically:YES];
     if(bSucc)
     {
-        NSLog(@"create m3u8file succeed; fullpath:%@, content:%@",fullpath,head);
+//        NSLog(@"create m3u8file succeed; fullpath:%@, content:%@",fullpath,head);
         completionHelper();
     }
     else

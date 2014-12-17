@@ -58,7 +58,7 @@
         @strongify(self);
         self.listArray = list;
 //        [self startDownload];
-//        [self reloadFetchedResultsController];
+        [self reloadFetchedResultsController];
     }];
     
     [[RACObserve([XMDataManager defaultDataManager], downloadNow) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSMutableDictionary *downloadNow) {
@@ -161,10 +161,10 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-//    _fetchedResultsController = nil;
+    _fetchedResultsController = nil;
     if (!_fetchedResultsController) {
-        //        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllGroupedBy:@"addTime" withPredicate:nil sortedBy:nil ascending:YES];
-        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllSortedBy:nil ascending:YES withPredicate:nil groupBy:@"addTime" delegate:self];
+        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllGroupedBy:@"addTime" withPredicate:nil sortedBy:nil ascending:YES];
+//        self.fetchedResultsController = [XMDownloadInfo MR_fetchAllSortedBy:nil ascending:YES withPredicate:nil groupBy:@"addTime" delegate:self];
     }
     return _fetchedResultsController;
 }
