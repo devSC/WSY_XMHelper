@@ -38,7 +38,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     
 
     
-    [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
+//    [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
 
     self.type = VIDEO_TYPE_PLAYER;
     [[XMDataManager defaultDataManager] xm_videoListWithVideoType:_type];
