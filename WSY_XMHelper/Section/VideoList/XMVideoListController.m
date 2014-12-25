@@ -36,7 +36,6 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-
     
 //    [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
 

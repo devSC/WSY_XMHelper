@@ -29,6 +29,7 @@
 		FEAAF0901A34860100731999 /* background_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF08F1A34860100731999 /* background_logo@2x.png */; };
 		FEAAF0921A348F9700731999 /* icon_video_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0911A348F9700731999 /* icon_video_play@2x.png */; };
 		FEAAF0941A348F9F00731999 /* icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0931A348F9F00731999 /* icon_settings@2x.png */; };
+		FEB5C93C1A4C5093000D9494 /* TQTableViewCellRemoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C93B1A4C5093000D9494 /* TQTableViewCellRemoveController.m */; };
 		FEB65B831A3C594100FEB67A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB65B821A3C594100FEB67A /* libxml2.2.dylib */; };
 		FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2861A37328F0059E826 /* XMM3U8Handler.m */; };
 		FED0B28A1A3734940059E826 /* XMM3U8PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2891A3734940059E826 /* XMM3U8PlayList.m */; };
@@ -75,7 +76,7 @@
 		FEAAF03F1A33646B00731999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FEAAF0401A33646B00731999 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FEAAF0491A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FEAAF04B1A33646B00731999 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WSY_XMHelper/Images.xcassets; sourceTree = "<group>"; };
+		FEAAF04B1A33646B00731999 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../WSY_XMHelper/Images.xcassets; sourceTree = "<group>"; };
 		FEAAF04E1A33646B00731999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FEAAF0591A33646B00731999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEAAF05A1A33646B00731999 /* WSY_XMHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSY_XMHelperTests.m; sourceTree = "<group>"; };
@@ -100,6 +101,8 @@
 		FEAAF08F1A34860100731999 /* background_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_logo@2x.png"; sourceTree = "<group>"; };
 		FEAAF0911A348F9700731999 /* icon_video_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video_play@2x.png"; sourceTree = "<group>"; };
 		FEAAF0931A348F9F00731999 /* icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_settings@2x.png"; sourceTree = "<group>"; };
+		FEB5C93A1A4C5093000D9494 /* TQTableViewCellRemoveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTableViewCellRemoveController.h; sourceTree = "<group>"; };
+		FEB5C93B1A4C5093000D9494 /* TQTableViewCellRemoveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTableViewCellRemoveController.m; sourceTree = "<group>"; };
 		FEB65B821A3C594100FEB67A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		FED0B2851A37328F0059E826 /* XMM3U8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMM3U8Handler.h; sourceTree = "<group>"; };
 		FED0B2861A37328F0059E826 /* XMM3U8Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMM3U8Handler.m; sourceTree = "<group>"; };
@@ -214,8 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				FEAAF03A1A33646B00731999 /* WSY_XMHelper */,
-				FEAAF04B1A33646B00731999 /* Images.xcassets */,
-				FEAAF04D1A33646B00731999 /* LaunchScreen.xib */,
 				FEAAF0571A33646B00731999 /* WSY_XMHelperTests */,
 				FEAAF0391A33646B00731999 /* Products */,
 				B00F50BC1E2A332073A100D3 /* Frameworks */,
@@ -273,6 +274,8 @@
 		FEAAF0581A33646B00731999 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FEAAF04B1A33646B00731999 /* Images.xcassets */,
+				FEAAF04D1A33646B00731999 /* LaunchScreen.xib */,
 				FEAAF0591A33646B00731999 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -348,6 +351,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		FEB5C9391A4C5093000D9494 /* TQRemoveController */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5C93A1A4C5093000D9494 /* TQTableViewCellRemoveController.h */,
+				FEB5C93B1A4C5093000D9494 /* TQTableViewCellRemoveController.m */,
+			);
+			path = TQRemoveController;
+			sourceTree = "<group>";
+		};
 		FED0B2841A372E3E0059E826 /* XMDownloader */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +380,7 @@
 		FED0B2971A3751A60059E826 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				FEB5C9391A4C5093000D9494 /* TQRemoveController */,
 				FE62A4D01A40746200BF98BC /* WSYDeviceInfo */,
 				FED0B2981A3751A60059E826 /* asi-http-request */,
 			);
@@ -581,6 +594,7 @@
 				FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */,
 				FEAAF0871A34130A00731999 /* XMDetailCell.m in Sources */,
 				FE056C751A3DD204003FE277 /* Model.xcdatamodeld in Sources */,
+				FEB5C93C1A4C5093000D9494 /* TQTableViewCellRemoveController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +615,7 @@
 				FEAAF04E1A33646B00731999 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = WSY_XMHelper;
+			path = ../WSY_XMHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

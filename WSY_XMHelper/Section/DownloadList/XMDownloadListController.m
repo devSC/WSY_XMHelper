@@ -16,8 +16,9 @@
 
 #import <CoreData+MagicalRecord.h>
 #import "XMDownloadInfo.h"
+#import "TQTableViewCellRemoveController.h"
 
-@interface XMDownloadListController ()<NSFetchedResultsControllerDelegate>
+@interface XMDownloadListController ()<TQTableViewCellRemoveControllerDelegate>
 {
     NSMutableArray *_listArray;
 }
@@ -25,6 +26,8 @@
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong) TQTableViewCellRemoveController *cellRemoveController;
+
 
 
 @end
@@ -51,6 +54,11 @@
     
     self.tableView.estimatedRowHeight = 129.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+//    self.cellRemoveController = [[TQTableViewCellRemoveController alloc] initWithTableView:self.tableView];
+//    self.cellRemoveController.delegate = self;
+
+    
     
 //    [[XMDataManager defaultDataManager] setDelegate:self];
     
@@ -162,6 +170,19 @@
     NSFetchedResultsController *fetchController = [XMDownloadInfo MR_fetchAllGroupedBy:@"name" withPredicate:nil sortedBy:@"addTime" ascending:YES];
     return fetchController;
 }
+
+#pragma mark - TQTableViewCellRemoveControllerDelegate
+
+/*
+- (void)didRemoveTableViewCellWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self.dataSource removeObjectAtIndex:indexPath.row];
+    
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView endUpdates];
+}
+*/
 
 /*
 // Override to support rearranging the table view.

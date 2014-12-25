@@ -57,6 +57,8 @@ PODS:
     - Mantle/extobjc (= 1.5.1)
   - Mantle/extobjc (1.5.1)
   - MBProgressHUD (0.9)
+  - ODRefreshControl (1.1.0)
+  - pop (1.0.7)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI (= 2.3.1)
   - ReactiveCocoa/Core (2.3.1):
@@ -78,6 +80,8 @@ DEPENDENCIES:
   - MagicalRecord (~> 2.2)
   - Mantle
   - MBProgressHUD
+  - ODRefreshControl
+  - pop (~> 1.0.7)
   - ReactiveCocoa
   - SDWebImage
   - UIColor-Utilities (~> 1.0.1)
@@ -93,6 +97,8 @@ SPEC CHECKSUMS:
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  ODRefreshControl: 7bc75258d9dba1f93c4e34654d1e4b5aa39529f0
+  pop: 2f14a1ea61339767af9e66741b418c831b3844df
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   UIColor-Utilities: 3f13aebe447f5e19c8d3aa18c194c53116b23537
