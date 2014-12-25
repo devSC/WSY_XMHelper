@@ -30,6 +30,12 @@
 		FEAAF0921A348F9700731999 /* icon_video_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0911A348F9700731999 /* icon_video_play@2x.png */; };
 		FEAAF0941A348F9F00731999 /* icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF0931A348F9F00731999 /* icon_settings@2x.png */; };
 		FEB5C93C1A4C5093000D9494 /* TQTableViewCellRemoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C93B1A4C5093000D9494 /* TQTableViewCellRemoveController.m */; };
+		FEB5C94A1A4C692B000D9494 /* QBPlasticPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C93F1A4C692B000D9494 /* QBPlasticPopupMenu.m */; };
+		FEB5C94B1A4C692B000D9494 /* QBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C9411A4C692B000D9494 /* QBPopupMenu.m */; };
+		FEB5C94C1A4C692B000D9494 /* QBPopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C9431A4C692B000D9494 /* QBPopupMenuItem.m */; };
+		FEB5C94D1A4C692B000D9494 /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C9451A4C692B000D9494 /* QBPopupMenuItemView.m */; };
+		FEB5C94E1A4C692B000D9494 /* QBPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C9471A4C692B000D9494 /* QBPopupMenuOverlayView.m */; };
+		FEB5C94F1A4C692B000D9494 /* QBPopupMenuPagenatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5C9491A4C692B000D9494 /* QBPopupMenuPagenatorView.m */; };
 		FEB65B831A3C594100FEB67A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB65B821A3C594100FEB67A /* libxml2.2.dylib */; };
 		FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2861A37328F0059E826 /* XMM3U8Handler.m */; };
 		FED0B28A1A3734940059E826 /* XMM3U8PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2891A3734940059E826 /* XMM3U8PlayList.m */; };
@@ -103,6 +109,18 @@
 		FEAAF0931A348F9F00731999 /* icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_settings@2x.png"; sourceTree = "<group>"; };
 		FEB5C93A1A4C5093000D9494 /* TQTableViewCellRemoveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTableViewCellRemoveController.h; sourceTree = "<group>"; };
 		FEB5C93B1A4C5093000D9494 /* TQTableViewCellRemoveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTableViewCellRemoveController.m; sourceTree = "<group>"; };
+		FEB5C93E1A4C692B000D9494 /* QBPlasticPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPlasticPopupMenu.h; sourceTree = "<group>"; };
+		FEB5C93F1A4C692B000D9494 /* QBPlasticPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPlasticPopupMenu.m; sourceTree = "<group>"; };
+		FEB5C9401A4C692B000D9494 /* QBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenu.h; sourceTree = "<group>"; };
+		FEB5C9411A4C692B000D9494 /* QBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenu.m; sourceTree = "<group>"; };
+		FEB5C9421A4C692B000D9494 /* QBPopupMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuItem.h; sourceTree = "<group>"; };
+		FEB5C9431A4C692B000D9494 /* QBPopupMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuItem.m; sourceTree = "<group>"; };
+		FEB5C9441A4C692B000D9494 /* QBPopupMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuItemView.h; sourceTree = "<group>"; };
+		FEB5C9451A4C692B000D9494 /* QBPopupMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuItemView.m; sourceTree = "<group>"; };
+		FEB5C9461A4C692B000D9494 /* QBPopupMenuOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuOverlayView.h; sourceTree = "<group>"; };
+		FEB5C9471A4C692B000D9494 /* QBPopupMenuOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuOverlayView.m; sourceTree = "<group>"; };
+		FEB5C9481A4C692B000D9494 /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
+		FEB5C9491A4C692B000D9494 /* QBPopupMenuPagenatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuPagenatorView.m; sourceTree = "<group>"; };
 		FEB65B821A3C594100FEB67A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		FED0B2851A37328F0059E826 /* XMM3U8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMM3U8Handler.h; sourceTree = "<group>"; };
 		FED0B2861A37328F0059E826 /* XMM3U8Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMM3U8Handler.m; sourceTree = "<group>"; };
@@ -360,6 +378,25 @@
 			path = TQRemoveController;
 			sourceTree = "<group>";
 		};
+		FEB5C93D1A4C692B000D9494 /* QBPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5C93E1A4C692B000D9494 /* QBPlasticPopupMenu.h */,
+				FEB5C93F1A4C692B000D9494 /* QBPlasticPopupMenu.m */,
+				FEB5C9401A4C692B000D9494 /* QBPopupMenu.h */,
+				FEB5C9411A4C692B000D9494 /* QBPopupMenu.m */,
+				FEB5C9421A4C692B000D9494 /* QBPopupMenuItem.h */,
+				FEB5C9431A4C692B000D9494 /* QBPopupMenuItem.m */,
+				FEB5C9441A4C692B000D9494 /* QBPopupMenuItemView.h */,
+				FEB5C9451A4C692B000D9494 /* QBPopupMenuItemView.m */,
+				FEB5C9461A4C692B000D9494 /* QBPopupMenuOverlayView.h */,
+				FEB5C9471A4C692B000D9494 /* QBPopupMenuOverlayView.m */,
+				FEB5C9481A4C692B000D9494 /* QBPopupMenuPagenatorView.h */,
+				FEB5C9491A4C692B000D9494 /* QBPopupMenuPagenatorView.m */,
+			);
+			path = QBPopupMenu;
+			sourceTree = "<group>";
+		};
 		FED0B2841A372E3E0059E826 /* XMDownloader */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +417,7 @@
 		FED0B2971A3751A60059E826 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				FEB5C93D1A4C692B000D9494 /* QBPopupMenu */,
 				FEB5C9391A4C5093000D9494 /* TQRemoveController */,
 				FE62A4D01A40746200BF98BC /* WSYDeviceInfo */,
 				FED0B2981A3751A60059E826 /* asi-http-request */,
@@ -568,16 +606,21 @@
 				FED0B2B51A3751A60059E826 /* ASIDownloadCache.m in Sources */,
 				FEAAF0701A33F60E00731999 /* XMVideoListCell.m in Sources */,
 				FED0B2BA1A3751A60059E826 /* Reachability.m in Sources */,
+				FEB5C94E1A4C692B000D9494 /* QBPopupMenuOverlayView.m in Sources */,
 				FED0B2931A373A250059E826 /* XMM3U8SegmentInfo.m in Sources */,
 				FED0B2B71A3751A60059E826 /* ASIHTTPRequest.m in Sources */,
+				FEB5C94D1A4C692B000D9494 /* QBPopupMenuItemView.m in Sources */,
+				FEB5C94B1A4C692B000D9494 /* QBPopupMenu.m in Sources */,
 				FEAAF0801A33F6E800731999 /* XMListModel.m in Sources */,
 				FE62A4D31A40746200BF98BC /* WSYDeviceInfo.m in Sources */,
 				FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */,
 				FED0B2B91A3751A60059E826 /* ASINetworkQueue.m in Sources */,
 				FED0B2B61A3751A60059E826 /* ASIFormDataRequest.m in Sources */,
+				FEB5C94F1A4C692B000D9494 /* QBPopupMenuPagenatorView.m in Sources */,
 				FED0B2B41A3751A60059E826 /* ASIDataDecompressor.m in Sources */,
 				FE62A4CF1A3F335200BF98BC /* XMDownloadInfo.m in Sources */,
 				FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */,
+				FEB5C94C1A4C692B000D9494 /* QBPopupMenuItem.m in Sources */,
 				FE62A4C91A3F1A6E00BF98BC /* XMDataManager.m in Sources */,
 				FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */,
 				FED0B2961A3742110059E826 /* XMM3U8SegmentDownloader.m in Sources */,
@@ -591,6 +634,7 @@
 				FED0B2B21A3751A60059E826 /* ASIAuthenticationDialog.m in Sources */,
 				FEAAF03E1A33646B00731999 /* main.m in Sources */,
 				FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */,
+				FEB5C94A1A4C692B000D9494 /* QBPlasticPopupMenu.m in Sources */,
 				FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */,
 				FEAAF0871A34130A00731999 /* XMDetailCell.m in Sources */,
 				FE056C751A3DD204003FE277 /* Model.xcdatamodeld in Sources */,

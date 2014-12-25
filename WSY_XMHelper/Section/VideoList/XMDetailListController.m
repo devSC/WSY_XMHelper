@@ -11,6 +11,7 @@
 #import "XMDetailCell.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <UIAlertView+BlocksKit.h>
+#import "QBPopupMenu.h"
 
 @interface XMDetailListController ()
 
@@ -19,6 +20,8 @@
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, copy) NSString *ID;
 @property (nonatomic, assign) NSArray *detailList;
+
+@property (nonatomic, strong) QBPopupMenu *popupMenu;
 
 @end
 
@@ -88,6 +91,12 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     XMDetailCell *cell = (XMDetailCell *)[tableView cellForRowAtIndexPath:indexPath];
 
+    NSLog(@"%@", NSStringFromCGRect(cell.frame));
+    CGRect menuRect = cell.frame;
+    menuRect.origin.y -= tableView.contentOffset.y;
+    menuRect.origin.y += 50;
+    [self.popupMenu showInView:self.view targetRect:menuRect animated:YES];
+    return;
     UIAlertView *alertView = [UIAlertView bk_alertViewWithTitle:@"选择操作"];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"下载", @"下载") handler:^{
         NSString *urlString = cell.youku.video_addr;
@@ -108,6 +117,35 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     [alertView show];
    
 }
+
+- (QBPopupMenu *)popupMenu
+{
+    QBPopupMenuItem *bItem = [QBPopupMenuItem itemWithTitle:@"Hello" actionBlcok:^{
+        NSLog(@"Hello");
+    }];
+    QBPopupMenuItem *bItem2 = [QBPopupMenuItem itemWithTitle:@"Cut" actionBlcok:^{
+        NSLog(@"Cut");
+    }];
+    QBPopupMenuItem *bItem3 = [QBPopupMenuItem itemWithTitle:@"Copy" actionBlcok:^{
+        NSLog(@"Copy");
+    }];
+    QBPopupMenuItem *bItem4 = [QBPopupMenuItem itemWithTitle:@"Delete" actionBlcok:^{
+        NSLog(@"Delete");
+    }];
+    QBPopupMenuItem *bItem5 = [QBPopupMenuItem itemWithImage:[UIImage imageNamed:@"clip"] actionBlock:^{
+        NSLog(@"Clip Image");
+    }];
+    QBPopupMenuItem *bItem6 = [QBPopupMenuItem itemWithTitle:@"Delete" image:[UIImage imageNamed:@"trash"] actionBlcok:^{
+        NSLog(@"Trash Image");
+    }];
+    NSArray *bItems = @[bItem, bItem2, bItem3, bItem4, bItem5, bItem6];
+    
+    QBPopupMenu *popupMenuBlcok = [[QBPopupMenu alloc] initWithItems:bItems];
+    popupMenuBlcok.arrowDirection = QBPopupMenuArrowDirectionDown;
+    popupMenuBlcok.highlightedColor = [[UIColor colorWithRed:0 green:0.478 blue:1.0 alpha:1.0] colorWithAlphaComponent:0.8];
+    return popupMenuBlcok;
+}
+
 
 
 //urlString	NSString *	@"http://pl.youku.com/playlist/m3u8?ep=eiaVHUmPUM0H5ybZiz8bbnnrciJeXJZ0vEiG%2FKYXSsVAMezQkT%2FRww%3D%3D&sid=8417026372563129e96ea&token=8104&ctype=12&ev=1&type=hd2&keyframe=0&oip=1931225911&ts=hXGJ9zRFKHwyRBt2AcC-SLQ&vid=XNzg3MDEzNTI4"	0x00007fb84bc9f910
