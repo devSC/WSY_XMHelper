@@ -45,6 +45,7 @@
                 if (!jsonError) {
                     //如果没有错误,将JSON数据发送给用户
                     [subscriber sendNext:json];
+                    [subscriber sendCompleted];
                 }else {
                     [subscriber sendError:jsonError];
                 }

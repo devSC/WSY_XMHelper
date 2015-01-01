@@ -110,11 +110,11 @@
                                 <segment title="赛事"/>
                                 <segment title="最新"/>
                             </segments>
-                            <connections>
-                                <action selector="segmentDidPressed:" destination="DTx-ZR-izr" eventType="valueChanged" id="ofk-dm-JYe"/>
-                            </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="videoTypeSegmented" destination="yV2-qT-MKf" id="pUZ-em-beP"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ma5-D9-37O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,6 +15,10 @@
 #import <UIColor+Expanded.h>
 #import "WSYDeviceInfo.h"
 
+#import <UIScrollView+UzysAnimatedGifPullToRefresh.h>
+
+#import "XMVideoListViewModel.h"
+
 @interface XMVideoListController ()<UICollectionViewDelegateFlowLayout>
 {
     NSArray *_videoList;
@@ -22,6 +26,10 @@
 @property (nonatomic, assign) VIDEO_TYPE type;
 
 @property (nonatomic, strong) NSArray *videoList;
+@property (nonatomic, strong) NSString *shouldRefresh;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *videoTypeSegmented;
+@property (nonatomic, strong) XMVideoListViewModel *viewModel;
 @end
 
 @implementation XMVideoListController
@@ -30,31 +38,56 @@
 
 static NSString * const reuseIdentifier = @"VideoListCell";
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.viewModel = [[XMVideoListViewModel alloc] init];
     
+    __weak typeof(self) weakSelf =self;
+    [self.collectionView addPullToRefreshActionHandler:^{
+        [weakSelf startRefresh];
+    } ProgressImagesGifName:@"spinner_dropbox@2x.gif"
+                             LoadingImagesGifName:@"jgr@2x.gif"
+                          ProgressScrollThreshold:60
+                            LoadingImageFrameRate:30];
     
-//    [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
-
-    self.type = VIDEO_TYPE_PLAYER;
-    [[XMDataManager defaultDataManager] requestVideoListWithVideoType:_type];
+    RAC(self.viewModel, selectedChart) = [self.videoTypeSegmented rac_newSelectedSegmentIndexChannelWithNilValue:nil];
+    
+    RACSignal *refreshSignal = [self rac_signalForSelector:@selector(startRefresh)];
+    RACSignal *viewAppelSignal = [self rac_signalForSelector:@selector(viewWillAppear:)];
+    RACSignal *segmentedChangedSignal = [self.videoTypeSegmented rac_signalForControlEvents:UIControlEventValueChanged];
+    
     @weakify(self);
-    [[RACObserve([XMDataManager defaultDataManager], videoList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *listArray) {
+    [[[[RACSignal merge:@[viewAppelSignal,refreshSignal, segmentedChangedSignal]] flattenMap:^RACStream *(id value) {
+        NSLog(@"test");
         @strongify(self);
-        self.videoList = listArray;
+        return [self.viewModel fetchObject];
+    }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self);
         [self.collectionView reloadData];
+        [self.collectionView stopRefreshAnimation];
+    } error:^(NSError *error) {
+        [self.collectionView stopRefreshAnimation];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.description delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
     }];
 }
+
+
+/*
 - (IBAction)segmentDidPressed:(UISegmentedControl *)sender {
     self.type = (sender.selectedSegmentIndex +2);
     [[XMDataManager defaultDataManager] requestVideoListWithVideoType:_type];
-    NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
-    if(self.videoList.count > 0) {
-        [self.collectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
-    }
+         if(self.viewModel.videoList.count > 0) {
+             NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
+             [self.collectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+         }
+}
+*/
+- (void)startRefresh
+{
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,12 +113,12 @@ static NSString * const reuseIdentifier = @"VideoListCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _videoList.count;
+    return self.viewModel.videoList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XMVideoListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    [cell setCellData:[_videoList objectAtIndex:indexPath.row]];
+    [cell setCellData:[self.viewModel.videoList objectAtIndex:indexPath.row]];
     // Configure the cell
     return cell;
 }
@@ -94,7 +127,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     XMVideoListCell *cell = (XMVideoListCell *)sender;
     if ([segue.identifier isEqualToString:@"XMDetail"]) {
         XMDetailListController *detailsViewController =  segue.destinationViewController;
-        [detailsViewController setVideoListType:_type name:cell.name.text videoId:cell.videoId ];
+        [detailsViewController setVideoListType:self.viewModel.type name:cell.name.text videoId:cell.videoId ];
     }
 }
 #pragma mark <UICollectionViewDelegate>

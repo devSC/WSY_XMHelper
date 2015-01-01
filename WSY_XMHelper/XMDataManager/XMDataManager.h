@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
     XMVideoDownloadQualitySuper,
 };
 
+@class RACSignal;
 @interface XMDataManager : NSObject
 
 @property (nonatomic, strong) NSArray *videoList;
@@ -27,7 +28,7 @@ typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
 
 + (instancetype)defaultDataManager;
 
-- (void)requestVideoListWithVideoType: (VIDEO_TYPE)type;
+- (RACSignal *)requestVideoListWithVideoType: (VIDEO_TYPE)type;
 - (void)requestVideoDetailListWithType: (VIDEO_TYPE)type name: (NSString *)name page: (NSInteger)page;
 //download
 - (void)addVideoDownloadWithVideoDic: (NSDictionary *)videoDic;
