@@ -45,17 +45,11 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     
     self.viewModel = [[XMVideoListViewModel alloc] init];
     
-    __weak typeof(self) weakSelf =self;
-    [self.collectionView addPullToRefreshActionHandler:^{
-        [weakSelf startRefresh];
-    } ProgressImagesGifName:@"spinner_dropbox@2x.gif"
-                             LoadingImagesGifName:@"jgr@2x.gif"
-                          ProgressScrollThreshold:60
-                            LoadingImageFrameRate:30];
-    
     RAC(self.viewModel, selectedChart) = [self.videoTypeSegmented rac_newSelectedSegmentIndexChannelWithNilValue:nil];
+
+    [self addHeaderRefreshView];
     
-    RACSignal *refreshSignal = [self rac_signalForSelector:@selector(startRefresh)];
+    RACSignal *refreshSignal = [self rac_signalForSelector:@selector(startRefreshHeader)];
     RACSignal *viewAppelSignal = [self rac_signalForSelector:@selector(viewWillAppear:)];
     RACSignal *segmentedChangedSignal = [self.videoTypeSegmented rac_signalForControlEvents:UIControlEventValueChanged];
     
@@ -75,21 +69,6 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     }];
 }
 
-
-/*
-- (IBAction)segmentDidPressed:(UISegmentedControl *)sender {
-    self.type = (sender.selectedSegmentIndex +2);
-    [[XMDataManager defaultDataManager] requestVideoListWithVideoType:_type];
-         if(self.viewModel.videoList.count > 0) {
-             NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
-             [self.collectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
-         }
-}
-*/
-- (void)startRefresh
-{
-
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

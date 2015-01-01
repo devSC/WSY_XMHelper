@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 wilson-yuan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "XMBaseCollectionController.h"
 
-@interface XMVideoListController : UICollectionViewController
+@interface XMVideoListController : XMBaseCollectionController
 
 @end

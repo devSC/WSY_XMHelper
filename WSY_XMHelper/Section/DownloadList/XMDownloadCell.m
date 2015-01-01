@@ -16,6 +16,8 @@
 @implementation XMDownloadCell
 - (void)awakeFromNib {
     // Initialization code
+    _icon.layer.cornerRadius = 2.0f;
+    _icon.layer.masksToBounds = YES;
     
     [_backGroundView.layer setCornerRadius:5.0f];
     [_backGroundView.layer setMasksToBounds:YES];

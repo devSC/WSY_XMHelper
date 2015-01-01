@@ -23,7 +23,7 @@ static NSString *const formant = @"#EXTINF:";
 
 -(void)handler_parseUrlString:(NSString *)urlString uuid:(NSString *)uuid completionHandler:(void (^)(XMM3U8PlayList *))successHandler failedHandler:(void (^)())failedHandler
 {
-    NSLog(@"download name: %@  urlString: %@", uuid, urlString);
+//    NSLog(@"download name: %@  urlString: %@", uuid, urlString);
     NSStringEncoding encoding;
     NSError *error = nil;
     NSString *dataString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] usedEncoding:&encoding error:&error];

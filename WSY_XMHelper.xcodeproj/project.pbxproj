@@ -43,6 +43,18 @@
 		FEB5CA3A1A554B1B000D9494 /* XMVideoDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA391A554B1B000D9494 /* XMVideoDetailViewModel.m */; };
 		FEB5CA401A554D43000D9494 /* XMDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA3D1A554D43000D9494 /* XMDetailCell.m */; };
 		FEB5CA411A554D43000D9494 /* XMDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA3F1A554D43000D9494 /* XMDetailListController.m */; };
+		FEB5CA531A555727000D9494 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEB5CA431A555727000D9494 /* MJRefresh.bundle */; };
+		FEB5CA541A555727000D9494 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA461A555727000D9494 /* MJRefreshBaseView.m */; };
+		FEB5CA551A555727000D9494 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA481A555727000D9494 /* MJRefreshConst.m */; };
+		FEB5CA561A555727000D9494 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA4A1A555727000D9494 /* MJRefreshFooterView.m */; };
+		FEB5CA571A555727000D9494 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA4C1A555727000D9494 /* MJRefreshHeaderView.m */; };
+		FEB5CA581A555727000D9494 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA4E1A555727000D9494 /* UIScrollView+MJExtension.m */; };
+		FEB5CA591A555727000D9494 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA501A555727000D9494 /* UIScrollView+MJRefresh.m */; };
+		FEB5CA5A1A555727000D9494 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA521A555727000D9494 /* UIView+MJExtension.m */; };
+		FEB5CA5E1A555FA3000D9494 /* XMBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA5D1A555FA3000D9494 /* XMBaseTableController.m */; };
+		FEB5CA611A555FB6000D9494 /* XMBaseCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA601A555FB6000D9494 /* XMBaseCollectionController.m */; };
+		FEB5CA641A557E19000D9494 /* XMDownloadListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA631A557E19000D9494 /* XMDownloadListViewModel.m */; };
+		FEB5CA6F1A558543000D9494 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA6E1A558543000D9494 /* NSDate+Helper.m */; };
 		FEB65B831A3C594100FEB67A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB65B821A3C594100FEB67A /* libxml2.2.dylib */; };
 		FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2861A37328F0059E826 /* XMM3U8Handler.m */; };
 		FED0B28A1A3734940059E826 /* XMM3U8PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2891A3734940059E826 /* XMM3U8PlayList.m */; };
@@ -137,6 +149,30 @@
 		FEB5CA3D1A554D43000D9494 /* XMDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailCell.m; sourceTree = "<group>"; };
 		FEB5CA3E1A554D43000D9494 /* XMDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDetailListController.h; sourceTree = "<group>"; };
 		FEB5CA3F1A554D43000D9494 /* XMDetailListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailListController.m; sourceTree = "<group>"; };
+		FEB5CA431A555727000D9494 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		FEB5CA441A555727000D9494 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		FEB5CA451A555727000D9494 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		FEB5CA461A555727000D9494 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		FEB5CA471A555727000D9494 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		FEB5CA481A555727000D9494 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		FEB5CA491A555727000D9494 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		FEB5CA4A1A555727000D9494 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		FEB5CA4B1A555727000D9494 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		FEB5CA4C1A555727000D9494 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		FEB5CA4D1A555727000D9494 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		FEB5CA4E1A555727000D9494 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		FEB5CA4F1A555727000D9494 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		FEB5CA501A555727000D9494 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		FEB5CA511A555727000D9494 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		FEB5CA521A555727000D9494 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		FEB5CA5C1A555FA3000D9494 /* XMBaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMBaseTableController.h; sourceTree = "<group>"; };
+		FEB5CA5D1A555FA3000D9494 /* XMBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMBaseTableController.m; sourceTree = "<group>"; };
+		FEB5CA5F1A555FB6000D9494 /* XMBaseCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMBaseCollectionController.h; sourceTree = "<group>"; };
+		FEB5CA601A555FB6000D9494 /* XMBaseCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMBaseCollectionController.m; sourceTree = "<group>"; };
+		FEB5CA621A557E19000D9494 /* XMDownloadListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDownloadListViewModel.h; sourceTree = "<group>"; };
+		FEB5CA631A557E19000D9494 /* XMDownloadListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadListViewModel.m; sourceTree = "<group>"; };
+		FEB5CA6D1A558543000D9494 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		FEB5CA6E1A558543000D9494 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		FEB65B821A3C594100FEB67A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		FED0B2851A37328F0059E826 /* XMM3U8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMM3U8Handler.h; sourceTree = "<group>"; };
 		FED0B2861A37328F0059E826 /* XMM3U8Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMM3U8Handler.m; sourceTree = "<group>"; };
@@ -318,6 +354,7 @@
 		FEAAF06A1A33F60E00731999 /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				FEB5CA5B1A555F85000D9494 /* XMBaseView */,
 				FEB5CA2A1A551F44000D9494 /* ViewModel */,
 				FEAAF06B1A33F60E00731999 /* VideoList */,
 				FED0B2CE1A388EB90059E826 /* DownloadList */,
@@ -423,6 +460,8 @@
 				FEB5CA2C1A551F44000D9494 /* XMVideoListViewModel.m */,
 				FEB5CA381A554B1B000D9494 /* XMVideoDetailViewModel.h */,
 				FEB5CA391A554B1B000D9494 /* XMVideoDetailViewModel.m */,
+				FEB5CA621A557E19000D9494 /* XMDownloadListViewModel.h */,
+				FEB5CA631A557E19000D9494 /* XMDownloadListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -436,6 +475,49 @@
 				FEB5CA3F1A554D43000D9494 /* XMDetailListController.m */,
 			);
 			path = DetailList;
+			sourceTree = "<group>";
+		};
+		FEB5CA421A555727000D9494 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5CA431A555727000D9494 /* MJRefresh.bundle */,
+				FEB5CA441A555727000D9494 /* MJRefresh.h */,
+				FEB5CA451A555727000D9494 /* MJRefreshBaseView.h */,
+				FEB5CA461A555727000D9494 /* MJRefreshBaseView.m */,
+				FEB5CA471A555727000D9494 /* MJRefreshConst.h */,
+				FEB5CA481A555727000D9494 /* MJRefreshConst.m */,
+				FEB5CA491A555727000D9494 /* MJRefreshFooterView.h */,
+				FEB5CA4A1A555727000D9494 /* MJRefreshFooterView.m */,
+				FEB5CA4B1A555727000D9494 /* MJRefreshHeaderView.h */,
+				FEB5CA4C1A555727000D9494 /* MJRefreshHeaderView.m */,
+				FEB5CA4D1A555727000D9494 /* UIScrollView+MJExtension.h */,
+				FEB5CA4E1A555727000D9494 /* UIScrollView+MJExtension.m */,
+				FEB5CA4F1A555727000D9494 /* UIScrollView+MJRefresh.h */,
+				FEB5CA501A555727000D9494 /* UIScrollView+MJRefresh.m */,
+				FEB5CA511A555727000D9494 /* UIView+MJExtension.h */,
+				FEB5CA521A555727000D9494 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		FEB5CA5B1A555F85000D9494 /* XMBaseView */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5CA5C1A555FA3000D9494 /* XMBaseTableController.h */,
+				FEB5CA5D1A555FA3000D9494 /* XMBaseTableController.m */,
+				FEB5CA5F1A555FB6000D9494 /* XMBaseCollectionController.h */,
+				FEB5CA601A555FB6000D9494 /* XMBaseCollectionController.m */,
+			);
+			path = XMBaseView;
+			sourceTree = "<group>";
+		};
+		FEB5CA6C1A558543000D9494 /* NSDate+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5CA6D1A558543000D9494 /* NSDate+Helper.h */,
+				FEB5CA6E1A558543000D9494 /* NSDate+Helper.m */,
+			);
+			path = "NSDate+Helper";
 			sourceTree = "<group>";
 		};
 		FED0B2841A372E3E0059E826 /* XMDownloader */ = {
@@ -458,6 +540,8 @@
 		FED0B2971A3751A60059E826 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				FEB5CA6C1A558543000D9494 /* NSDate+Helper */,
+				FEB5CA421A555727000D9494 /* MJRefresh */,
 				FEB5C93D1A4C692B000D9494 /* QBPopupMenu */,
 				FEB5C9391A4C5093000D9494 /* TQRemoveController */,
 				FE62A4D01A40746200BF98BC /* WSYDeviceInfo */,
@@ -604,6 +688,7 @@
 				FED0B2C41A388C1B0059E826 /* ic_video_normal@3x.png in Resources */,
 				FEB5CA351A552E67000D9494 /* Preloader_10@2x.gif in Resources */,
 				FEAAF0921A348F9700731999 /* icon_video_play@2x.png in Resources */,
+				FEB5CA531A555727000D9494 /* MJRefresh.bundle in Resources */,
 				FED0B2CA1A388CE30059E826 /* ic_left_3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,14 +734,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FED0B28A1A3734940059E826 /* XMM3U8PlayList.m in Sources */,
+				FEB5CA551A555727000D9494 /* MJRefreshConst.m in Sources */,
 				FED0B2B51A3751A60059E826 /* ASIDownloadCache.m in Sources */,
+				FEB5CA5A1A555727000D9494 /* UIView+MJExtension.m in Sources */,
 				FEAAF0701A33F60E00731999 /* XMVideoListCell.m in Sources */,
 				FED0B2BA1A3751A60059E826 /* Reachability.m in Sources */,
+				FEB5CA6F1A558543000D9494 /* NSDate+Helper.m in Sources */,
 				FEB5C94E1A4C692B000D9494 /* QBPopupMenuOverlayView.m in Sources */,
+				FEB5CA561A555727000D9494 /* MJRefreshFooterView.m in Sources */,
 				FED0B2931A373A250059E826 /* XMM3U8SegmentInfo.m in Sources */,
+				FEB5CA581A555727000D9494 /* UIScrollView+MJExtension.m in Sources */,
 				FED0B2B71A3751A60059E826 /* ASIHTTPRequest.m in Sources */,
 				FEB5C94D1A4C692B000D9494 /* QBPopupMenuItemView.m in Sources */,
 				FEB5C94B1A4C692B000D9494 /* QBPopupMenu.m in Sources */,
+				FEB5CA5E1A555FA3000D9494 /* XMBaseTableController.m in Sources */,
 				FEAAF0801A33F6E800731999 /* XMListModel.m in Sources */,
 				FE62A4D31A40746200BF98BC /* WSYDeviceInfo.m in Sources */,
 				FEAAF0411A33646B00731999 /* AppDelegate.m in Sources */,
@@ -666,6 +757,10 @@
 				FED0B2B41A3751A60059E826 /* ASIDataDecompressor.m in Sources */,
 				FE62A4CF1A3F335200BF98BC /* XMDownloadInfo.m in Sources */,
 				FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */,
+				FEB5CA571A555727000D9494 /* MJRefreshHeaderView.m in Sources */,
+				FEB5CA541A555727000D9494 /* MJRefreshBaseView.m in Sources */,
+				FEB5CA591A555727000D9494 /* UIScrollView+MJRefresh.m in Sources */,
+				FEB5CA641A557E19000D9494 /* XMDownloadListViewModel.m in Sources */,
 				FEB5C94C1A4C692B000D9494 /* QBPopupMenuItem.m in Sources */,
 				FE62A4C91A3F1A6E00BF98BC /* XMDataManager.m in Sources */,
 				FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */,
@@ -679,6 +774,7 @@
 				FED0B2B21A3751A60059E826 /* ASIAuthenticationDialog.m in Sources */,
 				FEAAF03E1A33646B00731999 /* main.m in Sources */,
 				FEB5CA411A554D43000D9494 /* XMDetailListController.m in Sources */,
+				FEB5CA611A555FB6000D9494 /* XMBaseCollectionController.m in Sources */,
 				FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */,
 				FEB5C94A1A4C692B000D9494 /* QBPlasticPopupMenu.m in Sources */,
 				FEB5CA3A1A554B1B000D9494 /* XMVideoDetailViewModel.m in Sources */,

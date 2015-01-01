@@ -15,11 +15,12 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, copy) NSString *ID;
-@property (nonatomic, assign) NSArray *detailList;
+@property (nonatomic, strong) NSMutableArray *detailList;
 
 
 + (instancetype)detailViewModelWithVideoListType:(VIDEO_TYPE)type name:(NSString *)name videoId:(NSString *)ID;
 
 - (RACSignal *)fetchObject;
+- (RACSignal *)fetchMoreObject;
 
 @end

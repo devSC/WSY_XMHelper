@@ -20,7 +20,7 @@
     #endif
 #endif
 
-#if MR_ENABLE_ACTIVE_RECORD_LOGGING != 0
+#if MR_ENABLE_ACTIVE_RECORD_LOGGING != 1
       // First, check if we can use Cocoalumberjack for logging
     #ifdef LOG_VERBOSE
         extern int ddLogLevel;

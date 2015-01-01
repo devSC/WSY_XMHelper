@@ -13,6 +13,7 @@
 #import <UIAlertView+BlocksKit.h>
 #import "QBPopupMenu.h"
 #import <UIScrollView+UzysAnimatedGifPullToRefresh.h>
+#import "MJRefresh.h"
 
 @interface XMDetailListController ()
 @property (nonatomic, strong) QBPopupMenu *popupMenu;
@@ -45,16 +46,17 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 //    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self
-    self.title = self.viewModel.name;
-    __weak typeof(self) weakSelf = self;
-    [self.tableView addPullToRefreshActionHandler:^{
-        [weakSelf startRefresh];
-    } ProgressImagesGifName:@"spinner_dropbox@2x.gif"
-                             LoadingImagesGifName:@"jgr@2x.gif"
-                          ProgressScrollThreshold:60 LoadingImageFrameRate:30];
+    
+//    self.title = self.viewModel.name;
+    RAC(self, title) = [RACObserve(self.viewModel, name) map:^id (NSString *title) {
+        return title;
+    }];
+    
+    [self addFooterMoreView];
+    [self addHeaderRefreshView];
     
     RACSignal *viewWillApperSignal = [self rac_signalForSelector:@selector(viewWillAppear:)];
-    RACSignal *refreshSignal = [self rac_signalForSelector:@selector(startRefresh)];
+    RACSignal *refreshSignal = [self rac_signalForSelector:@selector(startRefreshHeader)];
     
     @weakify(self);
     [[[[RACSignal merge:@[viewWillApperSignal, refreshSignal]] flattenMap:^RACStream *(id value) {
@@ -66,12 +68,17 @@ static NSString *const cellIdentifier = @"XMDetailCell";
         [self.tableView reloadData];
     }];
     
+
+    [[[[self rac_signalForSelector:@selector(startRefreshFooter)] flattenMap:^RACStream *(id value) {
+        @strongify(self);
+        return [self.viewModel fetchMoreObject];
+    }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        [self.tableView footerEndRefreshing];
+        [self.tableView reloadData];
+    }];
     
 }
-- (void)startRefresh
-{
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

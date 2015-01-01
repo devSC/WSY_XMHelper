@@ -138,7 +138,7 @@
                                             <rect key="frame" x="3" y="3" width="594" height="99"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CPI-bT-owz">
-                                                    <rect key="frame" x="8" y="11.5" width="75" height="75"/>
+                                                    <rect key="frame" x="8" y="11" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="CPI-bT-owz" secondAttribute="height" multiplier="1:1" id="bJq-IG-ZIo"/>
                                                         <constraint firstAttribute="width" constant="75" id="hfe-cs-uFv"/>
@@ -154,7 +154,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-W5-L2G">
-                                                    <rect key="frame" x="91" y="56" width="308" height="27.5"/>
+                                                    <rect key="frame" x="91" y="56" width="403" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -173,11 +173,11 @@
                                             <constraints>
                                                 <constraint firstItem="cbK-W5-L2G" firstAttribute="centerY" secondItem="Hud-eH-MQW" secondAttribute="centerY" constant="-3.75" id="DsP-pE-1UH"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hud-eH-MQW" secondAttribute="trailing" constant="12" id="Eeq-1l-a3v"/>
-                                                <constraint firstItem="Hud-eH-MQW" firstAttribute="leading" secondItem="cbK-W5-L2G" secondAttribute="trailing" constant="45" id="Fnv-Ah-nht"/>
+                                                <constraint firstItem="Hud-eH-MQW" firstAttribute="leading" secondItem="cbK-W5-L2G" secondAttribute="trailing" constant="-38" id="Fnv-Ah-nht"/>
                                                 <constraint firstItem="CPI-bT-owz" firstAttribute="leading" secondItem="xEq-mq-Juf" secondAttribute="leading" constant="8" id="Qjt-km-1Bi"/>
                                                 <constraint firstItem="tW6-nv-091" firstAttribute="leading" secondItem="cbK-W5-L2G" secondAttribute="leading" id="TWX-ch-pdY"/>
                                                 <constraint firstItem="tW6-nv-091" firstAttribute="leading" secondItem="CPI-bT-owz" secondAttribute="trailing" constant="8" id="WFS-4E-T3W"/>
-                                                <constraint firstAttribute="bottom" secondItem="cbK-W5-L2G" secondAttribute="bottom" constant="10.5" id="Wbz-s6-PKO"/>
+                                                <constraint firstAttribute="bottom" secondItem="cbK-W5-L2G" secondAttribute="bottom" constant="15.5" id="Wbz-s6-PKO"/>
                                                 <constraint firstItem="tW6-nv-091" firstAttribute="top" secondItem="xEq-mq-Juf" secondAttribute="top" constant="9" id="cPp-1O-sYl"/>
                                                 <constraint firstAttribute="trailing" secondItem="tW6-nv-091" secondAttribute="trailing" constant="12" id="cSS-gh-4sO"/>
                                                 <constraint firstAttribute="centerY" secondItem="CPI-bT-owz" secondAttribute="centerY" constant="0.5" id="kez-nM-aAA"/>
@@ -467,6 +467,6 @@
         <image name="ic_left_3.png" width="24" height="24"/>
         <image name="ic_novideo@3x.png" width="300" height="300"/>
         <image name="ic_record_normal.png" width="28" height="28"/>
-        <image name="ic_video_normal.png" width="21" height="35"/>
+        <image name="ic_video_normal.png" width="320" height="44"/>
     </resources>
 </document>

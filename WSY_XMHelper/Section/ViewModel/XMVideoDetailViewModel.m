@@ -28,11 +28,28 @@
     }
     return self;
 }
-
+- (NSMutableArray *)detailList
+{
+    if (_detailList == nil) {
+        _detailList = [NSMutableArray new];
+    }
+    return _detailList;
+}
 - (RACSignal *)fetchObject
 {
     return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:_type name:_ID page:_page] doNext:^(NSArray *list) {
-        self.detailList = list;
+        [self.detailList removeAllObjects];
+        [self.detailList addObjectsFromArray:list];
     }];
+}
+- (RACSignal *)fetchMoreObject
+{
+    return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:self.type name:self.ID page:self.page] doNext:^(NSArray *list) {
+        [self.detailList addObjectsFromArray:list];
+    }];
+}
+-(NSInteger)page
+{
+    return (_page +1);
 }
 @end

@@ -8,6 +8,7 @@
 
 #import "XMDetailCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "NSDate+Helper.h"
 
 @interface XMDetailCell ()
 @property (weak, nonatomic) IBOutlet UIView *backGroundView;
@@ -29,7 +30,7 @@
     _imgString = [data objectForKey:@"img"];
     [_icon sd_setImageWithURL:[NSURL URLWithString:_imgString]];
     _name.text = [data objectForKey:@"name"];
-    _time.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"time"]];
+    _time.text = [NSDate confromTimeWithTimeInterverString:[NSString stringWithFormat:@"%@", [data objectForKey:@"time"]]];
     _length.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"length"]];
     _youku = [[XMYouKuModel alloc] init];
     [_youku setModelData:data];
