@@ -46,20 +46,20 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
 }
 
 
-- (void)xm_videoListWithVideoType: (VIDEO_TYPE)type
+- (void)requestVideoListWithVideoType: (VIDEO_TYPE)type
 {
     [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_videoListWithVideoType:type]] subscribeNext:^(NSArray *list) {
         self.videoList = list;
     }];
 }
-- (void)xm_detailListWithType:(VIDEO_TYPE)type name:(NSString *)name page:(NSInteger)page
+- (void)requestVideoDetailListWithType:(VIDEO_TYPE)type name:(NSString *)name page:(NSInteger)page
 {
     [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_seriesWithType:type name:name page:page]] subscribeNext:^(NSArray *list) {
         self.detailList = list;
     }];
 }
 
-- (void)xm_addVideoDownloadwithVideoDic:(NSDictionary *)videoDic
+- (void)addVideoDownloadWithVideoDic:(NSDictionary *)videoDic
 {
         [self downloader_addDownloadToSqeue:videoDic];
 }
@@ -137,7 +137,7 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
     
 }
 
-- (void)xm_deleteLocalDownloadFileWithFileUUID:(NSString *)uuid
+- (void)deleteLocalDownloadFileWithFileUUID:(NSString *)uuid
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];

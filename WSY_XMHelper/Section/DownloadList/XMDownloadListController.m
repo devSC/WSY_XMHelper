@@ -149,7 +149,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
 
         XMDownloadInfo *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [[XMDataManager defaultDataManager] xm_deleteLocalDownloadFileWithFileUUID:info.youku_id];
+        [[XMDataManager defaultDataManager] deleteLocalDownloadFileWithFileUUID:info.youku_id];
         [info MR_deleteEntity];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         

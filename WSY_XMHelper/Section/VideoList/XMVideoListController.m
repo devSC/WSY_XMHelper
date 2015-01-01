@@ -40,7 +40,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
 //    [self.navigationController.navigationBar setBarTintColor: [UIColor colorWithHexString:@"2F438B"]];
 
     self.type = VIDEO_TYPE_PLAYER;
-    [[XMDataManager defaultDataManager] xm_videoListWithVideoType:_type];
+    [[XMDataManager defaultDataManager] requestVideoListWithVideoType:_type];
     @weakify(self);
     [[RACObserve([XMDataManager defaultDataManager], videoList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *listArray) {
         @strongify(self);
@@ -50,7 +50,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
 }
 - (IBAction)segmentDidPressed:(UISegmentedControl *)sender {
     self.type = (sender.selectedSegmentIndex +2);
-    [[XMDataManager defaultDataManager] xm_videoListWithVideoType:_type];
+    [[XMDataManager defaultDataManager] requestVideoListWithVideoType:_type];
     NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
     if(self.videoList.count > 0) {
         [self.collectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionTop animated:YES];

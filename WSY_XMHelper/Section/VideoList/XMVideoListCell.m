@@ -8,6 +8,7 @@
 
 #import "XMVideoListCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <GCDObjC.h>
 
 @implementation XMVideoListCell
 

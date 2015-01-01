@@ -37,11 +37,16 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    backButton
+    [backButton setTitle:@"back" forState:UIControlStateNormal];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+
     
     self.title = _name;
     
-    [[XMDataManager defaultDataManager] xm_detailListWithType:_type name:_ID page:_page];
+    [[XMDataManager defaultDataManager] requestVideoDetailListWithType:_type name:_ID page:_page];
     
     @weakify(self);
     [[RACObserve([XMDataManager defaultDataManager], detailList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *list) {
@@ -85,18 +90,60 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     
     return cell;
 }
+- (void)longPress:(UILongPressGestureRecognizer *)recognizer {
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+//        TSTableViewCell *cell = (TSTableViewCell *)recognizer.view;
+
+        
+    }
+}
+
+
+//
+//- (void)flag:(id)sender {
+//
+//    NSLog(@"Cell was flagged");
+//
+//}
+//
+//- (void)approve:(id)sender {
+//    NSLog(@"Cell was approved");
+//}
+//
+//- (void)deny:(id)sender {
+//    NSLog(@"Cell was denied");
+//}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     XMDetailCell *cell = (XMDetailCell *)[tableView cellForRowAtIndexPath:indexPath];
 
-    NSLog(@"%@", NSStringFromCGRect(cell.frame));
-    CGRect menuRect = cell.frame;
-    menuRect.origin.y -= tableView.contentOffset.y;
-    menuRect.origin.y += 50;
-    [self.popupMenu showInView:self.view targetRect:menuRect animated:YES];
-    return;
+//    [cell becomeFirstResponder];
+//
+//    
+//    UIMenuItem *flag = [[UIMenuItem alloc] initWithTitle:@"Flag"action:@selector(flag:)];
+//    UIMenuItem *approve = [[UIMenuItem alloc] initWithTitle:@"Approve"action:@selector(approve:)];
+//    UIMenuItem *deny = [[UIMenuItem alloc] initWithTitle:@"Deny"action:@selector(deny:)];
+//    
+//    
+//    UIMenuController *menu = [UIMenuController sharedMenuController];
+//    
+//    [menu setMenuItems:[NSArray arrayWithObjects:flag, approve, deny, nil]];
+//    
+//    [menu setTargetRect:cell.frame inView:cell.superview];
+//    
+//    [menu setMenuVisible:YES animated:YES];
+//    
+//    return;
+    
+//    NSLog(@"%@", NSStringFromCGRect(cell.frame));
+//    CGRect menuRect = cell.frame;
+//    menuRect.origin.y -= tableView.contentOffset.y;
+//    menuRect.origin.y += 50;
+//    [self.popupMenu showInView:self.view targetRect:menuRect animated:YES];
+//    return;
     UIAlertView *alertView = [UIAlertView bk_alertViewWithTitle:@"选择操作"];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"下载", @"下载") handler:^{
         NSString *urlString = cell.youku.video_addr;
@@ -104,7 +151,7 @@ static NSString *const cellIdentifier = @"XMDetailCell";
         NSString *length = cell.length.text;
         NSString *time = cell.time.text;
         NSDictionary *dic = @{@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"imgString": cell.imgString, @"youku_id": cell.youku.youku_id};
-        [[XMDataManager defaultDataManager] xm_addVideoDownloadwithVideoDic:dic];
+        [[XMDataManager defaultDataManager] addVideoDownloadWithVideoDic:dic];
     }];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"播放", nil) handler:^{
         NSString *urlString = cell.youku.video_addr_super;
