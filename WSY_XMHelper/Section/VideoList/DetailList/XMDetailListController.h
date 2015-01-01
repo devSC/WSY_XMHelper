@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "XMHelper.h"
+#import "XMVideoDetailViewModel.h"
 @interface XMDetailListController : UITableViewController
+
+@property (nonatomic, strong) XMVideoDetailViewModel *viewModel;
 
 - (void)setVideoListType: (VIDEO_TYPE)type name: (NSString *)name videoId: (NSString *)ID;
 @end

@@ -12,21 +12,24 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <UIAlertView+BlocksKit.h>
 #import "QBPopupMenu.h"
+#import <UIScrollView+UzysAnimatedGifPullToRefresh.h>
 
 @interface XMDetailListController ()
-
-@property (nonatomic, assign) VIDEO_TYPE type;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, assign) NSInteger page;
-@property (nonatomic, copy) NSString *ID;
-@property (nonatomic, assign) NSArray *detailList;
-
 @property (nonatomic, strong) QBPopupMenu *popupMenu;
 
 @end
 
 static NSString *const cellIdentifier = @"XMDetailCell";
 @implementation XMDetailListController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.viewModel = [[XMVideoDetailViewModel alloc] init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,33 +40,38 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    backButton
-    [backButton setTitle:@"back" forState:UIControlStateNormal];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-//    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
 
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self
+    self.title = self.viewModel.name;
+    __weak typeof(self) weakSelf = self;
+    [self.tableView addPullToRefreshActionHandler:^{
+        [weakSelf startRefresh];
+    } ProgressImagesGifName:@"spinner_dropbox@2x.gif"
+                             LoadingImagesGifName:@"jgr@2x.gif"
+                          ProgressScrollThreshold:60 LoadingImageFrameRate:30];
     
-    self.title = _name;
-    
-    [[XMDataManager defaultDataManager] requestVideoDetailListWithType:_type name:_ID page:_page];
+    RACSignal *viewWillApperSignal = [self rac_signalForSelector:@selector(viewWillAppear:)];
+    RACSignal *refreshSignal = [self rac_signalForSelector:@selector(startRefresh)];
     
     @weakify(self);
-    [[RACObserve([XMDataManager defaultDataManager], detailList) deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *list) {
+    [[[[RACSignal merge:@[viewWillApperSignal, refreshSignal]] flattenMap:^RACStream *(id value) {
         @strongify(self);
-        self.detailList = list;
-//        NSLog(@"%@", list);
+        return [self.viewModel fetchObject];
+    }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView stopRefreshAnimation];
         [self.tableView reloadData];
     }];
+    
+    
 }
-- (void)setVideoListType:(VIDEO_TYPE)type name:(NSString *)name videoId:(NSString *)ID
+- (void)startRefresh
 {
-    self.type = type;
-    self.name = name;
-    self.ID = ID;
-    self.page = 1;
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -79,14 +87,14 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.detailList.count;
+    return self.viewModel.detailList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XMDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    [cell setCellData:[_detailList objectAtIndex:indexPath.row]];
+    [cell setCellData:[self.viewModel.detailList objectAtIndex:indexPath.row]];
     
     return cell;
 }
@@ -97,22 +105,6 @@ static NSString *const cellIdentifier = @"XMDetailCell";
         
     }
 }
-
-
-//
-//- (void)flag:(id)sender {
-//
-//    NSLog(@"Cell was flagged");
-//
-//}
-//
-//- (void)approve:(id)sender {
-//    NSLog(@"Cell was approved");
-//}
-//
-//- (void)deny:(id)sender {
-//    NSLog(@"Cell was denied");
-//}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

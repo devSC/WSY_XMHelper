@@ -22,7 +22,6 @@ typedef NS_ENUM(NSInteger, XMVideoListSegmentedChart) {
 @property (nonatomic, assign) VIDEO_TYPE type;
 
 @property (nonatomic, assign) XMVideoListSegmentedChart selectedChart;
-
 @property (nonatomic, strong) NSArray *videoList;
 
 

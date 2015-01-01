@@ -18,6 +18,7 @@
 #import <UIScrollView+UzysAnimatedGifPullToRefresh.h>
 
 #import "XMVideoListViewModel.h"
+#import "XMVideoDetailViewModel.h"
 
 @interface XMVideoListController ()<UICollectionViewDelegateFlowLayout>
 {
@@ -60,7 +61,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     
     @weakify(self);
     [[[[RACSignal merge:@[viewAppelSignal,refreshSignal, segmentedChangedSignal]] flattenMap:^RACStream *(id value) {
-        NSLog(@"test");
+//        NSLog(@"test");
         @strongify(self);
         return [self.viewModel fetchObject];
     }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
@@ -127,7 +128,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     XMVideoListCell *cell = (XMVideoListCell *)sender;
     if ([segue.identifier isEqualToString:@"XMDetail"]) {
         XMDetailListController *detailsViewController =  segue.destinationViewController;
-        [detailsViewController setVideoListType:self.viewModel.type name:cell.name.text videoId:cell.videoId ];
+        detailsViewController.viewModel = [XMVideoDetailViewModel detailViewModelWithVideoListType:self.viewModel.type name:cell.name.text videoId:cell.videoId];
     }
 }
 #pragma mark <UICollectionViewDelegate>
@@ -136,7 +137,6 @@ static NSString * const reuseIdentifier = @"VideoListCell";
         return CGSizeMake(80, 90);
     }
     return CGSizeMake(110, 130);
-
 }
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

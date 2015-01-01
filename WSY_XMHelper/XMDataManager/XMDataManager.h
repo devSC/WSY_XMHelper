@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
 + (instancetype)defaultDataManager;
 
 - (RACSignal *)requestVideoListWithVideoType: (VIDEO_TYPE)type;
-- (void)requestVideoDetailListWithType: (VIDEO_TYPE)type name: (NSString *)name page: (NSInteger)page;
+- (RACSignal *)requestVideoDetailListWithType: (VIDEO_TYPE)type name: (NSString *)name page: (NSInteger)page;
 //download
 - (void)addVideoDownloadWithVideoDic: (NSDictionary *)videoDic;
 - (void)deleteLocalDownloadFileWithFileUUID: (NSString *)uuid;

@@ -22,8 +22,6 @@
 		FEAAF07F1A33F6E800731999 /* XMAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0771A33F6E800731999 /* XMAPI.m */; };
 		FEAAF0801A33F6E800731999 /* XMListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF07A1A33F6E800731999 /* XMListModel.m */; };
 		FEAAF0811A33F6E800731999 /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF07D1A33F6E800731999 /* XMRequest.m */; };
-		FEAAF0841A340A7500731999 /* XMDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0831A340A7500731999 /* XMDetailListController.m */; };
-		FEAAF0871A34130A00731999 /* XMDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0861A34130A00731999 /* XMDetailCell.m */; };
 		FEAAF08A1A34148400731999 /* XMYouKuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAAF0891A34148400731999 /* XMYouKuModel.m */; };
 		FEAAF08C1A343E4D00731999 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF08B1A343E4D00731999 /* InfoPlist.strings */; };
 		FEAAF0901A34860100731999 /* background_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAAF08F1A34860100731999 /* background_logo@2x.png */; };
@@ -42,6 +40,9 @@
 		FEB5CA351A552E67000D9494 /* Preloader_10@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = FEB5CA301A552E67000D9494 /* Preloader_10@2x.gif */; };
 		FEB5CA361A552E67000D9494 /* run@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = FEB5CA311A552E67000D9494 /* run@2x.gif */; };
 		FEB5CA371A552E67000D9494 /* spinner_dropbox@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = FEB5CA321A552E67000D9494 /* spinner_dropbox@2x.gif */; };
+		FEB5CA3A1A554B1B000D9494 /* XMVideoDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA391A554B1B000D9494 /* XMVideoDetailViewModel.m */; };
+		FEB5CA401A554D43000D9494 /* XMDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA3D1A554D43000D9494 /* XMDetailCell.m */; };
+		FEB5CA411A554D43000D9494 /* XMDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA3F1A554D43000D9494 /* XMDetailListController.m */; };
 		FEB65B831A3C594100FEB67A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB65B821A3C594100FEB67A /* libxml2.2.dylib */; };
 		FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2861A37328F0059E826 /* XMM3U8Handler.m */; };
 		FED0B28A1A3734940059E826 /* XMM3U8PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2891A3734940059E826 /* XMM3U8PlayList.m */; };
@@ -103,10 +104,6 @@
 		FEAAF07A1A33F6E800731999 /* XMListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMListModel.m; sourceTree = "<group>"; };
 		FEAAF07C1A33F6E800731999 /* XMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMRequest.h; sourceTree = "<group>"; };
 		FEAAF07D1A33F6E800731999 /* XMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMRequest.m; sourceTree = "<group>"; };
-		FEAAF0821A340A7500731999 /* XMDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDetailListController.h; sourceTree = "<group>"; };
-		FEAAF0831A340A7500731999 /* XMDetailListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailListController.m; sourceTree = "<group>"; };
-		FEAAF0851A34130A00731999 /* XMDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDetailCell.h; sourceTree = "<group>"; };
-		FEAAF0861A34130A00731999 /* XMDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailCell.m; sourceTree = "<group>"; };
 		FEAAF0881A34148400731999 /* XMYouKuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMYouKuModel.h; sourceTree = "<group>"; };
 		FEAAF0891A34148400731999 /* XMYouKuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMYouKuModel.m; sourceTree = "<group>"; };
 		FEAAF08B1A343E4D00731999 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = WSY_XMHelperTests/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
@@ -134,6 +131,12 @@
 		FEB5CA301A552E67000D9494 /* Preloader_10@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Preloader_10@2x.gif"; sourceTree = "<group>"; };
 		FEB5CA311A552E67000D9494 /* run@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "run@2x.gif"; sourceTree = "<group>"; };
 		FEB5CA321A552E67000D9494 /* spinner_dropbox@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "spinner_dropbox@2x.gif"; sourceTree = "<group>"; };
+		FEB5CA381A554B1B000D9494 /* XMVideoDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMVideoDetailViewModel.h; sourceTree = "<group>"; };
+		FEB5CA391A554B1B000D9494 /* XMVideoDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMVideoDetailViewModel.m; sourceTree = "<group>"; };
+		FEB5CA3C1A554D43000D9494 /* XMDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDetailCell.h; sourceTree = "<group>"; };
+		FEB5CA3D1A554D43000D9494 /* XMDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailCell.m; sourceTree = "<group>"; };
+		FEB5CA3E1A554D43000D9494 /* XMDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMDetailListController.h; sourceTree = "<group>"; };
+		FEB5CA3F1A554D43000D9494 /* XMDetailListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDetailListController.m; sourceTree = "<group>"; };
 		FEB65B821A3C594100FEB67A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		FED0B2851A37328F0059E826 /* XMM3U8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMM3U8Handler.h; sourceTree = "<group>"; };
 		FED0B2861A37328F0059E826 /* XMM3U8Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMM3U8Handler.m; sourceTree = "<group>"; };
@@ -329,10 +332,7 @@
 				FEAAF06D1A33F60E00731999 /* XMVideoListCell.m */,
 				FEAAF06E1A33F60E00731999 /* XMVideoListController.h */,
 				FEAAF06F1A33F60E00731999 /* XMVideoListController.m */,
-				FEAAF0821A340A7500731999 /* XMDetailListController.h */,
-				FEAAF0831A340A7500731999 /* XMDetailListController.m */,
-				FEAAF0851A34130A00731999 /* XMDetailCell.h */,
-				FEAAF0861A34130A00731999 /* XMDetailCell.m */,
+				FEB5CA3B1A554D43000D9494 /* DetailList */,
 			);
 			path = VideoList;
 			sourceTree = "<group>";
@@ -421,8 +421,21 @@
 			children = (
 				FEB5CA2B1A551F44000D9494 /* XMVideoListViewModel.h */,
 				FEB5CA2C1A551F44000D9494 /* XMVideoListViewModel.m */,
+				FEB5CA381A554B1B000D9494 /* XMVideoDetailViewModel.h */,
+				FEB5CA391A554B1B000D9494 /* XMVideoDetailViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEB5CA3B1A554D43000D9494 /* DetailList */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5CA3C1A554D43000D9494 /* XMDetailCell.h */,
+				FEB5CA3D1A554D43000D9494 /* XMDetailCell.m */,
+				FEB5CA3E1A554D43000D9494 /* XMDetailListController.h */,
+				FEB5CA3F1A554D43000D9494 /* XMDetailListController.m */,
+			);
+			path = DetailList;
 			sourceTree = "<group>";
 		};
 		FED0B2841A372E3E0059E826 /* XMDownloader */ = {
@@ -661,15 +674,16 @@
 				FED0B2D41A388F430059E826 /* XMDownloadListController.m in Sources */,
 				FED0B2901A3734C80059E826 /* XMVideoDownloader.m in Sources */,
 				FED0B2D71A3891220059E826 /* XMDownloadCell.m in Sources */,
-				FEAAF0841A340A7500731999 /* XMDetailListController.m in Sources */,
 				FEAAF08A1A34148400731999 /* XMYouKuModel.m in Sources */,
 				FED0B2B31A3751A60059E826 /* ASIDataCompressor.m in Sources */,
 				FED0B2B21A3751A60059E826 /* ASIAuthenticationDialog.m in Sources */,
 				FEAAF03E1A33646B00731999 /* main.m in Sources */,
+				FEB5CA411A554D43000D9494 /* XMDetailListController.m in Sources */,
 				FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */,
 				FEB5C94A1A4C692B000D9494 /* QBPlasticPopupMenu.m in Sources */,
+				FEB5CA3A1A554B1B000D9494 /* XMVideoDetailViewModel.m in Sources */,
+				FEB5CA401A554D43000D9494 /* XMDetailCell.m in Sources */,
 				FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */,
-				FEAAF0871A34130A00731999 /* XMDetailCell.m in Sources */,
 				FEB5CA2D1A551F44000D9494 /* XMVideoListViewModel.m in Sources */,
 				FE056C751A3DD204003FE277 /* Model.xcdatamodeld in Sources */,
 				FEB5C93C1A4C5093000D9494 /* TQTableViewCellRemoveController.m in Sources */,
