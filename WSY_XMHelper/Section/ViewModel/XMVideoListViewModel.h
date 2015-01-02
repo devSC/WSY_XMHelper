@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, XMVideoListSegmentedChart) {
 
 - (instancetype)init;
 
-- (RACSignal *)fetchObject;
+- (RACSignal *)fetchObjectWithErrorHandler: (void(^)())errorHandle;
+- (RACSignal *)refreshObjectWithErrorHandler: (void(^)())errorHandle;
 
 @end

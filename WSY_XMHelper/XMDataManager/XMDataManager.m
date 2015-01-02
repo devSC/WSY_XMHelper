@@ -46,16 +46,20 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
 }
 
 
-- (RACSignal *)requestVideoListWithVideoType: (VIDEO_TYPE)type
+- (RACSignal *)requestVideoListWithVideoType: (VIDEO_TYPE)type errorHandler: (void(^)())errorHandle
 {
-    return [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_videoListWithVideoType:type]] doNext:^(NSArray *list) {
+    return [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_videoListWithVideoType:type] errorHandler:^{
+        errorHandle();
+    }] doNext:^(NSArray *list) {
         self.videoList = list;
     }] ;
 }
 
-- (RACSignal *)requestVideoDetailListWithType:(VIDEO_TYPE)type name:(NSString *)name page:(NSInteger)page
+- (RACSignal *)requestVideoDetailListWithType:(VIDEO_TYPE)type name:(NSString *)name page:(NSInteger)page errorHandler: (void(^)())errorHandle
 {
-    return [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_seriesWithType:type name:name page:page]] doNext:^(NSArray *list) {
+    return [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_seriesWithType:type name:name page:page] errorHandler:^{
+        return errorHandle();
+    }] doNext:^(NSArray *list) {
         self.detailList = list;
     }];
 }

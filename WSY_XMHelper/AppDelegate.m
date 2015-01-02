@@ -39,7 +39,7 @@ static NSString *const path = @"Downloads";
     // Serve files from our embedded Web folder
     NSString *pathPrefix = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *webPath = [pathPrefix stringByAppendingPathComponent:path];
-    NSLog(@"Setting document root: %@", webPath);
+    NSLog(@"Setting Root Document: %@", webPath);
     [httpServer setDocumentRoot:webPath];
     //start the httpServer
     

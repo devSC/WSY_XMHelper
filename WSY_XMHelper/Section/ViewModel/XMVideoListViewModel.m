@@ -9,6 +9,11 @@
 #import "XMVideoListViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "XMDataManager.h"
+@interface XMVideoListViewModel()
+
+@property (strong, nonatomic) NSMutableDictionary *cacheDictionary;
+
+@end
 
 @implementation XMVideoListViewModel
 @synthesize videoList = _videoList;
@@ -17,6 +22,7 @@
 {
     self = [super init];
     if (self) {
+        self.cacheDictionary = [NSMutableDictionary new];
         self.type = VIDEO_TYPE_PLAYER;
         RAC(self, type) = [RACObserve(self, selectedChart) map:^id(NSNumber *chart) {
             return @(chart.integerValue +2);
@@ -24,10 +30,34 @@
     }
     return self;
 }
-- (RACSignal *)fetchObject
+
+- (RACSignal *)fetchObjectWithErrorHandler: (void(^)())errorHandle;
 {
-    return [[[XMDataManager defaultDataManager] requestVideoListWithVideoType:self.type] doNext:^(NSArray *videoArray) {
+
+    if (self.cacheDictionary[@(self.type)]) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            self.videoList = self.cacheDictionary[@(self.type)];
+            [subscriber sendNext:nil];
+            [subscriber sendCompleted];
+            return [RACDisposable disposableWithBlock:^{
+            }];
+        }];
+    }else {
+        return [self refreshObjectWithErrorHandler:^{
+            errorHandle();
+        }];
+    }
+}
+
+- (RACSignal *)refreshObjectWithErrorHandler: (void(^)())errorHandle
+{
+    return [[[XMDataManager defaultDataManager] requestVideoListWithVideoType:self.type errorHandler:^{
+        errorHandle();
+    }] doNext:^(NSArray *videoArray) {
         self.videoList = videoArray;
+        //add cache
+        [self.cacheDictionary setObject:videoArray forKey:@(self.type)];
     }];
 }
+
 @end

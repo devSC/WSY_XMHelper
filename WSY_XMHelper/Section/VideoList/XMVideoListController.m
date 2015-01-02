@@ -52,12 +52,22 @@ static NSString * const reuseIdentifier = @"VideoListCell";
     RACSignal *refreshSignal = [self rac_signalForSelector:@selector(startRefreshHeader)];
     RACSignal *viewAppelSignal = [self rac_signalForSelector:@selector(viewWillAppear:)];
     RACSignal *segmentedChangedSignal = [self.videoTypeSegmented rac_signalForControlEvents:UIControlEventValueChanged];
-    
     @weakify(self);
-    [[[[RACSignal merge:@[viewAppelSignal,refreshSignal, segmentedChangedSignal]] flattenMap:^RACStream *(id value) {
-//        NSLog(@"test");
+    [[[segmentedChangedSignal flattenMap:^RACStream *(id value) {
         @strongify(self);
-        return [self.viewModel fetchObject];
+        return [self.viewModel fetchObjectWithErrorHandler:^{
+            [self.collectionView stopRefreshAnimation];
+        }];
+    }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.collectionView reloadData];
+    }];
+    
+    [[[[RACSignal merge:@[viewAppelSignal,refreshSignal]] flattenMap:^RACStream *(id value) {
+        @strongify(self);
+        return [self.viewModel fetchObjectWithErrorHandler:^{
+            [self.collectionView stopRefreshAnimation];
+        }];
     }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self);
         [self.collectionView reloadData];

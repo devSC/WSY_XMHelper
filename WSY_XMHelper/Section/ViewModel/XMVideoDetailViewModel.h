@@ -20,7 +20,8 @@
 
 + (instancetype)detailViewModelWithVideoListType:(VIDEO_TYPE)type name:(NSString *)name videoId:(NSString *)ID;
 
-- (RACSignal *)fetchObject;
-- (RACSignal *)fetchMoreObject;
+- (RACSignal *)fetchObjectWithErrorHandler: (void(^)())errorHandle;
+- (RACSignal *)fetchMoreObjectWithErrorHandler: (void(^)())errorHandle;
+
 
 @end

@@ -108,7 +108,6 @@
                                 <segment title="解说"/>
                                 <segment title="系列"/>
                                 <segment title="赛事"/>
-                                <segment title="最新"/>
                             </segments>
                         </segmentedControl>
                     </navigationItem>

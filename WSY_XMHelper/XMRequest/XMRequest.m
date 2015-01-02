@@ -33,7 +33,7 @@
     }
     return self;
 }
-- (RACSignal *)fetchJSONFromUrlString:(NSString *)urlString
+- (RACSignal *)fetchJSONFromUrlString:(NSString *)urlString errorHandler: (void(^)())errorHandle
 {
     //创建信号
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
@@ -63,6 +63,7 @@
         }];
     }] doError:^(NSError *error) {
         NSLog(@"fetchJSONFromUrlStringError: %@", error);
+        return errorHandle(error);
     }];
 }
 @end

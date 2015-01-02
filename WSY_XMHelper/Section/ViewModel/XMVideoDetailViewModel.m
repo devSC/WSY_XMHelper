@@ -35,16 +35,31 @@
     }
     return _detailList;
 }
-- (RACSignal *)fetchObject
+- (RACSignal *)fetchObjectWithErrorHandler: (void(^)())errorHandle
 {
-    return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:_type name:_ID page:_page] doNext:^(NSArray *list) {
+    return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:_type name:_ID page:_page errorHandler:^{
+        errorHandle();
+    }] doNext:^(NSArray *list) {
         [self.detailList removeAllObjects];
         [self.detailList addObjectsFromArray:list];
     }];
 }
-- (RACSignal *)fetchMoreObject
+- (RACSignal *)fetchMoreObjectWithErrorHandler: (void(^)())errorHandle
 {
-    return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:self.type name:self.ID page:self.page] doNext:^(NSArray *list) {
+    if (self.detailList.count <20) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            [subscriber sendNext:nil];
+            [subscriber sendCompleted];
+            return [RACDisposable disposableWithBlock:^{
+            }];
+        }];
+    }
+    return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:self.type name:self.ID page:self.page errorHandler:^{
+        return errorHandle();
+    }] doNext:^(NSArray *list) {
+        if ([self.detailList containsObject:list.firstObject]) {
+            return;
+        }
         [self.detailList addObjectsFromArray:list];
     }];
 }

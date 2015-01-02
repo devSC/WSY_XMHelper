@@ -61,7 +61,9 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     @weakify(self);
     [[[[RACSignal merge:@[viewWillApperSignal, refreshSignal]] flattenMap:^RACStream *(id value) {
         @strongify(self);
-        return [self.viewModel fetchObject];
+        return [self.viewModel fetchObjectWithErrorHandler:^{
+            [self.tableView stopRefreshAnimation];
+        }];
     }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         @strongify(self);
         [self.tableView stopRefreshAnimation];
@@ -71,7 +73,9 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 
     [[[[self rac_signalForSelector:@selector(startRefreshFooter)] flattenMap:^RACStream *(id value) {
         @strongify(self);
-        return [self.viewModel fetchMoreObject];
+        return [self.viewModel fetchMoreObjectWithErrorHandler:^{
+            [self.tableView footerEndRefreshing];
+        }];
     }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
         [self.tableView footerEndRefreshing];
         [self.tableView reloadData];

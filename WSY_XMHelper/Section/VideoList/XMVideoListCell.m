@@ -24,7 +24,7 @@
     [_icon sd_setImageWithURL:[NSURL URLWithString:[data objectForKey:@"img"]]];
     _name.text = [data objectForKey:@"name"];
     _videoId = [data objectForKey:@"id"];
-    _name.text = [NSString stringWithFormat:@"%@ id:%@", [data objectForKey:@"name"], [data objectForKey:@"id"]];
+    _name.text = [NSString stringWithFormat:@"%@", [data objectForKey:@"name"]];
 }
 
 

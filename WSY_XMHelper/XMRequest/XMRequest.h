@@ -11,7 +11,7 @@
 @interface XMRequest : NSObject
 
 + (instancetype)defaultRequest;
--(RACSignal *)fetchJSONFromUrlString: (NSString *)urlString;
+-(RACSignal *)fetchJSONFromUrlString: (NSString *)urlString errorHandler: (void(^)())errorHandle;
 
 
 @end
