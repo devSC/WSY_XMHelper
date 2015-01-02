@@ -122,35 +122,12 @@ static NSString *const cellIdentifier = @"XMDetailCell";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     XMDetailCell *cell = (XMDetailCell *)[tableView cellForRowAtIndexPath:indexPath];
-
-//    [cell becomeFirstResponder];
-//
-//    
-//    UIMenuItem *flag = [[UIMenuItem alloc] initWithTitle:@"Flag"action:@selector(flag:)];
-//    UIMenuItem *approve = [[UIMenuItem alloc] initWithTitle:@"Approve"action:@selector(approve:)];
-//    UIMenuItem *deny = [[UIMenuItem alloc] initWithTitle:@"Deny"action:@selector(deny:)];
-//    
-//    
-//    UIMenuController *menu = [UIMenuController sharedMenuController];
-//    
-//    [menu setMenuItems:[NSArray arrayWithObjects:flag, approve, deny, nil]];
-//    
-//    [menu setTargetRect:cell.frame inView:cell.superview];
-//    
-//    [menu setMenuVisible:YES animated:YES];
-//    
-//    return;
     
-//    NSLog(@"%@", NSStringFromCGRect(cell.frame));
-//    CGRect menuRect = cell.frame;
-//    menuRect.origin.y -= tableView.contentOffset.y;
-//    menuRect.origin.y += 50;
-//    [self.popupMenu showInView:self.view targetRect:menuRect animated:YES];
-//    return;
     UIAlertView *alertView = [UIAlertView bk_alertViewWithTitle:@"选择操作"];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"下载", @"下载") handler:^{
-        NSString *urlString = cell.youku.video_addr;
-//        NSString *name = cell.name.text;
+
+        NSString *videoQuality = [[NSUserDefaults standardUserDefaults] objectForKey:@"videoDownloadQuality"];
+        NSString *urlString = cell.youku.videoUrlDic[videoQuality];
         NSString *length = cell.length.text;
         NSString *time = cell.time.text;
         NSDictionary *dic = @{@"name": cell.name.text, @"urlString": urlString, @"length":length, @"time": time, @"imgString": cell.imgString, @"youku_id": cell.youku.youku_id};

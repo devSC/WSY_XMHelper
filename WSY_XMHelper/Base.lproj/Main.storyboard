@@ -35,7 +35,7 @@
                             <size key="itemSize" width="110" height="130"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="10"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoListCell" id="BHP-aS-EjJ" customClass="XMVideoListCell">
@@ -109,6 +109,7 @@
                                 <segment title="系列"/>
                                 <segment title="赛事"/>
                             </segments>
+                            <color key="tintColor" red="0.90196078431372551" green="0.29019607843137257" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
@@ -369,7 +370,7 @@
         <!--设置-->
         <scene sceneID="qNG-mO-Psc">
             <objects>
-                <tableViewController id="Urp-kP-ruM" sceneMemberID="viewController">
+                <tableViewController id="Urp-kP-ruM" customClass="XMSettingController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="20" sectionFooterHeight="20" id="DIJ-3a-Ljo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,54 +378,61 @@
                         <sections>
                             <tableViewSection headerTitle="" id="PPD-bN-Uqq">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RnR-dB-9db">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="RnR-dB-9db">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RnR-dB-9db" id="4js-jn-wnZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="系统设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4US-Ih-fRE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="下载清晰度:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4US-Ih-fRE">
                                                     <rect key="frame" x="12" y="14" width="138" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="niT-oq-Xnu">
+                                                    <rect key="frame" x="413" y="8" width="167" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="167" id="F9G-WW-jsU"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="一般"/>
+                                                        <segment title="360P"/>
+                                                        <segment title="720p"/>
+                                                    </segments>
+                                                    <color key="tintColor" red="0.90196078430000004" green="0.2901960784" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="segmentControlTouched:" destination="Urp-kP-ruM" eventType="valueChanged" id="mL1-WZ-qwT"/>
+                                                    </connections>
+                                                </segmentedControl>
                                             </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="" id="Yxu-Fo-t5M">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="23p-aO-1Rm">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="23p-aO-1Rm" id="aab-Oj-x1o">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="清除缓存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-5g-JuP">
-                                                    <rect key="frame" x="12" y="14" width="159" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="niT-oq-Xnu" secondAttribute="centerY" id="Llk-Nf-XW6"/>
+                                                <constraint firstItem="4US-Ih-fRE" firstAttribute="leading" secondItem="4js-jn-wnZ" secondAttribute="leadingMargin" constant="4" id="idH-Nm-7en"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="niT-oq-Xnu" secondAttribute="trailing" constant="12" id="plK-kh-wFx"/>
+                                                <constraint firstAttribute="centerY" secondItem="4US-Ih-fRE" secondAttribute="centerY" id="wR6-pG-iGX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="uTl-MS-OrE">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7DR-wD-YOR">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="7DR-wD-YOR">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7DR-wD-YOR" id="PHZ-xr-7Zd">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="关于我们" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pun-NV-CbI">
-                                                    <rect key="frame" x="12" y="14" width="146" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="关于我们" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pun-NV-CbI">
+                                                    <rect key="frame" x="16" y="11" width="146" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pun-NV-CbI" firstAttribute="leading" secondItem="PHZ-xr-7Zd" secondAttribute="leadingMargin" constant="4" id="Xoe-CN-yul"/>
+                                                <constraint firstAttribute="centerY" secondItem="pun-NV-CbI" secondAttribute="centerY" id="mF0-cN-CS2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -436,6 +444,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="设置" id="nS9-ZY-FJ6"/>
+                    <connections>
+                        <outlet property="qualitySegment" destination="niT-oq-Xnu" id="gdA-hv-Sua"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5b-Bt-nvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,6 +461,8 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.90196078430000004" green="0.2901960784" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.90196078430000004" green="0.2901960784" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="VOw-HY-quW" kind="relationship" relationship="viewControllers" id="6aP-4J-I4J"/>

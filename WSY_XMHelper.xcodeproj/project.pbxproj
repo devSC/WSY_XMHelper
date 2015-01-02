@@ -55,6 +55,8 @@
 		FEB5CA611A555FB6000D9494 /* XMBaseCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA601A555FB6000D9494 /* XMBaseCollectionController.m */; };
 		FEB5CA641A557E19000D9494 /* XMDownloadListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA631A557E19000D9494 /* XMDownloadListViewModel.m */; };
 		FEB5CA6F1A558543000D9494 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA6E1A558543000D9494 /* NSDate+Helper.m */; };
+		FEB5CA731A565934000D9494 /* tan-paper.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5CA721A565934000D9494 /* tan-paper.png */; };
+		FEB5CA881A5676D3000D9494 /* XMSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5CA871A5676D3000D9494 /* XMSettingController.m */; };
 		FEB65B831A3C594100FEB67A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB65B821A3C594100FEB67A /* libxml2.2.dylib */; };
 		FED0B2871A37328F0059E826 /* XMM3U8Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2861A37328F0059E826 /* XMM3U8Handler.m */; };
 		FED0B28A1A3734940059E826 /* XMM3U8PlayList.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B2891A3734940059E826 /* XMM3U8PlayList.m */; };
@@ -173,6 +175,9 @@
 		FEB5CA631A557E19000D9494 /* XMDownloadListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMDownloadListViewModel.m; sourceTree = "<group>"; };
 		FEB5CA6D1A558543000D9494 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		FEB5CA6E1A558543000D9494 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		FEB5CA721A565934000D9494 /* tan-paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tan-paper.png"; sourceTree = "<group>"; };
+		FEB5CA861A5676D3000D9494 /* XMSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMSettingController.h; sourceTree = "<group>"; };
+		FEB5CA871A5676D3000D9494 /* XMSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMSettingController.m; sourceTree = "<group>"; };
 		FEB65B821A3C594100FEB67A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		FED0B2851A37328F0059E826 /* XMM3U8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMM3U8Handler.h; sourceTree = "<group>"; };
 		FED0B2861A37328F0059E826 /* XMM3U8Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMM3U8Handler.m; sourceTree = "<group>"; };
@@ -309,12 +314,12 @@
 				FEAAF0401A33646B00731999 /* AppDelegate.m */,
 				FEAAF0481A33646B00731999 /* Main.storyboard */,
 				FEAAF06A1A33F60E00731999 /* Section */,
-				FED0B2971A3751A60059E826 /* Vendor */,
 				FE62A4C61A3F1A6E00BF98BC /* XMDataManager */,
 				FEAAF0721A33F6E800731999 /* XMManager */,
 				FED0B2841A372E3E0059E826 /* XMDownloader */,
 				FEAAF0751A33F6E800731999 /* XMModel */,
 				FEAAF07B1A33F6E800731999 /* XMRequest */,
+				FED0B2971A3751A60059E826 /* Vendor */,
 				FEAAF03B1A33646B00731999 /* Supporting Files */,
 			);
 			path = WSY_XMHelper;
@@ -358,6 +363,7 @@
 				FEB5CA2A1A551F44000D9494 /* ViewModel */,
 				FEAAF06B1A33F60E00731999 /* VideoList */,
 				FED0B2CE1A388EB90059E826 /* DownloadList */,
+				FEB5CA851A5676D3000D9494 /* SettingController */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 		FEAAF08E1A34860100731999 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FEB5CA721A565934000D9494 /* tan-paper.png */,
 				FED0B2CB1A388DDE0059E826 /* ic_record_normal@2x.png */,
 				FED0B2C91A388CE30059E826 /* ic_left_3@2x.png */,
 				FED0B2C51A388C350059E826 /* ic_novideo@3x.png */,
@@ -518,6 +525,15 @@
 				FEB5CA6E1A558543000D9494 /* NSDate+Helper.m */,
 			);
 			path = "NSDate+Helper";
+			sourceTree = "<group>";
+		};
+		FEB5CA851A5676D3000D9494 /* SettingController */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5CA861A5676D3000D9494 /* XMSettingController.h */,
+				FEB5CA871A5676D3000D9494 /* XMSettingController.m */,
+			);
+			path = SettingController;
 			sourceTree = "<group>";
 		};
 		FED0B2841A372E3E0059E826 /* XMDownloader */ = {
@@ -677,6 +693,7 @@
 				FEB5CA341A552E67000D9494 /* jgr@2x.gif in Resources */,
 				FEAAF04A1A33646B00731999 /* Main.storyboard in Resources */,
 				FED0B2C61A388C350059E826 /* ic_novideo@3x.png in Resources */,
+				FEB5CA731A565934000D9494 /* tan-paper.png in Resources */,
 				FED0B2CC1A388DDE0059E826 /* ic_record_normal@2x.png in Resources */,
 				FEAAF0901A34860100731999 /* background_logo@2x.png in Resources */,
 				FEAAF08C1A343E4D00731999 /* InfoPlist.strings in Resources */,
@@ -774,6 +791,7 @@
 				FED0B2B21A3751A60059E826 /* ASIAuthenticationDialog.m in Sources */,
 				FEAAF03E1A33646B00731999 /* main.m in Sources */,
 				FEB5CA411A554D43000D9494 /* XMDetailListController.m in Sources */,
+				FEB5CA881A5676D3000D9494 /* XMSettingController.m in Sources */,
 				FEB5CA611A555FB6000D9494 /* XMBaseCollectionController.m in Sources */,
 				FEAAF0711A33F60E00731999 /* XMVideoListController.m in Sources */,
 				FEB5C94A1A4C692B000D9494 /* QBPlasticPopupMenu.m in Sources */,

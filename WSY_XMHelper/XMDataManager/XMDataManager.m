@@ -18,7 +18,6 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
 };
 
 @interface XMDataManager()
-@property (nonatomic, strong) NSDictionary *qualityDic;
 @property (nonatomic, strong) NSMutableArray *downloadSqueue;
 @property (nonatomic, assign) XMDownloadStatus downloadStatus;
 
@@ -38,8 +37,7 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
         self.downloadList = [NSMutableArray new];
         self.downloadNow = [NSMutableDictionary new];
         self.downloadSqueue = [NSMutableArray new];
-        self.qualityDic = @{@"0": @"video_addr", @"1": @"video_addr_high", @"2": @"video_addr_super"};
-        
+        self.videoDownloadQuality = [[NSUserDefaults standardUserDefaults] objectForKey:@"videoDownloadQuality"];
         self.downloadStatus = XMDownloadStateDownloadStop;
     }
     return self;

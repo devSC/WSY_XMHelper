@@ -9,13 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "XMAPI.h"
 
-
-typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
-    XMVideoDownloadQualityNormal,
-    XMVideoDownloadQualityHigher,
-    XMVideoDownloadQualitySuper,
-};
-
 @class RACSignal;
 @interface XMDataManager : NSObject
 
@@ -23,7 +16,7 @@ typedef NS_ENUM(NSInteger, XMVideoDownloadQuality) {
 @property (nonatomic, strong) NSArray *detailList;
 @property (nonatomic, strong) NSMutableArray *downloadList;
 @property (nonatomic, strong) NSMutableDictionary *downloadNow;
-@property (nonatomic, assign) XMVideoDownloadQuality quality;
+@property (nonatomic, assign) NSString *videoDownloadQuality;
 
 
 + (instancetype)defaultDataManager;

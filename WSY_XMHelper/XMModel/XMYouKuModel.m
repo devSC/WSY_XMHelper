@@ -9,12 +9,19 @@
 #import "XMYouKuModel.h"
 
 @implementation XMYouKuModel
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
 - (void)setModelData:(NSDictionary *)data
 {
-    self.video_addr = [self getCorrentUrlString: [data objectForKey:@"video_addr"]];
-    self.video_addr_high = [self getCorrentUrlString:[data objectForKey:@"video_addr_high"]];
-    self.video_addr_super = [self getCorrentUrlString:[data objectForKey:@"video_addr_super"]];
+//    self.video_addr = [self getCorrentUrlString: [data objectForKey:@"video_addr"]];
+//    self.video_addr_high = [self getCorrentUrlString:[data objectForKey:@"video_addr_high"]];
+//    self.video_addr_super = [self getCorrentUrlString:[data objectForKey:@"video_addr_super"]];
+    self.videoUrlDic = @{@"normal": [self getCorrentUrlString: [data objectForKey:@"video_addr"]], @"high": [self getCorrentUrlString:[data objectForKey:@"video_addr_high"]], @"super": [self getCorrentUrlString:[data objectForKey:@"video_addr_super"]]};
     self.youku_id = [data objectForKey:@"youku_id"];
 }
 

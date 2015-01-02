@@ -43,6 +43,8 @@ static NSString * const reuseIdentifier = @"VideoListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    self.collectionView.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bg-cloth"]];
+    
     self.viewModel = [[XMVideoListViewModel alloc] init];
     
     RAC(self.viewModel, selectedChart) = [self.videoTypeSegmented rac_newSelectedSegmentIndexChannelWithNilValue:nil];

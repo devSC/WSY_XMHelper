@@ -32,8 +32,6 @@
     [self.collectionView addFooterWithCallback:^{
         [weakSelf startRefreshFooter];
     }];
-    
-    
 }
 
 

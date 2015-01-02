@@ -50,18 +50,15 @@ static NSString *const path = @"Downloads";
     }
 //    [MagicalRecord setLogLevel:MagicalRecordLogLevelOff]
     
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"videoDownloadQuality"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"normal" forKey:@"videoDownloadQuality"];
+    }
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"XMHelper.sqlite"];
-    
-//    [[UINavigationBar appearance] setTitleTextAttributes:
-//     [NSDictionary dictionaryWithObjectsAndKeys:
-//      [UIColor colorWithHexString:@"004B8B"],
-//      NSForegroundColorAttributeName,
-//      shadow, NSShadowAttributeName,
-//      [UIFont fontWithName:@"Avenir Light" size:17.0], NSFontAttributeName,
-//      nil]];
-//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary
-//                                                       dictionaryWithObjectsAndKeys: [UIColor colorWithHexString:@"004B8B"],
-//                                                       NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithHexString:@"E64A19"]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithHexString:@"E64A19"]];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary
+                                                       dictionaryWithObjectsAndKeys: [UIColor colorWithHexString:@"E64A19"],
+                                                       NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
 //
     
     

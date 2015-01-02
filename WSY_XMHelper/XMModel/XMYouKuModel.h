@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface XMYouKuModel : NSObject
+@property (nonatomic, strong) NSDictionary *videoUrlDic;
 @property (nonatomic, copy) NSString *video_addr;
 @property (nonatomic, copy) NSString *video_addr_high;
 @property (nonatomic, copy) NSString *video_addr_super;
