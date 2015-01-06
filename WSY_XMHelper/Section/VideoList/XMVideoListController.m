@@ -125,7 +125,7 @@ static NSString * const reuseIdentifier = @"VideoListCell";
 #pragma mark <UICollectionViewDelegate>
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if ([WSYDeviceInfo deviceSize] == iPhone4inch || [WSYDeviceInfo deviceSize] == iPhone35inch) {
-        return CGSizeMake(80, 90);
+        return CGSizeMake(90, 100);
     }
     return CGSizeMake(110, 130);
 }
