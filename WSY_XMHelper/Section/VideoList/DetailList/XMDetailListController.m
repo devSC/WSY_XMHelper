@@ -134,7 +134,9 @@ static NSString *const cellIdentifier = @"XMDetailCell";
         [[XMDataManager defaultDataManager] addVideoDownloadWithVideoDic:dic];
     }];
     [alertView bk_addButtonWithTitle:NSLocalizedString(@"播放", nil) handler:^{
-        NSString *urlString = cell.youku.video_addr_super;
+        
+        NSString *videoQuality = [[NSUserDefaults standardUserDefaults] objectForKey:@"videoDownloadQuality"];
+        NSString *urlString = cell.youku.videoUrlDic[videoQuality];
         MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:urlString]];
         [self.navigationController presentMoviePlayerViewControllerAnimated:player];
     }];
