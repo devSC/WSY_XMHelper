@@ -77,6 +77,7 @@ static NSString *const cellIdentifier = @"XMDetailCell";
             [self.tableView footerEndRefreshing];
         }];
     }] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id x) {
+        @strongify(self);
         [self.tableView footerEndRefreshing];
         [self.tableView reloadData];
     }];
@@ -145,34 +146,6 @@ static NSString *const cellIdentifier = @"XMDetailCell";
     }];
     [alertView show];
    
-}
-
-- (QBPopupMenu *)popupMenu
-{
-    QBPopupMenuItem *bItem = [QBPopupMenuItem itemWithTitle:@"Hello" actionBlcok:^{
-        NSLog(@"Hello");
-    }];
-    QBPopupMenuItem *bItem2 = [QBPopupMenuItem itemWithTitle:@"Cut" actionBlcok:^{
-        NSLog(@"Cut");
-    }];
-    QBPopupMenuItem *bItem3 = [QBPopupMenuItem itemWithTitle:@"Copy" actionBlcok:^{
-        NSLog(@"Copy");
-    }];
-    QBPopupMenuItem *bItem4 = [QBPopupMenuItem itemWithTitle:@"Delete" actionBlcok:^{
-        NSLog(@"Delete");
-    }];
-    QBPopupMenuItem *bItem5 = [QBPopupMenuItem itemWithImage:[UIImage imageNamed:@"clip"] actionBlock:^{
-        NSLog(@"Clip Image");
-    }];
-    QBPopupMenuItem *bItem6 = [QBPopupMenuItem itemWithTitle:@"Delete" image:[UIImage imageNamed:@"trash"] actionBlcok:^{
-        NSLog(@"Trash Image");
-    }];
-    NSArray *bItems = @[bItem, bItem2, bItem3, bItem4, bItem5, bItem6];
-    
-    QBPopupMenu *popupMenuBlcok = [[QBPopupMenu alloc] initWithItems:bItems];
-    popupMenuBlcok.arrowDirection = QBPopupMenuArrowDirectionDown;
-    popupMenuBlcok.highlightedColor = [[UIColor colorWithRed:0 green:0.478 blue:1.0 alpha:1.0] colorWithAlphaComponent:0.8];
-    return popupMenuBlcok;
 }
 
 

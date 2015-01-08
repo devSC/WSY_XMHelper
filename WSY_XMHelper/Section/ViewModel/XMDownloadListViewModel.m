@@ -13,6 +13,7 @@
 
 #import <CoreData+MagicalRecord.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 
 @interface XMDownloadListViewModel()
 {
@@ -34,8 +35,9 @@
     if (self) {
         self.updateContentSignal = [[RACSubject subject] setNameWithFormat:@"XMDownloadListViewModel updatedContentSignal"];
         self.fetchedResultsController = [self getDownloadList];
-        
+        @weakify(self);
         [RACObserve([XMDataManager defaultDataManager], downloadList) subscribeNext:^(NSMutableArray *list){
+            @strongify(self);
             self.listArray = list;
             self.fetchedResultsController = [self getDownloadList];
             [(RACSubject *)self.updateContentSignal  sendNext:nil];

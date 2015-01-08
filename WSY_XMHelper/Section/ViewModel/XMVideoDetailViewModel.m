@@ -7,8 +7,9 @@
 //
 
 #import "XMVideoDetailViewModel.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "XMDataManager.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 
 
 @implementation XMVideoDetailViewModel
@@ -37,15 +38,18 @@
 }
 - (RACSignal *)fetchObjectWithErrorHandler: (void(^)())errorHandle
 {
+    @weakify(self);
     return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:_type name:_ID page:_page errorHandler:^{
         errorHandle();
     }] doNext:^(NSArray *list) {
+        @strongify(self);
         [self.detailList removeAllObjects];
         [self.detailList addObjectsFromArray:list];
     }];
 }
 - (RACSignal *)fetchMoreObjectWithErrorHandler: (void(^)())errorHandle
 {
+    @weakify(self);
     if (self.detailList.count <20) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             [subscriber sendNext:nil];
@@ -57,6 +61,7 @@
     return [[[XMDataManager defaultDataManager] requestVideoDetailListWithType:self.type name:self.ID page:self.page errorHandler:^{
         return errorHandle();
     }] doNext:^(NSArray *list) {
+        @strongify(self);
         if ([self.detailList containsObject:list.firstObject]) {
             return;
         }

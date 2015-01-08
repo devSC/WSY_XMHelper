@@ -46,18 +46,22 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
 
 - (RACSignal *)requestVideoListWithVideoType: (VIDEO_TYPE)type errorHandler: (void(^)())errorHandle
 {
+    @weakify(self);
     return [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_videoListWithVideoType:type] errorHandler:^{
         errorHandle();
     }] doNext:^(NSArray *list) {
+        @strongify(self);
         self.videoList = list;
     }] ;
 }
 
 - (RACSignal *)requestVideoDetailListWithType:(VIDEO_TYPE)type name:(NSString *)name page:(NSInteger)page errorHandler: (void(^)())errorHandle
 {
+    @weakify(self);
     return [[[XMRequest defaultRequest] fetchJSONFromUrlString:[XMAPI api_seriesWithType:type name:name page:page] errorHandler:^{
         return errorHandle();
     }] doNext:^(NSArray *list) {
+        @strongify(self);
         self.detailList = list;
     }];
 }
@@ -113,9 +117,7 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
         return;
     }
     self.downloadStatus = XMDownloadStateDownloadNow;
-    @weakify(self);
     [[XMVideoDownloader defaultDownloader] downloader_StartDownLoadWithName:downloadInfo.youku_id urlString:downloadInfo.urlString  downloadProgress:^(float progress) {
-        @strongify(self);
         NSString *progressString = [NSString stringWithFormat:@"%.2f", progress];
         [videoInfo removeAllObjects];
         [self.downloadNow removeAllObjects];
@@ -125,7 +127,6 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
         [self.downloadNow setObject:videoInfo forKey:@"download"];
         [self didChangeValueForKey:@"downloadNow"];
     } completionHandler:^{
-        @strongify(self);
         downloadInfo.done = [NSNumber numberWithBool:YES];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
             [self.downloadSqueue removeObject:downloadInfo];
@@ -151,7 +152,6 @@ typedef NS_ENUM(NSInteger, XMDownloadStatus) {
         if (error) {
             NSLog(@"error: %@", [error description]);
         }
-        
     }
 }
 

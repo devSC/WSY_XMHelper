@@ -315,7 +315,6 @@
 				FEAAF0481A33646B00731999 /* Main.storyboard */,
 				FEAAF06A1A33F60E00731999 /* Section */,
 				FE62A4C61A3F1A6E00BF98BC /* XMDataManager */,
-				FEAAF0721A33F6E800731999 /* XMManager */,
 				FED0B2841A372E3E0059E826 /* XMDownloader */,
 				FEAAF0751A33F6E800731999 /* XMModel */,
 				FEAAF07B1A33F6E800731999 /* XMRequest */,
@@ -378,13 +377,6 @@
 				FEB5CA3B1A554D43000D9494 /* DetailList */,
 			);
 			path = VideoList;
-			sourceTree = "<group>";
-		};
-		FEAAF0721A33F6E800731999 /* XMManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = XMManager;
 			sourceTree = "<group>";
 		};
 		FEAAF0751A33F6E800731999 /* XMModel */ = {

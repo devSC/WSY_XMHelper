@@ -9,6 +9,7 @@
 #import "XMVideoListViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "XMDataManager.h"
+#import <ReactiveCocoa/RACEXTScope.h>
 @interface XMVideoListViewModel()
 
 @property (strong, nonatomic) NSMutableDictionary *cacheDictionary;
@@ -33,9 +34,10 @@
 
 - (RACSignal *)fetchObjectWithErrorHandler: (void(^)())errorHandle;
 {
-
+    @weakify(self);
     if (self.cacheDictionary[@(self.type)]) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            @strongify(self);
             self.videoList = self.cacheDictionary[@(self.type)];
             [subscriber sendNext:nil];
             [subscriber sendCompleted];
@@ -51,9 +53,11 @@
 
 - (RACSignal *)refreshObjectWithErrorHandler: (void(^)())errorHandle
 {
+    @weakify(self);
     return [[[XMDataManager defaultDataManager] requestVideoListWithVideoType:self.type errorHandler:^{
         errorHandle();
     }] doNext:^(NSArray *videoArray) {
+        @strongify(self);
         self.videoList = videoArray;
         //add cache
         [self.cacheDictionary setObject:videoArray forKey:@(self.type)];

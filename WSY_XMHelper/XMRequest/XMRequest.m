@@ -8,6 +8,7 @@
 
 #import "XMRequest.h"
 #import <GCDObjC.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 
 @interface XMRequest ()
 
@@ -36,7 +37,9 @@
 - (RACSignal *)fetchJSONFromUrlString:(NSString *)urlString errorHandler: (void(^)())errorHandle
 {
     //创建信号
+    @weakify(self);
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        @strongify(self);
         //创建sessionDataTask /task 工作 任务/ 来请求数据 为异步的
         NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (!error) {
