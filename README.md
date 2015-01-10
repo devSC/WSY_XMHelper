@@ -1,9 +1,14 @@
 WSY_XMHelper
 ============
 
-A LOL live video open and download  project, Use ReactiveCocoa to programing,  Architacture to MVVM !
+A LOL live video open and download  project, Use ReactiveCocoa to programing,  Based On MVVM Architecture!
+
+#ABOUT MVVM
+http://www.objc.io/issue-13/mvvm.html
 
 
+#THANKS
+@Void Main
 
 #LICENSE
 `WSY_XMHelper` is released under GNU GENERAL PUBLIC LICENSE.
